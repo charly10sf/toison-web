@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toisón · Todas tus inversiones, en un solo sitio</title>
+<meta name="description" content="Toisón reúne en un solo sitio tus fondos, acciones, ETF, oro y cripto de cualquier bróker, con precios en directo. Tu cartera se queda cifrada en tu dispositivo. Muy pronto.">
+<meta name="theme-color" content="#4a0f1c">
+<link rel="canonical" href="https://toison.es/">
+<link rel="icon" type="image/webp" href="toison-icono.webp">
+<link rel="apple-touch-icon" href="toison-icono.webp">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Toisón">
+<meta property="og:title" content="Toisón · Todas tus inversiones, en un solo sitio">
+<meta property="og:description" content="Fondos, acciones, ETF, oro y cripto de cualquier bróker, con precios en directo y tu cartera cifrada en tu dispositivo. Muy pronto.">
+<meta property="og:url" content="https://toison.es/">
+<meta property="og:image" content="https://toison.es/toison-avance.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/ibarra.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: "Ibarra Real Nova"; src: url(fonts/ibarra.woff2) format("woff2"); font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter"; src: url(fonts/inter.woff2) format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+
+:root {
+  --borgona: #4a0f1c;
+  --borgona-boton: #4e101d;
+  --oro: #e3b45f;
+  --oro-texto: #684910;
+  --crema: #f6ead5;
+  --papel: #faf2e8;
+  --tinta: #1e1a17;
+  --texto-2: #4d4640;
+  --borde: #e3ddd3;
+  --marmol: #151817;
+  --marca: "Ibarra Real Nova", Georgia, serif;
+  --ui: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; font: 400 17px/1.6 var(--ui); color: var(--tinta); background: var(--papel); }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--oro); outline-offset: 3px; border-radius: 4px; }
+
+/* cabecera con el logo */
+.hero { background: var(--borgona); color: var(--crema); text-align: center; padding: 0 22px 72px; overflow: hidden; }
+.logo { width: min(100%, 760px); margin: 0 auto; -webkit-mask-image: radial-gradient(ellipse 72% 78% at 50% 50%, #000 62%, transparent 100%); mask-image: radial-gradient(ellipse 72% 78% at 50% 50%, #000 62%, transparent 100%); animation: sube 1s ease both; }
+.hero h1 { margin: -12px auto 0; max-width: 15em; font: 500 clamp(34px, 7.2vw, 56px)/1.08 var(--marca); letter-spacing: .005em; text-wrap: balance; animation: sube .9s ease .25s both; }
+.hero p { margin: 20px auto 0; max-width: 34em; font-size: 18px; color: #e2d3bc; text-wrap: pretty; animation: sube .9s ease .4s both; }
+.pronto { display: inline-flex; align-items: center; gap: 10px; margin-top: 32px; padding: 12px 22px; border: 1px solid rgba(227,180,95,.55); border-radius: 999px; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--oro); animation: sube .9s ease .55s both; }
+.pronto i { width: 8px; height: 8px; border-radius: 50%; background: var(--oro); }
+@keyframes sube { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+/* lo que hace */
+main section, .pie { padding-left: 22px; padding-right: 22px; }
+.que { max-width: 880px; margin: 0 auto; padding-top: 88px; padding-bottom: 24px; }
+.k { margin: 0 0 14px; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--oro-texto); }
+.que h2, .privado h2 { margin: 0 0 40px; font: 500 clamp(28px, 5vw, 36px)/1.12 var(--marca); text-wrap: balance; }
+.lista { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.lista li { display: grid; grid-template-columns: 1fr; gap: 6px; padding: 26px 0; border-top: 1px solid var(--borde); }
+.lista li:last-child { border-bottom: 1px solid var(--borde); }
+.lista h3 { margin: 0; font: 600 21px/1.2 var(--marca); }
+.lista p { margin: 0; color: var(--texto-2); max-width: 38em; }
+@media (min-width: 720px) {
+  .lista li { grid-template-columns: 15em 1fr; gap: 40px; align-items: baseline; }
+}
+
+/* privacidad */
+.privado { max-width: 880px; margin: 0 auto; padding-top: 72px; padding-bottom: 96px; }
+.privado h2 { margin-bottom: 18px; }
+.privado p:not(.k) { margin: 0 0 14px; max-width: 38em; color: var(--texto-2); font-size: 18px; }
+.privado p b { color: var(--tinta); font-weight: 600; }
+
+/* pie en mármol negro */
+.pie { background: var(--marmol); color: var(--crema); text-align: center; padding-top: 72px; padding-bottom: 56px; }
+.pie h2 { margin: 0 0 10px; font: 500 28px/1.15 var(--marca); }
+.pie > p { margin: 0 auto; max-width: 30em; color: #cfc3b0; }
+.redes { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 30px 0 0; padding: 0; list-style: none; }
+.redes a { display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; border: 1px solid rgba(227,180,95,.6); border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; color: var(--oro); transition: background .2s, color .2s; }
+.redes a:hover { background: var(--oro); color: #2a0e14; }
+.pie > p.legal { margin: 56px auto 0; max-width: 40em; font-size: 13px; line-height: 1.55; color: #a99c89; }
+.legal span { display: block; margin-top: 10px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .logo, .hero h1, .hero p, .pronto { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img class="logo" src="toison-avance.webp" width="1120" height="640" alt="Toisón: una T dorada en forma de columna que atraviesa una O de mármol claro">
+  <h1>Todas tus inversiones, en un solo sitio</h1>
+  <p>Fondos, acciones, ETF, oro y cripto de cualquier bróker, con los precios en directo y las cuentas hechas en tu dispositivo.</p>
+  <span class="pronto"><i aria-hidden="true"></i>Muy pronto · Web y Android</span>
+</header>
+
+<main>
+  <section class="que" aria-labelledby="t-que">
+    <p class="k">Qué es</p>
+    <h2 id="t-que">Una cartera, la tuya, entera</h2>
+    <ul class="lista">
+      <li>
+        <h3>Todo junto</h3>
+        <p>Revolut, MyInvestor, Trade Republic, Interactive Brokers, Bitvavo o el que uses. Toisón calcula tu patrimonio, lo que ganas y lo que pierdes, el riesgo, los costes y el reparto por países y sectores, y proyecta cuánto podrías tener dentro de unos años.</p>
+      </li>
+      <li>
+        <h3>Un calendario para cada mes</h3>
+        <p>Qué aportar, qué revisar, qué resultados vigilar y qué supone todo eso en la renta. Con una guía de Fiscalidad para saber qué pagarás a Hacienda.</p>
+      </li>
+      <li>
+        <h3>Mercados explicados</h3>
+        <p>Bolsas, tipos, divisas y materias primas de todo el mundo, y qué significa cada movimiento para lo que tienes tú, no para el mercado en general.</p>
+      </li>
+      <li>
+        <h3>Objetivos y un asistente</h3>
+        <p>Tu perfil de inversor, tus límites y tus metas, y un asistente con IA al que preguntar lo que quieras sobre tu cartera.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="privado" aria-labelledby="t-priv">
+    <p class="k">Privacidad</p>
+    <h2 id="t-priv">Tu cartera no sale de tu móvil</h2>
+    <p>Se guarda en tu dispositivo y va cifrada con tu contraseña. <b>Nadie más la ve</b>.</p>
+    <p>Toisón no mueve tu dinero: solo lleva la cuenta.</p>
+  </section>
+</main>
+
+<footer class="pie">
+  <h2>Todavía no está abierta al público</h2>
+  <p>Cuando lo esté, se anunciará primero en las redes.</p>
+  <ul class="redes">
+    <li><a href="https://www.instagram.com/toisonapp" rel="noopener">Instagram @toisonapp</a></li>
+    <li><a href="https://x.com/toisonapp" rel="noopener">X @toisonapp</a></li>
+  </ul>
+  <p class="legal">Toisón no da recomendaciones ni asesoramiento de inversión. Invertir conlleva riesgo, incluida la pérdida de parte o de todo el capital.
+    <span>© 2026 Toisón</span></p>
+</footer>
+
+</body>
+</html>
