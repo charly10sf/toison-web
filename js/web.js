@@ -50,7 +50,6 @@
     });
     $$('.etapas button').forEach((b, i) => b.setAttribute('aria-label', L('Paso ', 'Step ') + (i + 1)));
     $('meta[name="theme-color"]').content = { marmol: '#131615', marfil: '#faf2e8', borgona: '#4e101d' }[html.dataset.dir] || '#131615';
-    $('#anillo-txt').textContent = L('EL VELLOCINO DE ORO · JASÓN · EL ARGO · LA CÓLQUIDE · BRUJAS, 1430 · TOISÓN ·', 'THE GOLDEN FLEECE · JASON · THE ARGO · COLCHIS · BRUGES, 1430 · TOISÓN · ');
     $$('.idioma button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === lang));
     partePalabras();
     pintaCinta();
