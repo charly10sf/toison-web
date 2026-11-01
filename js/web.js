@@ -49,7 +49,7 @@
       el.alt = lang === 'en' && en ? en : el._esAlt;
     });
     $$('.etapas button').forEach((b, i) => b.setAttribute('aria-label', L('Paso ', 'Step ') + (i + 1)));
-    $('meta[name="theme-color"]').content = { marmol: '#131615', marfil: '#faf2e8', borgona: '#4e101d' }[html.dataset.dir] || '#131615';
+    $('meta[name="theme-color"]').content = { marmol: '#151817', marfil: '#faf2e8', borgona: '#4e101d' }[html.dataset.dir] || '#151817';
     $$('.idioma button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === lang));
     partePalabras();
     pintaCinta();
@@ -237,9 +237,9 @@
       </div>` + navApp(0),
     () => `<div class="hola"><div><small>${L('Noviembre', 'November')}</small><b>${L('Paso a paso', 'Step by step')}</b></div>${yo}</div>
       <div class="tarj" style="display:flex;align-items:center;gap:12px"><svg class="anillo-p" viewBox="0 0 46 46" aria-hidden="true"><circle class="fondo" cx="23" cy="23" r="18"/><circle class="lleno" cx="23" cy="23" r="18" pathLength="1"/></svg>
-        <div><b style="font-size:14px">${L('1 de 4 hecho', '1 of 4 done')}</b><small style="display:block;color:var(--a-txt2)">${L('Lo que toca este mes', 'What’s due this month')}</small></div></div>
+        <div><b style="font-size:14px">${L('1 de 4 hecho', '1 of 4 done')}</b><small style="display:block;color:var(--a-txt2)">${L('Tu mes', 'Your month')}</small></div></div>
       <div class="tarj">
-        <div class="check ok" style="--i:0"><i></i><div>${L('Aportar ' + eur(200) + ' al fondo mundial', 'Add ' + eur(200) + ' to the global fund')}<small>${L('En la renta: nada', 'Tax effect: none')}</small></div></div>
+        <div class="check ok" style="--i:0"><i></i><div>${L('Tu aportación programada: ' + eur(200) + ' al fondo mundial', 'Your scheduled contribution: ' + eur(200) + ' to the global fund')}<small>${L('En la renta: nada', 'Tax effect: none')}</small></div></div>
         <div class="check" style="--i:1"><i></i><div>${L('Resultados de dos empresas tuyas', 'Earnings from two of your companies')}<small>${L('Jueves 12 y martes 17', 'Thursday 12 and Tuesday 17')}</small></div></div>
         <div class="check" style="--i:2"><i></i><div>${L('Tecnología: 34' + NB + '%, tu límite es 30' + NB + '%', 'Tech: 34%, your limit is 30%')}<span class="chip">${L('Lo decides tú', 'Your call')}</span></div></div>
         <div class="check" style="--i:3"><i></i><div>${L('31 dic: cierra el año fiscal', '31 Dec: tax year ends')}<small>${L('Después, todo cuenta para 2027', 'After that, it counts for 2027')}</small></div></div>
@@ -269,7 +269,7 @@
   ];
   let pasoActual = 0;
   function pintaMoviles() {
-    const tema = html.dataset.dir === 'marmol' ? 'app-osc' : 'app-claro';
+    const tema = { marfil: 'app-claro', borgona: 'app-borg' }[html.dataset.dir] || 'app-osc';
     $$('.movil').forEach((m) => {
       const n = m.dataset.pantalla;
       const capas = n === 'todas'
@@ -622,7 +622,7 @@
   function colorPais(c, m, v) {
     if (m === 'tuyo') { const t = TUYO[c]; return t ? `color-mix(in srgb, var(--graf) ${Math.round(18 + 82 * Math.sqrt(t / 48))}%, ${v || BASE})` : (v || BASE); }
     const b = BOLSAS[c]; if (!b) return v || BASE;
-    const x = b[COL[m]], k = Math.round(25 + 75 * Math.min(1, Math.abs(x) / TOPE[m]));
+    const x = b[COL[m]], k = Math.round(35 + 65 * Math.min(1, Math.abs(x) / TOPE[m]));
     return `color-mix(in srgb, var(${x >= 0 ? '--sube' : '--baja'}) ${k}%, ${v || BASE})`;
   }
   const nomPais = (c) => (c === 'US' ? L('EE. UU.', 'United States') : geo && geo.n[c] ? L(geo.n[c][0], geo.n[c][1]) : c);
@@ -642,7 +642,7 @@
       const c = p.dataset.c;
       let v;
       if (modo === 'tuyo') v = TUYO[c] ? L(`${fmt(TUYO[c], TUYO[c] % 1 ? 1 : 0)}${NB}% de tu cartera`, `${fmt(TUYO[c], TUYO[c] % 1 ? 1 : 0)}% of your portfolio`) : L('Aquí no tienes nada', 'Nothing here');
-      else v = BOLSAS[c] ? `${BOLSAS[c][0]}: ${flecha(BOLSAS[c][COL[modo]])}` : L('No seguimos su bolsa', 'We don’t track its market');
+      else v = BOLSAS[c] ? `${BOLSAS[c][0]}: <span class="tip-${BOLSAS[c][COL[modo]] >= 0 ? 's' : 'b'}">${flecha(BOLSAS[c][COL[modo]])}</span>` : L('No seguimos su bolsa', 'We don’t track its market');
       tip.innerHTML = `<b>${nomPais(c)}</b>${v}`;
       const rc = $('.mapa-caja').getBoundingClientRect();
       tip.style.left = (e.clientX - rc.left) + 'px'; tip.style.top = (e.clientY - rc.top) + 'px';
@@ -814,7 +814,7 @@
   function ponDir(d, guardar) {
     if (!DIRS.includes(d)) d = 'marmol';
     html.dataset.dir = d;
-    $('meta[name="theme-color"]').content = { marmol: '#131615', marfil: '#faf2e8', borgona: '#4e101d' }[d];
+    $('meta[name="theme-color"]').content = { marmol: '#151817', marfil: '#faf2e8', borgona: '#4e101d' }[d];
     $$('.estilo button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.dir === d));
     pintaMoviles();
     vetasAlto = 0;
