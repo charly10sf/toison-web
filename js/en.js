@@ -71,7 +71,7 @@ window.TEXTOS_EN = {
   pp1: 'Everything in Free', pp2: 'More questions to the AI and deeper answers', pp3: 'The full radar, with a profile for each company', pp4: 'Whatever comes next, before anyone else',
   ppNota: 'Price to be announced. Those who request access now will be the first to know.', kNombre: 'Why Toisón', hNombre: 'A story of <em>gold, sea and patience</em>',
   kQuien: 'Who is behind it', hQuien: 'Toisón is made by <em>one person</em>',
-  quien1: 'My name is Carlos Díez, I am 24 and I live in Madrid. I work shifts as an electromechanical maintenance technician and, in the afternoons, I study Economics at the University of Alcalá.',
+  quien1: 'My name is Carlos Díez, I am 24 and I live in Madrid. I studied automation and robotics and have spent the last five years working in the field. Recently I’ve been combining it with a degree in Economics at the University of Alcalá.',
   quien2: 'Toisón started as the spreadsheet I used to keep track of my own investments, spread across several brokers, and the tax return I had to file every year. It grew into an app: first for me, then for a group of friends. This is what I am now opening up to more people.',
   quien3: 'There is no big company behind it and no investors: there is one person, a lot of care with the numbers and one fixed rule: Toisón explains, it doesn’t tell you what to do. If you have questions or ideas, write to me.',
   copy: '© 2026 Toisón · Carlos Díez Rodríguez',
