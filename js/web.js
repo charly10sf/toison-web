@@ -815,6 +815,8 @@
     if (!DIRS.includes(d)) d = 'marmol';
     html.dataset.dir = d;
     $('meta[name="theme-color"]').content = { marmol: '#151817', marfil: '#faf2e8', borgona: '#4e101d' }[d];
+    // Marfil es claro: «only light» le dice al navegador que no lo oscurezca aunque el móvil esté en modo oscuro
+    $('meta[name="color-scheme"]').content = d === 'marfil' ? 'only light' : 'dark';
     $$('.estilo button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.dir === d));
     pintaMoviles();
     vetasAlto = 0;

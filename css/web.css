@@ -17,7 +17,7 @@ html[data-dir="marfil"] {
   --bg: #faf2e8; --bg2: #f3eadc; --surf: #fffdf9; --surf2: #efe7da; --borde: #d9cfc0;
   --txt: #1e1a17; --txt2: #4d4640; --oro: #684910; --graf: #8a6216; --sube: #08573a; --baja: #982d0e;
   --prim: #4e101d; --sobre-prim: #f6ead5; --sim-o: #4e101d; --sim-t: #8a6216;
-  color-scheme: light;
+  color-scheme: only light; /* «only»: que el modo oscuro del móvil no lo repinte */
 }
 /* Escala de Borgoña (a pasar al manual): 1 #3c0b16 fondo 2 · 2 #4e101d fondo (marca) · tarjetas más oscuras que el fondo: superficie #26121a y superficie 2 #351921 · borde #84404f. Bandas negras: #150a0d, #26121a, #351921, borde #5e2734. Sube #93e2b9 · baja #ffb7a0. */
 html[data-dir="borgona"] {
@@ -26,6 +26,10 @@ html[data-dir="borgona"] {
   --prim: #e3b45f; --sobre-prim: #3c0b16; --sim-o: #f6ead5; --sim-t: #e3b45f;
   color-scheme: dark;
 }
+
+/* Samsung Internet mira si la web responde a prefers-color-scheme para no aplicar su modo oscuro. Los colores no cambian:
+   el estilo lo elige la persona; esto solo avisa de que la web ya trae los suyos */
+@media (prefers-color-scheme: dark) { :root { --sistema-oscuro: 1; } }
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 80px; }
