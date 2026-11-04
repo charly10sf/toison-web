@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="es" data-dir="marmol" data-perfil="novato">
+<html lang="es" data-dir="marmol">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Toisón · Todas tus inversiones, en un solo sitio</title>
-<meta name="description" content="Toisón reúne tus fondos, acciones, ETF, oro y cripto de cualquier bróker, con una IA que lee el mercado por ti, un asistente que conoce tu cartera y la renta española hecha. Muy pronto.">
+<meta name="description" content="Toisón reúne tus fondos, acciones, ETF, oro y cripto de cualquier bróker, con precios en directo, una IA que lee el mercado y lo que supondría en la renta española. Tu cartera, cifrada con tu contraseña.">
 <meta name="theme-color" content="#151817">
-<!-- 4 nov: el esquema de color dicho en la cabecera, para que el modo oscuro del móvil (Samsung Internet, los navegadores de
-     WhatsApp y X) no repinte la web. Lo cambia ponDir (js/web.js) según el estilo -->
+<!-- El esquema de color dicho en la cabecera, para que el modo oscuro del móvil (Samsung Internet, los navegadores de
+     WhatsApp y X) no repinte la web. Lo cambia ponDir (js/web.js) según el estilo: «dark», «only light» en Marfil -->
 <meta name="color-scheme" content="dark">
 <link rel="canonical" href="https://toison.es/">
 <meta property="og:type" content="website">
@@ -15,14 +15,14 @@
 <meta property="og:locale" content="es_ES">
 <meta property="og:url" content="https://toison.es/">
 <meta property="og:title" content="Toisón · Todas tus inversiones, en un solo sitio">
-<meta property="og:description" content="Fondos, acciones, ETF, oro y cripto de cualquier bróker, con una IA que lee el mercado por ti y la renta española hecha. Muy pronto.">
+<meta property="og:description" content="Fondos, acciones, ETF, oro y cripto de cualquier bróker, con una IA que lee el mercado por ti y lo que supondría en la renta española. Tu cartera, cifrada con tu contraseña.">
 <meta property="og:image" content="https://toison.es/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Toisón: una T dorada en forma de columna que atraviesa una O de mármol claro, sobre mármol negro">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Toisón · Todas tus inversiones, en un solo sitio">
-<meta name="twitter:description" content="Fondos, acciones, ETF, oro y cripto de cualquier bróker, con una IA que lee el mercado por ti y la renta española hecha. Muy pronto.">
+<meta name="twitter:description" content="Fondos, acciones, ETF, oro y cripto de cualquier bróker, con una IA que lee el mercado por ti y lo que supondría en la renta española.">
 <meta name="twitter:image" content="https://toison.es/og.jpg">
 <link rel="icon" type="image/webp" href="toison-icono.webp">
 <link rel="apple-touch-icon" href="toison-icono.webp">
@@ -37,560 +37,462 @@
     <path id="o" d="M-80.9 0A80.9 50 0 1 1 80.9 0A80.9 50 0 1 1 -80.9 0ZM-54.1 0A54.1 46.4 0 1 0 54.1 0A54.1 46.4 0 1 0 -54.1 0Z"/>
     <path id="t" d="M-61.15 -76L61.15 -76L61.15 -66.7L16.25 -66.7L9.05 -57L12.25 60L20.5 60L20.5 67.2L-20.5 67.2L-20.5 60L-12.25 60L-9.05 -57L-16.25 -66.7L-61.15 -66.7ZM-6.45 -40.5L-6.45 38.5L-4.55 38.5L-4.55 -40.5ZM-0.95 -40.5L-0.95 38.5L0.95 38.5L0.95 -40.5ZM4.55 -40.5L4.55 38.5L6.45 38.5L6.45 -40.5Z"/>
   </defs>
-  <defs id="defs-mapa"></defs>
 </svg>
-<div class="progreso" aria-hidden="true"></div>
-<div class="brillo" aria-hidden="true"></div>
-<svg class="vetas" aria-hidden="true"></svg>
 
-<header class="nav">
+<svg class="vetas" aria-hidden="true"></svg>
+<div class="brillo" aria-hidden="true"></div>
+
+<a class="salta" href="#inicio" data-t="salta">Saltar al contenido</a>
+
+<header class="nav" id="nav">
   <div class="cont">
-    <a class="logo" href="#inicio" aria-label="Toisón" data-t-aria="logoAria">
+    <a class="logo" href="#inicio" aria-label="Toisón, inicio" data-t-aria="logoAria">
       <svg viewBox="-82 -78 164 147" aria-hidden="true"><use class="s-o" href="#o"/><use class="s-t" href="#t"/></svg>
       <b>TOISÓN</b>
     </a>
-    <div class="ajustes">
-    <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="indice-nav" aria-label="Índice" data-t-aria="indiceAria"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
-    <div class="estilo" role="group" aria-label="Estilo" data-t-aria="estiloAria">
-      <button type="button" data-dir="marmol" data-nombre="Mármol" aria-pressed="true" aria-label="Mármol"><span class="muestra m-marmol"><svg viewBox="-82 -78 164 147" aria-hidden="true"><use class="so" href="#o"/><use class="st" href="#t"/></svg></span></button>
-      <button type="button" data-dir="marfil" data-nombre="Marfil" aria-pressed="false" aria-label="Marfil"><span class="muestra m-marfil"><svg viewBox="-82 -78 164 147" aria-hidden="true"><use class="so" href="#o"/><use class="st" href="#t"/></svg></span></button>
-      <button type="button" data-dir="borgona" data-nombre="Borgoña" aria-pressed="false" aria-label="Borgoña"><span class="muestra m-borgona"><svg viewBox="-82 -78 164 147" aria-hidden="true"><use class="so" href="#o"/><use class="st" href="#t"/></svg></span></button>
+    <nav class="menu" aria-label="Secciones" data-t-aria="menuAria">
+      <a href="#producto" data-t="mProducto">Producto</a>
+      <a href="#ia" data-t="mIA">La IA</a>
+      <a href="#hacienda" data-t="mHacienda">Hacienda</a>
+      <a href="#seguridad" data-t="mSeguridad">Seguridad</a>
+      <a href="#pro" data-t="mPro">Pro</a>
+      <a href="#preguntas" data-t="mPreguntas">Preguntas</a>
+    </nav>
+    <div class="derecha">
+      <div class="ajustes">
+        <div class="estilo" role="group" aria-label="Estilo" data-t-aria="estiloAria">
+          <button type="button" data-dir="marmol" aria-pressed="true" aria-label="Mármol" data-t-aria="marmolAria"><i class="m-marmol"></i></button>
+          <button type="button" data-dir="marfil" aria-pressed="false" aria-label="Marfil" data-t-aria="marfilAria"><i class="m-marfil"></i></button>
+          <button type="button" data-dir="borgona" aria-pressed="false" aria-label="Borgoña" data-t-aria="borgonaAria"><i class="m-borgona"></i></button>
+        </div>
+        <span class="sep" aria-hidden="true"></span>
+        <div class="idioma" role="group" aria-label="Idioma" data-t-aria="idiomaAria">
+          <button type="button" data-lang="es" aria-pressed="true" lang="es">ES</button>
+          <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+        </div>
+      </div>
+      <a class="entrar" href="https://toison.es/app" data-app><span data-t="entrar">Entrar</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4l4 4-4 4"/></svg></a>
+      <a class="boton chico" href="#acceso" data-t="pedir">Pedir acceso</a>
+      <button type="button" class="menu-btn" aria-expanded="false" aria-controls="menu-movil" aria-label="Menú" data-t-aria="menuBtnAria"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
-    <div class="idioma" role="group" aria-label="Idioma" data-t-aria="idiomaAria">
-      <button type="button" data-lang="es" aria-pressed="true" lang="es"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg><span class="sr">Español</span></button>
-      <button type="button" data-lang="en" aria-pressed="false" lang="en"><svg viewBox="0 0 60 30" aria-hidden="true"><clipPath id="uk-c"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0 0l60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30M60 0L0 30" clip-path="url(#uk-c)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg><span class="sr">English</span></button>
-    </div>
+  </div>
+  <div class="menu-movil" id="menu-movil" hidden>
+    <a href="#producto" data-t="mProducto">Producto</a><a href="#ia" data-t="mIA">La IA</a><a href="#hacienda" data-t="mHacienda">Hacienda</a><a href="#seguridad" data-t="mSeguridad">Seguridad</a><a href="#pro" data-t="mPro">Pro</a><a href="#preguntas" data-t="mPreguntas">Preguntas</a>
+    <div class="mm-ajustes">
+      <div class="estilo" role="group" aria-label="Estilo" data-t-aria="estiloAria">
+        <button type="button" data-dir="marmol" aria-pressed="true" aria-label="Mármol" data-t-aria="marmolAria"><i class="m-marmol"></i></button>
+        <button type="button" data-dir="marfil" aria-pressed="false" aria-label="Marfil" data-t-aria="marfilAria"><i class="m-marfil"></i></button>
+        <button type="button" data-dir="borgona" aria-pressed="false" aria-label="Borgoña" data-t-aria="borgonaAria"><i class="m-borgona"></i></button>
+      </div>
+      <div class="idioma" role="group" aria-label="Idioma" data-t-aria="idiomaAria">
+        <button type="button" data-lang="es" aria-pressed="true" lang="es">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+      </div>
     </div>
   </div>
 </header>
 
-<main>
-<section id="inicio" class="hero banda" aria-label="Inicio" data-t-aria="inicioAria">
+<main id="inicio">
 
-  <!-- MÁRMOL -->
-  <div class="hero-marmol">
-    <div class="relieve">
-      <div class="lento">
-        <img src="toison-marmol.webp" width="1120" height="640" fetchpriority="high" decoding="async" alt="Toisón: una T dorada en forma de columna que atraviesa una O de mármol claro" data-t-alt="logoAlt">
-        <svg class="vec" viewBox="0 0 1120 640" aria-hidden="true"><g transform="translate(558 249) scale(2.08)"><path class="vo" pathLength="2" d="M-80.9 0A80.9 50 0 1 1 80.9 0A80.9 50 0 1 1 -80.9 0ZM-54.1 0A54.1 46.4 0 1 0 54.1 0A54.1 46.4 0 1 0 -54.1 0Z"/><path class="vt" pathLength="2" d="M-61.15 -76L61.15 -76L61.15 -66.7L16.25 -66.7L9.05 -57L12.25 60L20.5 60L20.5 67.2L-20.5 67.2L-20.5 60L-12.25 60L-9.05 -57L-16.25 -66.7L-61.15 -66.7Z"/></g></svg>
-      </div>
-    </div>
-    <div class="cont">
-      <h1 data-t="h1">Todas tus inversiones, <em>en un solo sitio</em></h1>
-      <p class="ent" data-t="heroEnt">Fondos, acciones, ETF, oro y cripto de cualquier bróker. Una IA que lee el mercado por ti, un asistente que conoce tu cartera y la renta española ya hecha.</p>
-      <div class="acciones">
-        <a class="boton" href="#como" data-t="btnComo">Ver cómo es por dentro</a>
-        <a class="boton sec" href="#nombre" data-t="btnNombre">Por qué Toisón</a>
-      </div>
-      <p class="pronto"><i aria-hidden="true"></i><span data-t="pronto">Muy pronto · Web y Android</span></p>
-      <div class="baja-cue" aria-hidden="true"></div>
-    </div>
-  </div>
+<!-- ========== PORTADA ========== -->
+<section class="hero" aria-label="Portada" data-t-aria="portadaAria">
+  <div class="cont hero-grid">
+    <div class="texto">
+      <div class="filete-doble" aria-hidden="true"></div>
+      <p class="k"><span class="punto" aria-hidden="true"></span><span data-t="kHero">Web hoy · Android muy pronto · Gratis para empezar</span></p>
+      <h1 data-t="h1">Todas tus inversiones, <em>en un solo sitio.</em></h1>
+      <p class="ent" data-t="heroEnt">Fondos, acciones, ETF, oro y cripto de cualquier bróker, con los precios al día, una IA que lee el mercado y lo que supondría en la renta española. Tu cartera va cifrada con tu contraseña: nadie más la ve.</p>
 
-  <!-- MARFIL -->
-  <div class="hero-marfil">
-    <div class="cont">
-      <div class="filete"><span data-t="croNum">Número 0 · Noviembre de 2026</span><span data-t="croSec">Inversiones · Renta · Mercados</span><span data-t="pronto">Muy pronto · Web y Android</span></div>
-      <div class="cabecera">
-        <svg viewBox="-82 -78 164 147" aria-hidden="true"><use class="s-o" href="#o"/><use class="s-t" href="#t"/></svg>
-        <p class="palabra" aria-label="Toisón" style="margin:0"><span style="--i:0">T</span><span style="--i:1">O</span><span style="--i:2">I</span><span style="--i:3">S</span><span style="--i:4">Ó</span><span style="--i:5">N</span></p>
-      </div>
-      <p class="lema" data-t="croLema">Algo de oro, bien guardado. Tu cartera, entera y explicada.</p>
-      <div class="cro-grid">
-        <div>
-          <h1 data-t="h1">Todas tus inversiones, <em>en un solo sitio</em></h1>
-          <p class="ent" data-t="croEnt">Fondos, acciones, ETF, oro y cripto de cualquier bróker. Un asistente que conoce tu cartera, lo que pasa en los mercados contado para ti y la renta hecha para Hacienda.</p>
-          <div class="acciones">
-            <a class="boton" href="#como" data-t="btnComo">Ver cómo es por dentro</a>
-            <a class="boton sec" href="#futuro" data-t="btnFuturo">Prueba la proyección</a>
-          </div>
+      <form class="acceso" id="acceso" action="#" aria-label="Pedir acceso" data-t-aria="accesoAria" novalidate>
+        <label class="sr" for="correo" data-t="tuCorreo">Tu correo</label>
+        <div class="campo">
+          <input id="correo" type="email" name="correo" placeholder="Tu correo" data-t-ph="tuCorreo" autocomplete="email" inputmode="email" required maxlength="120">
+          <input class="sr" type="text" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit" class="boton"><span data-t="pedir">Pedir acceso</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4l4 4-4 4"/></svg></button>
         </div>
-        <div class="escena" id="escena">
-          <svg class="aurea" viewBox="0 0 200 150" aria-hidden="true">
-            <g transform="translate(100 70)"><path class="o" pathLength="2" d="M-80.9 0A80.9 50 0 1 1 80.9 0A80.9 50 0 1 1 -80.9 0ZM-54.1 0A54.1 46.4 0 1 0 54.1 0A54.1 46.4 0 1 0 -54.1 0Z"/></g>
-            <rect class="l" x="19.1" y="20" width="161.8" height="100" pathLength="1"/>
-            <path class="l" d="M119.1 20V120M119.1 81.8H180.9M142.7 81.8V120M119.1 96.4H142.7M133.7 81.8V96.4" pathLength="1"/>
-            <path class="l" d="M19.1 120A100 100 0 0 1 119.1 20A61.8 61.8 0 0 1 180.9 81.8A38.2 38.2 0 0 1 142.7 120A23.6 23.6 0 0 1 119.1 96.4A14.6 14.6 0 0 1 133.7 81.8" pathLength="1"/>
-          </svg>
-          <div class="movil" data-pantalla="0"></div>
-          <div class="flota f1" data-prof="18"><small data-t="f1a">Renta de 2026 · ejemplo</small><b class="num" data-t="f1b">A pagar: 171,00 €</b></div>
-          <div class="flota f2" data-prof="-24"><small data-t="f2a">Asistente</small><br><span data-t="f2b">La tecnología ya es el 34 % de tu cartera. Tu límite es el 30 %.</span></div>
-          <div class="flota f3" data-prof="12"><small data-t="f3a">Riesgo de la cartera</small><b data-t="f3b">4 de 7</b></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- BORGOÑA -->
-  <div class="hero-borgona">
-    <div class="cont">
-      <div class="sello">
-        <div class="medalla">
-          <img src="toison-sello.webp" width="420" height="420" alt="" decoding="async">
-          <svg class="vec" viewBox="0 0 420 420" aria-hidden="true"><g transform="translate(210 235) scale(2.08)"><path class="vo" pathLength="2" d="M-80.9 0A80.9 50 0 1 1 80.9 0A80.9 50 0 1 1 -80.9 0ZM-54.1 0A54.1 46.4 0 1 0 54.1 0A54.1 46.4 0 1 0 -54.1 0Z"/><path class="vt" pathLength="2" d="M-61.15 -76L61.15 -76L61.15 -66.7L16.25 -66.7L9.05 -57L12.25 60L20.5 60L20.5 67.2L-20.5 67.2L-20.5 60L-12.25 60L-9.05 -57L-16.25 -66.7L-61.15 -66.7Z"/></g></svg>
-        </div>
-      </div>
-      <p class="palabra-b" aria-label="Toisón"><span style="--i:0">T</span><span style="--i:1">O</span><span style="--i:2">I</span><span style="--i:3">S</span><span style="--i:4">Ó</span><span style="--i:5">N</span></p>
-      <div class="orla" aria-hidden="true"><i></i></div>
-      <h1 data-t="h1">Todas tus inversiones, <em>en un solo sitio</em></h1>
-      <p class="ent" data-t="heroEnt">Fondos, acciones, ETF, oro y cripto de cualquier bróker. Una IA que lee el mercado por ti, un asistente que conoce tu cartera y la renta española ya hecha.</p>
-      <div class="acciones">
-        <a class="boton" href="#como" data-t="btnComo">Ver cómo es por dentro</a>
-        <a class="boton sec" href="#nombre" data-t="btnNombre">Por qué Toisón</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="cinta" data-b="n" aria-hidden="true"><div class="cinta-in" id="cinta"></div></div>
-
-<section id="como" data-b="b" class="recorrido banda seccion" aria-labelledby="t-como">
-  <div class="cont">
-    <div class="cab cab-sec">
-      <div>
-        <p class="k" data-rom="I" data-t="kComo">Cómo es por dentro</p>
-        <h2 id="t-como" data-split data-t="hComo">Lo que ves <em>al abrirla</em></h2>
-      </div>
-      <div>
-        <p class="perfil-lab" id="perfil-lab" data-t="perfilLab">Te lo contamos a tu medida:</p>
-        <div class="perfil" role="group" aria-labelledby="perfil-lab">
-          <button type="button" data-perfil="novato" aria-pressed="true" data-t="perfNov">Estoy empezando</button>
-          <button type="button" data-perfil="experto" aria-pressed="false" data-t="perfExp">Llevo años invirtiendo</button>
-        </div>
-      </div>
-    </div>
-    <div class="rec-grid">
-      <ol class="pasos">
-        <li class="paso" data-paso="0">
-          <span class="n" data-t="p1n">01 · CARTERA</span>
-          <h3 data-t="p1h">Todo lo que tienes, junto</h3>
-          <p class="x-nov" data-t="p1nov">Da igual que tengas un fondo en un banco, acciones en otro y algo de cripto en una app. Ves cuánto tienes en total, si ganas o pierdes y en qué está metido tu dinero.</p>
-          <p class="x-exp" data-t="p1exp">Valor en directo de fondos, acciones, ETF, oro y cripto de cualquier bróker. Rentabilidad por posición y total, lo que pagas en comisiones fondo a fondo, la clase de riesgo de 1 a 7 con su volatilidad y su peor caída, y el reparto por país, sector y tipo de activo.</p>
-          <div class="mini"><div class="movil" data-pantalla="0"></div></div>
-        </li>
-        <li class="paso" data-paso="1">
-          <span class="n" data-t="p2n">02 · PASO A PASO</span>
-          <h3 data-t="p2h">Tu mes, de un vistazo</h3>
-          <p class="x-nov" data-t="p2nov">Un calendario de tu mes: tus aportaciones programadas, lo que hay que vigilar y las fechas que importan. Cada punto cuenta qué supondría en la renta. Lo que hagas lo decides tú.</p>
-          <p class="x-exp" data-t="p2exp">Aportaciones programadas, resultados de las empresas que tienes, límites de tu perfil que se pasan y el efecto fiscal de cada movimiento antes de hacerlo, con la regla de recompra de Hacienda incluida.</p>
-          <div class="mini"><div class="movil" data-pantalla="1"></div></div>
-        </li>
-        <li class="paso" data-paso="2">
-          <span class="n" data-t="p3n">03 · MERCADOS</span>
-          <h3 data-t="p3h">El mundo, traducido a tu cartera</h3>
-          <p class="x-nov" data-t="p3nov">Un mapa con cada país del color de su bolsa, y en una frase qué significa cada movimiento para lo tuyo: bolsas, tipos, divisas y materias primas.</p>
-          <p class="x-exp" data-t="p3exp">Mapa por países (hoy, en el mes, en el año o tu dinero), índices, tipos de interés, divisas y materias primas, con el efecto del tipo de cambio en lo que tienes en otras monedas, en euros y no en porcentajes sueltos.</p>
-          <div class="mini"><div class="movil" data-pantalla="2"></div></div>
-        </li>
-        <li class="paso" data-paso="3">
-          <span class="n" data-t="p4n">04 · NOTICIAS</span>
-          <h3 data-t="p4h">La prensa, leída por la IA</h3>
-          <p class="x-nov" data-t="p4nov">Las noticias de lo que tienes y de lo que sigues, cada una con una línea de la IA: qué ha pasado, si es bueno o malo y cuánto importa.</p>
-          <p class="x-exp" data-t="p4exp">Titulares de la prensa económica de los últimos 30 días, cada uno marcado con su factor (negocio, sector, economía, política, sociedad o mercado), su signo y su peso, del relleno a lo que cambia la tesis.</p>
-          <div class="mini"><div class="movil" data-pantalla="3"></div></div>
-        </li>
-        <li class="paso" data-paso="4">
-          <span class="n" data-t="p5n">05 · EXPERTOS</span>
-          <h3 data-t="p5h">Analistas y factores, en una ficha</h3>
-          <p class="x-nov" data-t="p5nov">Para cada empresa, qué piensan los analistas, cuánto recorrido le ven y lo que dice la prensa, todo junto. Y un radar de 840 empresas con ideas para que las mires tú.</p>
-          <p class="x-exp" data-t="p5exp">Consenso y precio objetivo, los seis factores con su signo, peso y plazo, la tendencia, tus reglas de salida y lo que pesa cada posición. Un radar de 840 empresas de EE. UU. y Europa con la ficha renovada cada pocas horas. Las ideas son eso, ideas: decides tú.</p>
-          <div class="mini"><div class="movil" data-pantalla="4"></div></div>
-        </li>
-      </ol>
-      <div class="fijo" aria-hidden="true">
-        <div class="movil" id="movil-fijo" data-pantalla="todas"></div>
-        <div class="puntos"><i class="act"></i><i></i><i></i><i></i><i></i></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="cadena" aria-hidden="true"></div>
-
-<section class="cifras banda alt" data-b="n" aria-label="Toisón en cifras" data-t-aria="cifrasAria">
-  <div class="cont">
-    <ul>
-      <li data-r><b data-count="362">362</b><span data-t="c1">fondos, ETF, oro y cripto en el catálogo, cada uno con su ficha</span></li>
-      <li data-r style="--d:.12s"><b data-count="840">840</b><span data-t="c2">empresas de EE. UU. y Europa en el radar de ideas</span></li>
-      <li data-r style="--d:.24s"><b data-count="5">5</b><span data-t="c3">tipos de activo en una sola cartera: fondos, acciones, ETF, oro y cripto</span></li>
-    </ul>
-  </div>
-</section>
-
-<section id="ia" data-b="n" class="ia banda seccion" aria-labelledby="t-ia">
-  <div class="cont">
-    <div class="cab-sec">
-      <p class="k" data-rom="II" data-t="kIA">Inteligencia artificial</p>
-      <h2 id="t-ia" data-split data-t="hIA">Una IA que lee el mundo <em>para que tú decidas</em></h2>
-      <p class="ent" data-t="entIA">Entre semana, cada 20 minutos, Toisón trae la prensa económica y la IA lee la de las empresas con novedades. Así pasa por las 840 del radar varias veces al día. No se queda en el titular: separa lo que toca al negocio, al sector, a la economía, a la política, a la sociedad y al mercado, y lo cruza con lo que opinan los analistas.</p>
-    </div>
-
-    <ol class="tubo">
-      <li class="via" aria-hidden="true"><i></i></li>
-      <li class="etapa-ia" data-r><span class="bola" aria-hidden="true">1</span><span class="cada" data-t="t1c">Cada 20 minutos</span><h3 data-t="t1h">Trae la prensa</h3><p data-t="t1p">Titulares y resúmenes de un lote de empresas del radar, empezando por las que llevan más tiempo sin mirar.</p></li>
-      <li class="etapa-ia" data-r style="--d:.12s"><span class="bola" aria-hidden="true">2</span><span class="cada" data-t="t2c">En cada pasada</span><h3 data-t="t2h">La IA la lee</h3><p data-t="t2p">Unas 70 empresas con noticias nuevas: qué ha pasado, si es bueno o malo, cuánto importa y si hay algo con fecha que pueda moverla.</p></li>
-      <li class="etapa-ia" data-r style="--d:.24s"><span class="bola" aria-hidden="true">3</span><span class="cada" data-t="t3c">Cada 2 horas</span><h3 data-t="t3h">Escribe un informe</h3><p data-t="t3p">Del mercado y de las empresas que sigues: qué ha pasado, qué fuentes coinciden y qué hay que vigilar.</p></li>
-      <li class="etapa-ia" data-r style="--d:.36s"><span class="bola" aria-hidden="true">4</span><span class="cada" data-t="t4c">Una vez al día</span><h3 data-t="t4h">Saca las ideas</h3><p data-t="t4p">Entre las empresas con buenos números y buena prensa. Con constancia: como mucho dos nuevas al día, y ninguna cambia sin un motivo que queda apuntado.</p></li>
-    </ol>
-
-    <ul class="ia-num">
-      <li data-r><b data-count="20">20</b><span data-t="n1">minutos entre una lectura de la prensa y la siguiente, entre semana</span></li>
-      <li data-r style="--d:.1s"><b data-count="840">840</b><span data-t="n2">empresas de EE. UU. y Europa en el radar, recorridas varias veces al día</span></li>
-      <li data-r style="--d:.2s"><b data-count="6">6</b><span data-t="n3">factores por empresa, cada uno con su signo, su peso y su plazo</span></li>
-      <li data-r style="--d:.3s"><b data-count="2">2</b><span data-t="n4">ideas nuevas al día como mucho, y ninguna cambia sin un motivo apuntado</span></li>
-    </ul>
-
-    <div class="fac-grid">
-      <div>
-        <h3 data-t="facH">Seis factores por empresa</h3>
-        <p data-t="facP">Cada noticia va a su sitio, con su signo (a favor, en contra, neutra o mixta), su peso (de relleno a «cambia la tesis») y su plazo (días, meses o años). Toca un factor.</p>
-        <svg class="radial" id="radial" viewBox="0 0 520 470" role="group" aria-label="Factores de una empresa de ejemplo" data-t-aria="radialAria"></svg>
-      </div>
-      <div>
-        <div class="fac-tabs" role="group" aria-label="Factores" data-t-aria="facTabsAria" id="fac-tabs"></div>
-        <div class="fac-det" id="fac-det" aria-live="polite"></div>
-
-      </div>
-    </div>
-
-    <div class="temas-b">
-      <h3 data-t="temasH">Lo que mueve a muchas a la vez</h3>
-      <p data-t="temasP">Hay noticias que no son de una empresa, sino de muchas: un banco central que toca los tipos, unos aranceles, unas elecciones. La IA las apunta como temas, dice a qué países y sectores tocan, y las suma a la ficha de cada empresa afectada.</p>
-      <div class="temas-g" id="temas"></div>
-    </div>
-
-    <div class="feed-grid">
-      <div>
-        <h3 class="sub" data-t="feedH">La prensa, al momento</h3>
-        <p class="intro" data-t="feedP">Cada titular llega con su lectura. Así se ve lo que importa sin leerse cien noticias.</p>
-        <div class="feed" data-r>
-          <div class="feed-cab"><b><i aria-hidden="true"></i><span data-t="feedVivo">Noticias leídas por la IA</span></b><span class="ejemplo" data-t="ej">Ejemplo</span></div>
-          <ol id="feed"></ol>
-        </div>
-      </div>
-      <div>
-        <h3 class="sub" data-t="ideaH">Analistas e ideas</h3>
-        <p class="intro" data-t="ideaP">Lo que opinan los analistas, junto a los seis factores y la prensa, en una sola ficha.</p>
-        <div class="idea" id="idea" data-r></div>
-      </div>
-    </div>
-
-    <div class="lectura-g">
-      <div>
-        <h3 class="sub" data-t="lecH" style="margin:0 0 10px;font:500 clamp(26px,3vw,34px)/1.1 var(--marca)">Así lee una noticia</h3>
-        <p class="intro" data-t="lecP" style="margin:0 0 22px;color:var(--txt2)">De cada titular, la IA saca cuatro cosas: qué ha pasado, si es bueno o malo, cuánto importa y si hay algo con fecha que pueda mover la acción. Elige un titular.</p>
-        <div class="titulares" id="titulares" role="group" aria-label="Titulares de ejemplo" data-t-aria="titAria"></div>
-      </div>
-      <div>
-        <div class="lectura" id="lectura" aria-live="polite"></div>
-        <div class="informe" id="informe" data-r></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="mundo" data-b="n" class="mundo banda alt seccion" aria-labelledby="t-mundo">
-  <div class="cont">
-    <div class="cab-sec">
-      <p class="k" data-rom="III" data-t="kMundo">El mundo</p>
-      <h2 id="t-mundo" data-split data-t="hMundo">Cada país, <em>del color de su bolsa</em></h2>
-      <p class="ent" data-t="entMundo">El mapa de Mercados: cómo van las bolsas hoy o en el año y, en «Tu dinero», en qué países está lo que tienes, aunque sea a través de un fondo. Toca un país para ver su bolsa y lo que tienes allí.</p>
-    </div>
-    <div class="mapa-ctl">
-      <div class="seg" role="group" aria-label="Qué enseña el mapa" data-t-aria="modoAria" id="mapa-modos">
-        <button type="button" data-modo="hoy" aria-pressed="true" data-t="mHoy">Hoy</button>
-        <button type="button" data-modo="mes" aria-pressed="false" data-t="mMes">1 mes</button>
-        <button type="button" data-modo="anio" aria-pressed="false" data-t="mAnio">En el año</button>
-        <button type="button" data-modo="tuyo" aria-pressed="false" data-t="mTuyo">Tu dinero</button>
-      </div>
-      <div class="seg" role="group" aria-label="Zona" data-t-aria="zonaAria" id="mapa-zonas">
-        <button type="button" data-zona="mundo" aria-pressed="true" data-t="zMundo">Mundo</button>
-        <button type="button" data-zona="am" aria-pressed="false" data-t="zAm">América</button>
-        <button type="button" data-zona="eu" aria-pressed="false" data-t="zEu">Europa</button>
-        <button type="button" data-zona="as" aria-pressed="false" data-t="zAs">Asia</button>
-      </div>
-    </div>
-    <div class="mapa-g">
-    <div class="mapa-caja" data-r>
-      <svg id="mapa" viewBox="0 0 1000 439" role="img" aria-label="Mapa del mundo de ejemplo" data-t-aria="mapaAria"></svg>
-      <div class="mapa-tip" id="mapa-tip" hidden></div>
-      <div class="mapa-pie"><span class="escala" id="escala"></span><span class="ejemplo" data-t="mapaEj">Datos de ejemplo</span></div>
-    </div>
-    <aside class="ficha-p" id="ficha-p" aria-live="polite"></aside>
-    </div>
-    <ul class="mapa-lista" id="mapa-lista"></ul>
-  </div>
-</section>
-
-<div class="cadena" aria-hidden="true"></div>
-
-<section id="nombre" data-b="n" class="mito banda seccion" aria-labelledby="t-nombre">
-  <div class="cont">
-    <div class="cab-sec">
-      <p class="k" data-rom="IV" data-t="kNombre">Por qué Toisón</p>
-      <h2 id="t-nombre" data-split data-t="hNombre">Una historia de <em>oro, mar y paciencia</em></h2>
-      <p class="ent" data-t="entNombre">Toisón quiere decir vellón, la lana de una oveja. El de oro tiene casi tres mil años de historia: de un mito griego a una orden de caballeros y, ahora, a tu cartera.</p>
-    </div>
-    <div class="mito-grid">
-      <ol class="caps">
-        <li class="cap" data-cap="0">
-          <span class="fecha" data-t="m1f">El mito</span>
-          <h3 data-t="m1h">El carnero de oro</h3>
-          <p data-t="m1p">Un carnero alado, de lana de oro, salvó a Frixo y voló con él hasta la Cólquide, a orillas del mar Negro. Allí su piel, el vellocino de oro, quedó colgada en un bosque sagrado. Dicen que el carnero subió al cielo: es la constelación de Aries.</p>
-          <div class="mini-esc"></div>
-        </li>
-        <li class="cap" data-cap="1">
-          <span class="fecha" data-t="m2f">La travesía</span>
-          <h3 data-t="m2h">Jasón y los argonautas</h3>
-          <p data-t="m2p">Jasón reunió a los mejores héroes de Grecia y zarpó en el Argo a buscarlo. Un viaje largo, con tormentas y pruebas, para traerse algo de oro que guardaba un dragón que nunca dormía. Invertir también es un viaje largo.</p>
-          <div class="mini-esc"></div>
-        </li>
-        <li class="cap" data-cap="2">
-          <span class="fecha" data-t="m3f">1430, Brujas</span>
-          <h3 data-t="m3h">La Orden del Toisón de Oro</h3>
-          <p data-t="m3p">Felipe el Bueno, duque de Borgoña, funda una orden de caballeros con el vellocino como emblema. <i>Toison</i> es «vellón» en francés. En el siglo XVI, con Carlos I, nieto de María de Borgoña, la orden pasa a los reyes de España, que la siguen concediendo. Y borgoña es también el color de la marca.</p>
-          <div class="mini-esc"></div>
-        </li>
-        <li class="cap" data-cap="3">
-          <span class="fecha" data-t="m4f">Ahora</span>
-          <h3 data-t="m4h">Algo de oro, bien guardado</h3>
-          <p data-t="m4p">Nos quedamos con la idea. La T es una columna, como las de los templos griegos: lo que se construye para durar. Y como el dragón con el vellocino, tu contraseña guarda tu cartera, y nadie más la ve.</p>
-          <div class="mini-esc"></div>
-        </li>
-        <li class="cap" data-cap="4">
-          <span class="fecha" data-t="m5f">La O áurea</span>
-          <h3 data-t="m5h">Áureo quiere decir «de oro»</h3>
-          <p data-t="m5p">La O de Toisón cabe justa en un rectángulo de 1,618 por 1, el número de oro que ya describió Euclides. Si le quitas un cuadrado, lo que queda tiene otra vez la misma forma, y de ahí sale la espiral. Oro en el mito, oro en la orden y oro en la O.</p>
-          <div class="mini-esc"></div>
-        </li>
-      </ol>
-      <div class="escenario" aria-hidden="true"><div class="marco" id="marco"></div></div>
-    </div>
-    <div class="porque-h">
-      <h3 data-split data-t="porH">Por eso, <em>Toisón</em></h3>
-      <p data-t="porP">Porque invertir se parece al viaje del Argo: hay algo de oro al final, el camino es largo y lo que consigues hay que guardarlo bien. Y porque es una palabra española, con casi seis siglos de historia, corta y fácil de recordar.</p>
-    </div>
-    <div class="porque-g">
-      <div class="porque-c" data-r><span class="gr" aria-hidden="true">I</span><h4 data-t="po1h">El oro</h4><p data-t="po1p">Lo que buscas al invertir: que tu dinero crezca. El vellocino era de oro, y oro es la T del símbolo.</p></div>
-      <div class="porque-c" data-r style="--d:.12s"><span class="gr" aria-hidden="true">II</span><h4 data-t="po2h">El viaje</h4><p data-t="po2p">Nadie llega a la Cólquide en un día. Invertir bien es cosa de años, con tormentas por el camino; Toisón te acompaña en todas.</p></div>
-      <div class="porque-c" data-r style="--d:.24s"><span class="gr" aria-hidden="true">III</span><h4 data-t="po3h">La guardia</h4><p data-t="po3p">Al vellocino lo guardaba un dragón que nunca dormía. A tu cartera, tu contraseña: va cifrada y nadie más la ve.</p></div>
-    </div>
-  </div>
-</section>
-
-<div class="cadena" aria-hidden="true"></div>
-
-<section id="renta" data-b="b" class="renta banda alt seccion" aria-labelledby="t-renta">
-  <div class="cont">
-    <div class="cab-sec">
-      <p class="k" data-rom="V" data-t="kRenta">Fiscalidad</p>
-      <h2 id="t-renta" data-split data-t="hRenta">La renta, <em>hecha a la española</em></h2>
-      <p class="ent" data-t="entRenta">Toisón calcula lo que pagarás a Hacienda por tus inversiones con la escala del ahorro de 2026 y te guía en la declaración, paso a paso. Pruébalo con un año inventado.</p>
-    </div>
-    <div class="renta-grid">
-      <div>
-        <ol class="etapas" aria-label="Pasos del ejemplo" data-t-aria="etapasAria">
-          <li><button type="button" data-etapa="0" aria-current="step" aria-label="Paso 1">1</button></li>
-          <li><button type="button" data-etapa="1" aria-label="Paso 2">2</button></li>
-          <li><button type="button" data-etapa="2" aria-label="Paso 3">3</button></li>
-          <li><button type="button" data-etapa="3" aria-label="Paso 4">4</button></li>
-          <li><button type="button" data-etapa="4" aria-label="Paso 5">5</button></li>
-        </ol>
-        <div aria-live="polite">
-          <div class="etapa" data-etapa="0">
-            <h3 data-t="e1h">Lo que ganas al cerrar posiciones</h3>
-            <p class="x-nov" data-t="e1nov">Mientras no cierras una posición, Hacienda no cuenta nada. Cuando la cierras, pagas por la diferencia entre lo que te costó y lo que sacas.</p>
-            <p class="x-exp" data-t="e1exp">Ganancia = valor de transmisión menos valor de adquisición, gastos incluidos, saliendo primero las más antiguas de cada valor (FIFO), como pide Hacienda. Toisón lo calcula con tus operaciones.</p>
-          </div>
-          <div class="etapa" data-etapa="1" hidden>
-            <h3 data-t="e2h">Las pérdidas restan</h3>
-            <p class="x-nov" data-t="e2nov">Si algo te ha salido mal, esa pérdida se resta de lo que has ganado. Aquí, 1.200 € menos 300 € deja 900 €.</p>
-            <p class="x-exp" data-t="e2exp">Si el saldo sale negativo, compensa hasta el 25 % del saldo de rendimientos y el resto pasa a los 4 años siguientes. Ojo con la recompra: dos meses en lo que cotiza en la UE y un año en fondos y en lo de fuera.</p>
-          </div>
-          <div class="etapa" data-etapa="2" hidden>
-            <h3 data-t="e3h">Dividendos e intereses</h3>
-            <p class="x-nov" data-t="e3nov">Lo que te pagan las empresas y las cuentas va al mismo saco, el del ahorro. El banco ya se queda con el 19 % al pagártelo.</p>
-            <p class="x-exp" data-t="e3exp">Son rendimientos del capital mobiliario. Si vienen de fuera y te retuvieron también allí, una parte se recupera con la deducción por doble imposición internacional.</p>
-          </div>
-          <div class="etapa" data-etapa="3" hidden>
-            <h3 data-t="e4h">La escala del ahorro</h3>
-            <p class="x-nov" data-t="e4nov">Hasta 6.000 € se paga el 19 %. Por encima, el 21 %, el 23 %, el 27 % y, desde 300.000 €, el 30 %. Aquí todo cae en el primer tramo.</p>
-            <p class="x-exp" data-t="e4exp">Escala de 2026 para la base liquidable del ahorro: 19 % hasta 6.000 €, 21 % hasta 50.000 €, 23 % hasta 200.000 €, 27 % hasta 300.000 € y 30 % por encima. Es la misma en todo el territorio común.</p>
-          </div>
-          <div class="etapa" data-etapa="4" hidden>
-            <h3 data-t="e5h">Lo que ya te quitaron</h3>
-            <p class="x-nov" data-t="e5nov">De lo que sale se resta lo que el banco ya retuvo. Lo que queda es lo que pagarás en junio. Y Toisón te dice en qué casilla va cada cosa.</p>
-            <p class="x-exp" data-t="e5exp">Los traspasos entre fondos no tributan hasta que reembolsas (en ETF no vale). Y si a 31 de diciembre tenías más de 50.000 € fuera de España, toca el 720 o el 721 antes del 31 de marzo: Toisón te lo recuerda.</p>
-          </div>
-        </div>
-        <div class="etapa-nav">
-          <button type="button" class="boton sec" id="et-ant" data-t="ant">Anterior</button>
-          <button type="button" class="boton" id="et-sig" data-t="sig">Siguiente paso</button>
-        </div>
-      </div>
-      <div class="hoja" id="hoja"></div>
-    </div>
-    <div class="renta-mas">
-      <div>
-        <h3 data-t="trH">Cómo se reparte por tramos</h3>
-        <p class="intro" data-t="trP">Mueve lo que ganas en el año con tus inversiones y mira cuánto cae en cada tramo de la escala del ahorro.</p>
-        <div class="tramos" data-r>
-          <label for="r-gan"><span data-t="trLab">Ganancias, dividendos e intereses del año</span> <output id="o-gan" for="r-gan">8.000 €</output></label>
-          <input type="range" id="r-gan" min="0" max="400000" step="1000" value="8000">
-          <div class="barras-t" id="barras-t"></div>
-          <div class="tot-t"><span data-t="trTot">Cuota del ahorro</span><b class="num" id="t-tot">—</b></div>
-          <p class="pie-ej" id="t-tipo" style="margin-top:8px"></p>
-        </div>
-      </div>
-      <div>
-        <h3 data-t="haceH">Lo que Toisón hace por ti</h3>
-        <ul class="hace" data-r>
-          <li><div><b data-t="h1b">Calcula cada venta</b><span data-t="h1s">Con tus operaciones, saliendo primero las más antiguas (FIFO) y con los gastos incluidos, como pide Hacienda.</span></div></li>
-          <li><div><b data-t="h2b">Compensa por ti</b><span data-t="h2s">Pérdidas con ganancias, el 25 % entre ganancias y rendimientos y lo que sobra, a los 4 años siguientes.</span></div></li>
-          <li><div><b data-t="h3b">Te avisa antes</b><span data-t="h3s">De la regla de recompra y de lo que supone cada movimiento en la renta, antes de hacerlo. Y antes del 31 de diciembre, de cuánto cambiaría tu renta si compensas pérdidas. Decides tú.</span></div></li>
-          <li><div><b data-t="h4b">Dividendos de fuera</b><span data-t="h4s">Cuánto te retuvieron en origen, cuánto recuperas por doble imposición (hasta el tipo del convenio, casi siempre el 15 %) y cuánto se pierde.</span></div></li>
-          <li><div><b data-t="h5b">Te guía en la declaración</b><span data-t="h5s">En qué casilla va cada cosa, con tus cifras del año. Y si vives en País Vasco o Navarra, con su propia escala.</span></div></li>
-        </ul>
-      </div>
-    </div>
-    <div class="cal" data-r>
-      <div class="hoja-cab" style="margin:0"><b style="font:600 20px/1.2 var(--marca)" data-t="calH">El año fiscal, en cuatro fechas</b></div>
-      <ol>
-        <li><b data-t="c1b">31 de diciembre</b><span data-t="c1s">Se cierra el año: lo que vendas después cuenta para el siguiente.</span></li>
-        <li><b data-t="c2b">Hasta el 31 de marzo</b><span data-t="c2s">Modelos 720 y 721, solo si tenías más de 50.000 € fuera de España.</span></li>
-        <li><b data-t="c3b">Abril</b><span data-t="c3s">Empieza la campaña de la renta. Toisón tiene tus cifras listas.</span></li>
-        <li><b data-t="c4b">30 de junio</b><span data-t="c4s">Último día para presentarla. Si sale a pagar, puedes fraccionarlo.</span></li>
-      </ol>
-    </div>
-    <p class="pie-ej" data-t="pieRenta">Cifras inventadas para el ejemplo, con la escala estatal del ahorro de 2026. Lo que pagues tú depende de tu caso.</p>
-  </div>
-</section>
-
-<section id="futuro" data-b="n" class="futuro banda seccion" aria-labelledby="t-fut">
-  <div class="cont">
-    <div class="cab-sec">
-      <p class="k" data-rom="VI" data-t="kFut">Objetivos y futuro</p>
-      <h2 id="t-fut" data-split data-t="hFut">Hasta dónde <em>podrías llegar</em></h2>
-      <p class="ent x-nov" data-t="futNov">Como la travesía del Argo, invertir es un viaje largo. Mueve las barras: la línea es lo normal y la franja va de cuando las cosas van mal a cuando van bien. Pasa el dedo por la gráfica para ver cada año.</p>
-      <p class="ent x-exp" data-t="futExp">600 caminos al azar con la rentabilidad y la volatilidad del perfil elegido; la franja va del percentil 10 al 90. En la app son 2.000 caminos con el riesgo de tu propia cartera y tus aportaciones reales.</p>
-    </div>
-    <div class="fut-grid">
-      <form class="mando" id="mando" onsubmit="return false">
-        <div>
-          <label for="r-ini"><span data-t="lIni">Lo que tienes hoy</span> <output id="o-ini" for="r-ini">5.000 €</output></label>
-          <input type="range" id="r-ini" min="0" max="50000" step="500" value="5000">
-        </div>
-        <div>
-          <label for="r-apo"><span data-t="lApo">Lo que aportas al mes</span> <output id="o-apo" for="r-apo">200 €</output></label>
-          <input type="range" id="r-apo" min="0" max="1000" step="25" value="200">
-        </div>
-        <div>
-          <label for="r-anos"><span data-t="lAnos">Años</span> <output id="o-anos" for="r-anos">20</output></label>
-          <input type="range" id="r-anos" min="3" max="40" step="1" value="20">
-        </div>
-        <div>
-          <span class="lab" id="perf-lab" data-t="lPerf">Perfil de ejemplo</span>
-          <div class="perfiles" role="group" aria-labelledby="perf-lab">
-            <button type="button" data-r="0.03" data-v="0.06" aria-pressed="false" data-t="prud">Prudente</button>
-            <button type="button" data-r="0.05" data-v="0.12" aria-pressed="true" data-t="equi">Equilibrado</button>
-            <button type="button" data-r="0.07" data-v="0.18" aria-pressed="false" data-t="deci">Decidido</button>
-          </div>
-        </div>
+        <p class="nota"><span class="aviso-f" aria-live="polite"></span><span data-t="notaAcceso">Guardamos tu correo solo para avisarte cuando puedas entrar. Nada más: sin cookies ni rastreo. <a href="#privacidad" data-t="verPriv">Privacidad</a>.</span> <a href="https://toison.es/app" data-app data-t="yaUsas">¿Ya la usas? Entrar</a></p>
       </form>
-      <div class="grafica">
-        <div class="resumen" aria-live="polite">
-          <div><small id="r-ano">En 20 años, si va mal</small><b class="num" id="v-mal">—</b></div>
-          <div class="medio"><small data-t="rNormal">Lo normal</small><b class="num" id="v-med">—</b></div>
-          <div><small data-t="rBien">Si va bien</small><b class="num" id="v-bien">—</b></div>
-          <div><small data-t="rPuesto">Lo que habrás puesto</small><b class="num" id="v-apo">—</b></div>
-        </div>
-        <svg id="graf" viewBox="0 0 640 300" role="img" aria-label="Gráfica de la proyección de ejemplo" data-t-aria="grafAria"></svg>
-        <div class="leyenda"><span><i></i><span data-t="rNormal">Lo normal</span></span><span><i class="f"></i><span data-t="lgFranja">De mal a bien</span></span><span><i class="a"></i><span data-t="lgPones">Lo que pones</span></span></div>
-        <p class="pie-ej" data-t="pieFut">Ejemplo con rentabilidades y volatilidades supuestas, constantes y antes de impuestos. No es una previsión: el pasado no asegura nada.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<div class="cadena" aria-hidden="true"></div>
-
-<section id="asistente" data-b="b" class="asis banda alt seccion" aria-labelledby="t-asis">
-  <div class="cont asis-grid">
-    <div class="cab-sec">
-      <p class="k" data-rom="VII" data-t="kAsis">Asistente con IA</p>
-      <h2 id="t-asis" data-split data-t="hAsis">Pregunta lo que quieras. <em>Conoce tu cartera.</em></h2>
-      <p class="ent x-nov" data-t="asisNov">Como hablar con alguien que sabe de esto y tiene tus números delante. Se adapta a tu edad, a tus metas y al riesgo que aceptas, y si le falta algo, te lo pregunta.</p>
-      <p class="ent x-exp" data-t="asisExp">Lee cada día las noticias de lo que tienes, revisa la cartera contra tus límites y tus metas, y contesta con tus datos: posiciones, costes, renta y analistas. Con cifras, no con generalidades.</p>
-      <ul class="lista-asis" style="text-align:left">
-        <li data-t="a1">Te explica qué ha pasado y por qué, con tus cifras.</li>
-        <li data-t="a2">Avisa cuando algo se sale de los límites que tú marcaste.</li>
-        <li data-t="a3">No te dice qué hacer. Te cuenta lo que pasa y decides tú.</li>
+      <ul class="cifras" aria-label="Toisón en cifras" data-t-aria="cifrasAria">
+        <li><b class="num">840</b><span data-t="c1">empresas en el radar</span></li>
+        <li><b class="num">362</b><span data-t="c2">fondos, ETF, oro y cripto en el catálogo</span></li>
+        <li><b class="num" data-t="cero">0 €</b><span data-t="c3">para empezar</span></li>
       </ul>
     </div>
-    <div class="chat" data-r>
-      <div class="chat-cab">
-        <svg viewBox="-82 -78 164 147" aria-hidden="true"><use class="s-o" href="#o"/><use class="s-t" href="#t"/></svg>
-        <span data-t="asisNombre">Asistente</span> <span class="ejemplo" data-t="convEj">Conversación de ejemplo</span>
-      </div>
-      <div class="burbuja yo" id="preg"></div>
-      <div class="burbuja ella" id="resp" aria-live="polite"></div>
-      <div class="preguntas" role="group" aria-label="Preguntas de ejemplo" data-t-aria="pregAria">
-        <button type="button" data-q="0" aria-pressed="true"></button>
-        <button type="button" data-q="1" aria-pressed="false"></button>
-        <button type="button" data-q="2" aria-pressed="false"></button>
+
+    <div class="demo-wrap" role="group" aria-label="La app de Toisón, dibujada con datos de ejemplo" data-t-aria="demoAria">
+      <div class="demo" id="demo">
+        <svg class="orla-fondo" viewBox="-82 -52 164 104" aria-hidden="true"><use href="#o"/></svg>
+        <div class="ventana" id="ventana">
+          <div class="barra-nav-web" aria-hidden="true">
+            <span class="luces"><i></i><i></i><i></i></span>
+            <span class="url"><svg viewBox="0 0 16 16"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5 7V5a3 3 0 0 1 6 0v2"/></svg>toison.es/app</span>
+          </div>
+          <div class="app">
+            <div class="app-cab">
+              <span class="app-logo"><svg viewBox="-82 -78 164 147" aria-hidden="true"><use class="s-o" href="#o"/><use class="s-t" href="#t"/></svg><b>TOISÓN</b></span>
+              <div class="app-tabs" role="tablist" aria-label="Pantallas de ejemplo" data-t-aria="tabsAria">
+                <button type="button" role="tab" aria-selected="true" data-p="cartera" data-t="tCartera">Cartera</button>
+                <button type="button" role="tab" aria-selected="false" data-p="paso" data-t="tPaso">Paso a paso</button>
+                <button type="button" role="tab" aria-selected="false" data-p="mercados" data-t="tMercados">Mercados</button>
+                <button type="button" role="tab" aria-selected="false" data-p="expertos" data-t="tExpertos">Expertos</button>
+                <button type="button" role="tab" aria-selected="false" data-p="hacienda" data-t="tHacienda">Hacienda</button>
+              </div>
+              <span class="ejemplo" data-t="ejemplo">Ejemplo</span>
+            </div>
+            <div class="app-cuerpo" id="app-cuerpo" aria-live="polite"></div>
+          </div>
+        </div>
+        <div class="movil" id="movil" aria-hidden="true"></div>
       </div>
     </div>
   </div>
+  <div class="hero-fondo" aria-hidden="true"></div>
 </section>
 
-<section id="privacidad" data-b="n" class="priv banda seccion" aria-labelledby="t-priv">
-  <div class="cont priv-grid">
-    <div class="cab-sec">
-      <p class="k" data-rom="VIII" data-t="kPriv">Privacidad</p>
-      <h2 id="t-priv" data-split data-t="hPriv">Tu cartera es tuya. <em>Nadie más la ve.</em></h2>
-      <p class="ent" data-t="entPriv">Como el vellocino con su dragón, que nunca dormía.</p>
-    </div>
-    <ul>
-      <li data-r><b data-t="pr1b">Cifrada con tu contraseña</b><span data-t="pr1">Se guarda cifrada y solo se abre con tu contraseña.</span></li>
-      <li data-r style="--d:.1s"><b data-t="pr2b">En tu dispositivo</b><span data-t="pr2">Las cuentas se hacen en tu móvil o en tu ordenador.</span></li>
-      <li data-r style="--d:.2s"><b data-t="pr3b">No mueve tu dinero</b><span data-t="pr3">Toisón no da órdenes en tu bróker ni en tu banco. Solo lleva la cuenta.</span></li>
+<div class="cinta" aria-hidden="true"><div class="cinta-in" id="cinta"></div></div>
+
+<!-- ========== CONFIANZA ========== -->
+<section class="confianza" aria-labelledby="t-conf">
+  <div class="cont">
+    <h2 id="t-conf" class="sr" data-t="hConf">Lo que Toisón hace y lo que no</h2>
+    <ul class="conf-grid">
+      <li class="r">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.3"/></svg>
+        <b data-t="cf1">Cifrada con tu contraseña</b>
+        <p data-t="cf1p">Tu cartera se cifra antes de guardarse. Nadie más la puede abrir, tampoco nosotros.</p>
+      </li>
+      <li class="r">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v10H3z"/><path d="M3 11h18"/><path d="M7 15h3"/><path d="M4 4l16 16"/></svg>
+        <b data-t="cf2">No toca tu dinero</b>
+        <p data-t="cf2p">Toisón no es un bróker. No mueve ni custodia nada: solo lee lo que tú apuntas.</p>
+      </li>
+      <li class="r">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.4 5 5.4.6-4 3.7 1.1 5.3L12 15l-4.9 2.6 1.1-5.3-4-3.7 5.4-.6z"/><path d="M12 15v6"/></svg>
+        <b data-t="cf3">Decides tú</b>
+        <p data-t="cf3p">Información y análisis, no asesoramiento. La IA explica lo que pasa; la decisión es tuya.</p>
+      </li>
+      <li class="r">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/><circle cx="12" cy="12" r="2.5"/></svg>
+        <b data-t="cf4">Sin cookies ni rastreo</b>
+        <p data-t="cf4p">Ni en la web ni en la app, y sin anuncios.</p>
+      </li>
     </ul>
   </div>
 </section>
 
-<section id="preguntas" data-b="b" class="faq banda alt seccion" aria-labelledby="t-faq">
-  <div class="cont faq-grid">
-    <div class="cab-sec"><p class="k" data-rom="IX" data-t="kFaq">Preguntas</p><h2 id="t-faq" data-split data-t="hFaq">Lo que suele <em>preguntarse</em></h2></div>
-    <div>
-      <details open><summary data-t="q1">¿Toisón decide por mí?</summary><p data-t="r1">No. Te enseña datos, análisis e ideas, y la decisión es siempre tuya. Toisón no es un asesor financiero ni da recomendaciones personalizadas.</p></details>
-      <details><summary data-t="q7">¿De dónde saca la IA lo que dice?</summary><p data-t="r7">De la prensa económica, de los datos del mercado y de la opinión de los analistas. Cada lectura guarda sus fuentes, para que puedas ir a la noticia original.</p></details>
-      <details><summary data-t="q2">¿Qué brókers puedo usar?</summary><p data-t="r2">Cualquiera: Revolut, MyInvestor, Trade Republic, Interactive Brokers, Bitvavo o el que uses. Añades tus posiciones y los precios se actualizan solos.</p></details>
-      <details><summary data-t="q3">¿En qué se nota que está hecha para España?</summary><p data-t="r3">En la renta: calcula lo que pagarás con la escala del ahorro, te guía casilla a casilla y te avisa de los plazos, el 720 y el 721 incluidos.</p></details>
-      <details><summary data-t="q4">¿Dónde se guarda mi cartera?</summary><p data-t="r4">En tu dispositivo, cifrada con tu contraseña.</p></details>
-      <details><summary data-t="q5">¿Por qué se llama Toisón?</summary><p data-t="r5">Por el vellocino de oro del mito de Jasón: algo de oro, que cuesta un viaje largo conseguir y que hay que guardar bien. Lo tienes contado más arriba.</p></details>
-      <details><summary data-t="q6">¿Cuándo sale?</summary><p data-t="r6">Muy pronto, en la web y en Android. Se anunciará primero en Instagram y en X.</p></details>
+<!-- ========== PRODUCTO ========== -->
+<section id="producto" class="seccion producto" aria-labelledby="t-prod">
+  <div class="cont">
+    <div class="cab-sec r">
+      <p class="k" data-t="kProd">Producto</p>
+      <h2 id="t-prod" data-t="hProd">Tu cartera entera, <em>explicada</em></h2>
+      <p class="ent" data-t="entProd">Apuntas lo que tienes en cada bróker, una vez. Toisón lo junta, lo valora con precios de mercado y te cuenta qué pasa con ello: lo que ganas y pierdes, el riesgo, los costes y el reparto por países y sectores.</p>
+    </div>
+    <div class="bento">
+      <article class="tarjeta r b-brokers">
+        <h3 data-t="b1">Cualquier bróker, cualquier activo</h3>
+        <p data-t="b1p">Fondos, acciones, ETF, oro y cripto, estén donde estén. Apuntas cada posición y en qué bróker está; Toisón busca el precio y lo valora. Sin conectarse a tu bróker ni pedirte sus claves.</p>
+        <ul class="chips" aria-label="Brókers y exchanges de ejemplo" data-t-aria="chipsAria"><li>MyInvestor</li><li>Trade Republic</li><li>Revolut</li><li>Interactive Brokers</li><li>Bitvavo</li><li data-t="b1otros">y cualquier otro</li></ul>
+      </article>
+      <article class="tarjeta r b-precios">
+        <h3 data-t="b2">Precios al día</h3>
+        <p data-t="b2p">Bolsas, fondos por ISIN, divisas, oro y cripto, con precios de mercado actualizados varias veces al día. Y un widget en la pantalla de inicio del móvil.</p>
+        <div class="mini-lista" id="mini-precios"></div>
+      </article>
+      <article class="tarjeta r b-riesgo">
+        <h3 data-t="b3">Patrimonio, riesgo y reparto</h3>
+        <p data-t="b3p">Cuánto tienes, cuánto has puesto, qué parte es ganancia y cómo se reparte por tipo de activo, país y sector. El riesgo, del 1 al 7, como en los folletos de los fondos.</p>
+        <div class="reparto-g" id="reparto-g"></div>
+      </article>
+      <article class="tarjeta r b-paso">
+        <h3 data-t="b4">Paso a paso, cada mes</h3>
+        <p data-t="b4p">Tu aportación programada, los resultados de tus empresas, los límites que te has puesto y lo que supondría en la renta. Una lista corta; las decisiones, tuyas.</p>
+        <ul class="lista-check" id="lista-paso"></ul>
+      </article>
+      <article class="tarjeta r b-objetivos">
+        <h3 data-t="b5">Objetivos y límites</h3>
+        <p data-t="b5p">Tu perfil de inversor, metas con fecha y límites por sector o por activo. Cuando algo se pasa, Toisón te lo dice; no hace nada por ti.</p>
+        <div class="limites" id="limites"></div>
+      </article>
+      <article class="tarjeta r b-futuro">
+        <div class="fut-cab">
+          <div>
+            <h3 data-t="b6">Hasta dónde podrías llegar</h3>
+            <p data-t="b6p">Mueve lo que aportas al mes y los años, y mira tres escenarios. Es una proyección con rentabilidades de ejemplo, no una promesa: puedes recuperar menos de lo aportado.</p>
+          </div>
+          <span class="ejemplo" data-t="ejemplo">Ejemplo</span>
+        </div>
+        <div class="fut-grid">
+          <form class="mando" onsubmit="return false">
+            <label for="r-apo"><span data-t="lApo">Lo que aportas al mes</span><output id="o-apo" for="r-apo">200 €</output></label>
+            <input type="range" id="r-apo" min="25" max="1000" step="25" value="200">
+            <label for="r-anos"><span data-t="lAnos">Años</span><output id="o-anos" for="r-anos">20</output></label>
+            <input type="range" id="r-anos" min="5" max="40" step="1" value="20">
+          </form>
+          <div class="fut-res">
+            <svg class="fut-svg" id="fut-svg" viewBox="0 0 420 160" preserveAspectRatio="none" aria-hidden="true"></svg>
+            <div class="fut-ejes" id="fut-ejes" aria-hidden="true"></div>
+            <div class="fut-cifras">
+              <div><small data-t="rMal">Escenario bajo · −1 %</small><b class="num" id="v-mal">—</b></div>
+              <div><small data-t="rNormal">Escenario medio · 4 %</small><b class="num" id="v-med">—</b></div>
+              <div><small data-t="rBien">Escenario alto · 7 %</small><b class="num" id="v-bien">—</b></div>
+            </div>
+            <p class="pie-ej" id="fut-nota"></p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LA IA ========== -->
+<section id="ia" class="seccion ia alt" aria-labelledby="t-ia">
+  <div class="cont">
+    <div class="cab-sec r">
+      <p class="k" data-t="kIA">La IA</p>
+      <h2 id="t-ia" data-t="hIA">Una IA que lee el mundo <em>para que tú decidas</em></h2>
+      <p class="ent" data-t="entIA">Cada día lee la prensa económica, mira lo que pasa con las 840 empresas del radar y te lo cuenta en claro: qué ha pasado, a quién afecta y qué supone para tu cartera. Explica; no recomienda.</p>
+    </div>
+    <div class="ia-grid">
+      <ol class="etapas" aria-label="Cómo trabaja la IA" data-t-aria="etapasAria">
+        <li class="r"><span class="et-n">01</span><div><b data-t="e1">Lee la prensa</b><p data-t="e1p">Cada veinte minutos trae los titulares de la prensa económica y los ordena por empresa, sector y tema.</p></div></li>
+        <li class="r"><span class="et-n">02</span><div><b data-t="e2">Revisa el radar</b><p data-t="e2p">En cada pasada repasa unas setenta empresas: negocio, sector, economía, política, sociedad y mercado.</p></div></li>
+        <li class="r"><span class="et-n">03</span><div><b data-t="e3">Escribe el informe</b><p data-t="e3p">Cada dos horas, un informe corto de lo que ha cambiado, con los hechos separados de las opiniones y las fuentes al lado.</p></div></li>
+        <li class="r"><span class="et-n">04</span><div><b data-t="e4">Te lo cuenta a tu medida</b><p data-t="e4p">Cruza todo con tu cartera, tus metas y tus límites, y te pregunta lo que le falte. Las ideas son las mismas para todos; lo que supone para ti, lo tuyo.</p></div></li>
+      </ol>
+      <div class="lector r">
+        <div class="lector-cab"><span class="k" data-t="kLector">Así lee una noticia</span><span class="ejemplo" data-t="ejemplo">Ejemplo</span></div>
+        <div class="titulares" id="titulares" role="tablist" aria-label="Titulares de ejemplo" data-t-aria="titAria"></div>
+        <div class="lectura" id="lectura" aria-live="polite"></div>
+      </div>
+    </div>
+    <p class="aviso-ia r" data-t="avisoIA">La IA de Toisón es una IA: puede equivocarse. Sus análisis no son asesoramiento ni una recomendación personalizada. Lo que hagas con tu dinero lo decides tú.</p>
+  </div>
+</section>
+
+<!-- ========== HACIENDA ========== -->
+<section id="hacienda" class="seccion renta" aria-labelledby="t-renta">
+  <div class="cont">
+    <div class="cab-sec r">
+      <p class="k" data-t="kRenta">Hacienda</p>
+      <h2 id="t-renta" data-t="hRenta">La renta, <em>hecha a la española</em></h2>
+      <p class="ent" data-t="entRenta">Ganancias y pérdidas de cada venta, dividendos con su retención, intereses y lo que se compensa. Toisón lleva la cuenta durante el año y te dice lo que supondría en la declaración, con una guía de qué va en cada sitio.</p>
+    </div>
+    <div class="renta-grid">
+      <div class="tarjeta r">
+        <div class="lector-cab"><span class="k" data-t="kSim">Lo que pagarías por el ahorro</span><span class="ejemplo" data-t="ejemplo">Ejemplo</span></div>
+        <form class="mando" onsubmit="return false">
+          <label for="r-gan"><span data-t="trLab">Ganancias, dividendos e intereses del año</span><output id="o-gan" for="r-gan">8.000 €</output></label>
+          <input type="range" id="r-gan" min="0" max="100000" step="500" value="8000">
+        </form>
+        <div class="tramos" id="tramos"></div>
+        <div class="tot-t"><span data-t="trTot">Cuota del ahorro</span><b class="num" id="t-tot">—</b></div>
+        <div style="height:8px"></div>
+        <p class="pie-ej" data-t="trNota">Tramos de la base del ahorro vigentes (19, 21, 23, 27 y 30 %; los dos últimos, por encima de 200.000 y 300.000 €). Sin retenciones ya practicadas ni pérdidas de otros años.</p>
+      </div>
+      <ul class="lista-renta r">
+        <li><b data-t="rt1">Cada venta, con su fecha y su resultado</b><p data-t="rt1p">La ganancia o la pérdida de cada operación, con el coste de compra y los gastos.</p></li>
+        <li><b data-t="rt2">Dividendos e intereses con su retención</b><p data-t="rt2p">Lo cobrado, lo retenido en origen y lo que quedaría por pagar.</p></li>
+        <li><b data-t="rt3">Pérdidas que compensan</b><p data-t="rt3p">Las pérdidas que restan a las ganancias, y cuánto cambian la cuota.</p></li>
+        <li><b data-t="rt4">El año fiscal en cuatro fechas</b><p data-t="rt4p">Cierre del año, los datos fiscales de cada bróker, la campaña y el plazo. Para que nada pille de sorpresa.</p></li>
+        <li><b data-t="rt5">Guía de la renta</b><p data-t="rt5p">Qué casilla, qué papel pedir a cada bróker y qué mirar en el borrador. Toisón explica la regla y el cálculo; lo que declaras lo decides tú.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MERCADOS ========== -->
+<section id="mundo" class="seccion mundo alt" aria-labelledby="t-mundo">
+  <div class="cont">
+    <div class="cab-sec r">
+      <p class="k" data-t="kMundo">Mercados</p>
+      <h2 id="t-mundo" data-t="hMundo">Cada país, <em>del color de su bolsa</em></h2>
+      <p class="ent" data-t="entMundo">Las bolsas, los tipos de interés, las divisas y las materias primas del mundo, y qué significa cada movimiento para lo que tú tienes. Lo que tienes en fondos se reparte por países como sus índices.</p>
+    </div>
+    <div class="mapa-ctl r">
+      <div class="seg" role="group" aria-label="Qué enseña el mapa" data-t-aria="modoAria" id="mapa-modos">
+        <button type="button" data-modo="hoy" aria-pressed="true" data-t="mdHoy">Bolsas hoy</button>
+        <button type="button" data-modo="anio" aria-pressed="false" data-t="mdAnio">En el año</button>
+        <button type="button" data-modo="tuyo" aria-pressed="false" data-t="mdTuyo">Tu dinero</button>
+      </div>
+    </div>
+    <div class="mapa-g r">
+      <div class="mapa-caja">
+        <svg id="mapa" viewBox="0 0 1000 439" role="img" aria-label="Mapa del mundo de ejemplo" data-t-aria="mapaAria"></svg>
+        <div class="mapa-tip" id="mapa-tip" hidden></div>
+        <div class="mapa-pie"><span class="escala" id="escala"></span><span class="mapa-toca" data-t="mapaToca">Toca un país del mapa</span><span class="ejemplo" data-t="ejemplo">Ejemplo</span></div>
+        <ul class="paises" id="paises" aria-label="Países con bolsa seguida" data-t-aria="paisesAria"></ul>
+      </div>
+      <aside class="ficha-p" id="ficha-p" aria-live="polite"></aside>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SEGURIDAD ========== -->
+<section id="seguridad" class="seccion seguridad" aria-labelledby="t-seg">
+  <div class="cont">
+    <div class="cab-sec r">
+      <p class="k" data-t="kSeg">Seguridad</p>
+      <h2 id="t-seg" data-t="hSeg">Tu cartera, <em>solo tuya</em></h2>
+      <p class="ent" data-t="entSeg">Toisón no necesita ver tu dinero para explicártelo. Así se guarda lo tuyo y así de claro está lo que no hacemos.</p>
+    </div>
+    <div class="seg-grid">
+      <div class="tarjeta r">
+        <h3 data-t="s1">Cómo se guarda</h3>
+        <ul class="lista-puntos">
+          <li data-t="s1a">Tu cartera se cifra con tu contraseña antes de salir de tu dispositivo. Sin ella no se puede abrir: tampoco nosotros.</li>
+          <li data-t="s1b">Para entrar solo hace falta un correo. No pedimos tu DNI, tu cuenta bancaria ni las claves de tu bróker.</li>
+          <li data-t="s1c">Sin cookies, sin rastreadores y sin anuncios. Ni en la web ni en la app.</li>
+          <li data-t="s1d">Los precios, las noticias y los informes se preparan fuera de tu dispositivo y llegan a todos iguales. Lo tuyo no sale de tu cartera cifrada.</li>
+        </ul>
+      </div>
+      <div class="tarjeta r no-hace">
+        <h3 data-t="s2">Lo que Toisón no hace</h3>
+        <ul class="lista-puntos">
+          <li data-t="s2a"><b>No toca tu dinero.</b> No es un bróker ni una entidad financiera: no custodia, no compra y no vende.</li>
+          <li data-t="s2b"><b>No da asesoramiento.</b> Ofrece información, análisis y el cálculo de lo que supondría cada cosa para ti. Decides tú.</li>
+          <li data-t="s2c"><b>No celebra operaciones.</b> Sin rankings de rentabilidad, sin «lo más comprado», sin avisos para que compres ya.</li>
+          <li data-t="s2d"><b>No vende tus datos.</b> De tu cartera no tenemos nada; del correo, solo el correo, y se borra cuando lo pides.</li>
+        </ul>
+        <p class="marca-nota" data-t="marcaNota">«Toisón» es una marca solicitada en la Oficina Española de Patentes y Marcas (expediente M4413012).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRO ========== -->
+<section id="pro" class="seccion pro alt" aria-labelledby="t-pro">
+  <div class="cont">
+    <div class="cab-sec r">
+      <p class="k" data-t="kPro">Gratis y Pro</p>
+      <h2 id="t-pro" data-t="hPro">Gratis para empezar. <em>Pro, en 2027.</em></h2>
+      <p class="ent" data-t="entPro">La cartera entera, los mercados, el paso a paso y la IA van en la versión gratuita. Pro llegará a principios de 2027, para quien quiera más.</p>
+    </div>
+    <div class="planes">
+      <div class="plan r">
+        <div class="plan-cab"><b data-t="pGratis">Gratis</b><span class="num" data-t="cero">0 €</span></div>
+        <ul class="lista-puntos">
+          <li data-t="pg1">Toda tu cartera, de todos tus brókers, con precios al día</li>
+          <li data-t="pg2">Patrimonio, riesgo, costes y reparto por países y sectores</li>
+          <li data-t="pg3">Paso a paso cada mes, objetivos y límites</li>
+          <li data-t="pg4">Mercados del mundo y el radar de 840 empresas</li>
+          <li data-t="pg5">La IA que lee las noticias y revisa tu cartera, con un uso diario</li>
+          <li data-t="pg6">Lo que supondría en la renta y la guía</li>
+          <li data-t="pg7">Web; Android y widget, muy pronto</li>
+        </ul>
+        <a class="boton" href="#acceso" data-t="pedir">Pedir acceso</a>
+      </div>
+      <div class="plan pro-plan r">
+        <div class="plan-cab"><b>Pro</b><span class="pronto" data-t="pronto">En 2027</span></div>
+        <ul class="lista-puntos">
+          <li data-t="pp1">Todo lo de Gratis</li>
+          <li data-t="pp2">Más preguntas a la IA y respuestas más a fondo</li>
+          <li data-t="pp3">El radar completo, con las fichas de cada empresa</li>
+          <li data-t="pp4">Lo que vaya llegando antes que nadie</li>
+        </ul>
+        <p class="plan-nota" data-t="ppNota">Precio por anunciar. Quien pida acceso ahora será el primero en saberlo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== EL NOMBRE ========== -->
+<section id="nombre" class="seccion nombre" aria-labelledby="t-nombre">
+  <div class="cont nombre-grid">
+    <div class="sello r"><img src="toison-sello.webp" width="420" height="420" alt="El sello de Toisón: una T en forma de columna dorada que atraviesa una O" data-t-alt="selloAlt" loading="lazy" decoding="async"></div>
+    <div class="r">
+      <p class="k" data-t="kNombre">Por qué Toisón</p>
+      <h2 id="t-nombre" data-t="hNombre">Algo de oro, <em>bien guardado</em></h2>
+      <p data-t="nombre1">El vellocino de oro era la piel de un carnero que, según la leyenda, lo valía todo. Jasón cruzó medio mundo en el Argo para traerlo, y un dragón que nunca dormía lo guardaba.</p>
+      <p data-t="nombre2">Siglos después, en 1430, la Orden del Toisón de Oro lo convirtió en el collar más codiciado de Europa. Esa es la idea: lo que tienes vale mucho, y merece un buen guardián.</p>
+      <p data-t="nombre3">En Toisón, el guardián es tu contraseña. La T es una columna que sostiene; la O, el oro que guarda.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PREGUNTAS ========== -->
+<section id="preguntas" class="seccion preguntas alt" aria-labelledby="t-faq">
+  <div class="cont">
+    <div class="cab-sec r">
+      <p class="k" data-t="kFaq">Preguntas</p>
+      <h2 id="t-faq" data-t="hFaq">Lo que suele <em>preguntarse</em></h2>
+    </div>
+    <div class="faq r">
+      <details><summary data-t="q1">¿Toisón es un bróker?</summary><p data-t="q1a">No. Toisón no compra, no vende y no guarda tu dinero. Tú sigues invirtiendo donde ya lo haces; Toisón junta lo que tienes en todos esos sitios y te lo explica.</p></details>
+      <details><summary data-t="q2">¿Alguien puede ver mi cartera?</summary><p data-t="q2a">No. Se cifra con tu contraseña antes de guardarse y sin esa contraseña no se puede abrir, tampoco desde Toisón. Por eso conviene guardarla bien: si la pierdes, la cartera no se puede recuperar.</p></details>
+      <details><summary data-t="q3">¿Me dice qué comprar o vender?</summary><p data-t="q3a">No. Toisón ofrece información, análisis y el cálculo de lo que supondría cada cosa para tu cartera y tu renta. No es asesoramiento ni una recomendación personalizada: la decisión es siempre tuya.</p></details>
+      <details><summary data-t="q4">¿Con qué brókers funciona?</summary><p data-t="q4a">Con cualquiera: MyInvestor, Trade Republic, Revolut, Interactive Brokers, Bitvavo o el que uses. Apuntas lo que tienes y en qué bróker está, y Toisón lo valora con precios de mercado. No se conecta a tu bróker ni necesita tus claves.</p></details>
+      <details><summary data-t="q5">¿Cuánto cuesta?</summary><p data-t="q5a">Empezar es gratis y lo seguirá siendo. Más adelante habrá una versión Pro, con más IA y el radar completo; el precio se anunciará antes de que llegue.</p></details>
+      <details><summary data-t="q6">¿Hay app para el móvil?</summary><p data-t="q6a">Sí: la web funciona en cualquier navegador y la app de Android llegará muy pronto a Google Play, con un widget para la pantalla de inicio. En iPhone, de momento, la web.</p></details>
+      <details><summary data-t="q7">¿De dónde salen los precios y las noticias?</summary><p data-t="q7a">De proveedores de datos de mercado y de la prensa económica, actualizados varias veces al día. Los datos que ves en esta web son ejemplos.</p></details>
+      <details><summary data-t="q8">¿Cuándo puedo entrar?</summary><p data-t="q8a">Toisón la usan ya su creador y un grupo de amigos. Pide acceso con tu correo y te avisaremos cuando se abra a más gente, a principios de 2027.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PEDIR ACCESO ========== -->
+<section class="final" aria-labelledby="t-final">
+  <div class="cont">
+    <div class="final-caja r">
+      <h2 id="t-final" data-t="hFinal">Tu cartera, entera y explicada. <em>Pide acceso.</em></h2>
+      <p class="ent" data-t="entFinal">Te avisamos cuando puedas entrar. Nada más.</p>
+      <form class="acceso" id="acceso-2" action="#" aria-label="Pedir acceso" data-t-aria="accesoAria" novalidate>
+        <label class="sr" for="correo-2" data-t="tuCorreo">Tu correo</label>
+        <div class="campo">
+          <input id="correo-2" type="email" name="correo" placeholder="Tu correo" data-t-ph="tuCorreo" autocomplete="email" inputmode="email" required maxlength="120">
+          <input class="sr" type="text" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit" class="boton"><span data-t="pedir">Pedir acceso</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4l4 4-4 4"/></svg></button>
+        </div>
+        <p class="nota"><span class="aviso-f" aria-live="polite"></span><span data-t="notaAcceso2">Solo para avisarte. Lo borramos cuando lo pidas. <a href="#privacidad" data-t="verPriv">Privacidad</a>.</span> <a href="https://toison.es/app" data-app data-t="yaUsas">¿Ya la usas? Entrar</a></p>
+      </form>
     </div>
   </div>
 </section>
 </main>
 
-<footer class="pie" data-b="n">
+<!-- ========== PIE ========== -->
+<footer class="pie">
   <div class="cont">
-    <span class="logo" aria-hidden="true"><svg viewBox="-82 -78 164 147"><use class="s-o" href="#o"/><use class="s-t" href="#t"/></svg><b>TOISÓN</b></span>
-    <h2 data-t="pieH">Todavía no está abierta al público</h2>
-    <p class="ent" data-t="pieEnt">Cuando lo esté, se anunciará primero en las redes.</p>
-    <ul class="redes">
-      <li><a href="https://www.instagram.com/toisonapp" rel="noopener">Instagram @toisonapp</a></li>
-      <li><a href="https://x.com/toisonapp" rel="noopener">X @toisonapp</a></li>
-    </ul>
-    <p class="acceso"><span data-t="yaUsas">¿Ya la usas?</span> <a href="https://charly10sf.github.io/GrowFolio/" data-t="entrar">Entrar a la app</a></p>
-    <p class="legal" data-t="legal">Toisón no da recomendaciones ni asesoramiento de inversión. La información, los análisis y los ejemplos de esta web no son una recomendación personalizada. Invertir conlleva riesgo, incluida la pérdida de parte o de todo el capital. Toisón no tiene relación con la Orden del Toisón de Oro.<br>© 2026 Toisón</p>
+    <div class="pie-grid">
+      <div class="pie-marca">
+        <span class="logo" aria-hidden="true"><svg viewBox="-82 -78 164 147"><use class="s-o" href="#o"/><use class="s-t" href="#t"/></svg><b>TOISÓN</b></span>
+        <p data-t="pieLema">Todas tus inversiones, en un solo sitio.</p>
+        <p class="pie-android"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V8H7zM7 8a5 5 0 0 1 10 0M9 4l1 2M15 4l-1 2"/></svg><span data-t="android">Android · muy pronto en Google Play</span></p>
+      </div>
+      <nav class="pie-col" aria-label="Producto" data-t-aria="pieProdAria">
+        <b data-t="mProducto">Producto</b>
+        <a href="#producto" data-t="pfCartera">La cartera</a>
+        <a href="#ia" data-t="mIA">La IA</a>
+        <a href="#hacienda" data-t="mHacienda">Hacienda</a>
+        <a href="#mundo" data-t="mMercados">Mercados</a>
+        <a href="#pro" data-t="pfPro">Gratis y Pro</a>
+      </nav>
+      <nav class="pie-col" aria-label="Toisón" data-t-aria="pieToisonAria">
+        <b>Toisón</b>
+        <a href="#seguridad" data-t="mSeguridad">Seguridad</a>
+        <a href="#nombre" data-t="pfNombre">Por qué Toisón</a>
+        <a href="#preguntas" data-t="mPreguntas">Preguntas</a>
+        <a href="https://toison.es/app" data-app data-t="pfEntrar">Entrar a la app</a>
+        <a href="mailto:hola@toison.es">hola@toison.es</a>
+      </nav>
+      <nav class="pie-col" aria-label="Redes" data-t-aria="pieRedesAria">
+        <b data-t="pfRedes">Redes</b>
+        <a href="https://www.instagram.com/toisonapp" rel="noopener">Instagram</a>
+        <a href="https://x.com/toisonapp" rel="noopener">X</a>
+        <a href="https://www.tiktok.com/@toisonapp" rel="noopener">TikTok</a>
+      </nav>
+    </div>
+    <div class="pie-legal">
+      <p id="aviso" data-t="legal1">Toisón es una herramienta de seguimiento y análisis. No es un bróker, una entidad financiera ni una empresa de servicios de inversión: no custodia dinero, no ejecuta órdenes y no da asesoramiento ni recomendaciones personalizadas. La información y los análisis que ofrece son generales y no tienen en cuenta tu situación personal. Invertir conlleva riesgo, incluida la pérdida de parte o de todo el capital.</p>
+      <p data-t="legal2">Los datos, precios y carteras que aparecen en esta web son ejemplos. Los cálculos fiscales son orientativos. «Toisón» es una marca solicitada en la OEPM (M4413012). Toisón no tiene relación con la Orden del Toisón de Oro.</p>
+      <p id="privacidad" data-t="legal3"><b>Privacidad.</b> Esta web no usa cookies ni rastreadores; solo recuerda en tu navegador el estilo y el idioma que eliges. Si pides acceso, guardamos tu correo, la fecha y el idioma en Google Firebase (Firestore), con el único fin de avisarte cuando puedas entrar; nadie más lo recibe y lo borramos cuando lo pides o cuando Toisón se abra a todos. Puedes pedir el acceso a tus datos, corregirlos o borrarlos escribiendo a <a href="mailto:hola@toison.es">hola@toison.es</a>.</p>
+      <p class="copy">© 2026 Toisón</p>
+    </div>
   </div>
 </footer>
 
-<nav class="indice" id="indice-nav" aria-label="Índice" data-t-aria="indiceAria"><p class="ind-cab" data-t="indCab">Índice</p><ol id="indice"></ol><p class="ind-pct"><span id="ind-pct">0</span>% <span data-t="indLeido">recorrido</span></p></nav>
-
-<script src="js/en.js"></script>
-<script src="js/web.js"></script>
+<script src="js/en.js" defer></script>
+<script src="js/web.js" defer></script>
 </body>
 </html>
