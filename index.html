@@ -30,7 +30,7 @@
 <link rel="apple-touch-icon" href="toison-icono.webp">
 <link rel="preload" href="fonts/ibarra.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/web.css?v=20261105b">
+<link rel="stylesheet" href="css/web.css?v=20261105c">
 </head>
 <body>
 
@@ -55,6 +55,7 @@
       <b>TOISÓN</b>
     </a>
     <nav class="menu" aria-label="Secciones" data-t-aria="menuAria">
+      <a href="#nombre" data-t="pfNombre">Por qué Toisón</a>
       <a href="#producto" data-t="mProducto">Producto</a>
       <a href="#ia" data-t="mIA">La IA</a>
       <a href="#hacienda" data-t="mHacienda">Hacienda</a>
@@ -81,7 +82,7 @@
     </div>
   </div>
   <div class="menu-movil" id="menu-movil" hidden>
-    <a href="#producto" data-t="mProducto">Producto</a><a href="#ia" data-t="mIA">La IA</a><a href="#hacienda" data-t="mHacienda">Hacienda</a><a href="#seguridad" data-t="mSeguridad">Seguridad</a><a href="#pro" data-t="mPro">Pro</a><a href="#preguntas" data-t="mPreguntas">Preguntas</a>
+    <a href="#nombre" data-t="pfNombre">Por qué Toisón</a><a href="#producto" data-t="mProducto">Producto</a><a href="#ia" data-t="mIA">La IA</a><a href="#hacienda" data-t="mHacienda">Hacienda</a><a href="#seguridad" data-t="mSeguridad">Seguridad</a><a href="#pro" data-t="mPro">Pro</a><a href="#preguntas" data-t="mPreguntas">Preguntas</a>
     <div class="mm-ajustes">
       <div class="estilo" role="group" aria-label="Estilo" data-t-aria="estiloAria">
         <button type="button" data-dir="marmol" aria-pressed="true" aria-label="Mármol" data-t-aria="marmolAria"><i class="m-marmol"></i></button>
@@ -214,11 +215,67 @@
   </div>
 </section>
 
+<!-- ========== POR QUÉ TOISÓN: la historia del nombre, con escenas que cambian al bajar ========== -->
+<section id="nombre" class="seccion nombre mito alt" aria-labelledby="t-nombre">
+  <div class="cadena" aria-hidden="true"></div>
+  <div class="cont">
+    <div class="cab-sec r">
+      <p class="k" data-rom="I" data-t="kNombre">Por qué Toisón</p>
+      <h2 id="t-nombre" data-t="hNombre" data-split>Una historia de <em>oro, mar y paciencia</em></h2>
+      <p class="ent" data-t="entNombre">Toisón quiere decir vellón, la lana de una oveja. El de oro tiene casi tres mil años de historia: de un mito griego a una orden de caballeros y, ahora, a tu cartera.</p>
+    </div>
+    <div class="mito-grid">
+      <ol class="caps">
+        <li class="cap" data-cap="0">
+          <span class="fecha" data-t="m1f">El mito</span>
+          <h3 data-t="m1h">El carnero de oro</h3>
+          <p data-t="m1p">Un carnero alado, de lana de oro, salvó a Frixo y voló con él hasta la Cólquide, a orillas del mar Negro. Allí su piel, el vellocino de oro, quedó colgada en un bosque sagrado. Dicen que el carnero subió al cielo: es la constelación de Aries.</p>
+          <div class="mini-esc" aria-hidden="true"></div>
+        </li>
+        <li class="cap" data-cap="1">
+          <span class="fecha" data-t="m2f">La travesía</span>
+          <h3 data-t="m2h">Jasón y los argonautas</h3>
+          <p data-t="m2p">Jasón reunió a los mejores héroes de Grecia y zarpó en el Argo a buscarlo. Un viaje largo, con tormentas y pruebas, para traerse algo de oro que guardaba un dragón que nunca dormía. Invertir también es un viaje largo.</p>
+          <div class="mini-esc" aria-hidden="true"></div>
+        </li>
+        <li class="cap" data-cap="2">
+          <span class="fecha" data-t="m3f">1430, Brujas</span>
+          <h3 data-t="m3h">La Orden del Toisón de Oro</h3>
+          <p data-t="m3p">Felipe el Bueno, duque de Borgoña, funda una orden de caballeros con el vellocino como emblema. <i>Toison</i> es «vellón» en francés. En el siglo XVI, con Carlos I, nieto de María de Borgoña, la orden pasa a los reyes de España, que la siguen concediendo. Y borgoña es también el color de la marca.</p>
+          <div class="mini-esc" aria-hidden="true"></div>
+        </li>
+        <li class="cap" data-cap="3">
+          <span class="fecha" data-t="m4f">Ahora</span>
+          <h3 data-t="m4h">Algo de oro, bien guardado</h3>
+          <p data-t="m4p">Nos quedamos con la idea. La T es una columna, como las de los templos griegos: lo que se construye para durar. Y como el dragón con el vellocino, tu contraseña guarda tu cartera, y nadie más la ve.</p>
+          <div class="mini-esc" aria-hidden="true"></div>
+        </li>
+        <li class="cap" data-cap="4">
+          <span class="fecha" data-t="m5f">La O áurea</span>
+          <h3 data-t="m5h">Áureo quiere decir «de oro»</h3>
+          <p data-t="m5p">La O de Toisón cabe justa en un rectángulo de 1,618 por 1, el número de oro que ya describió Euclides. Si le quitas un cuadrado, lo que queda tiene otra vez la misma forma, y de ahí sale la espiral. Oro en el mito, oro en la orden y oro en la O.</p>
+          <div class="mini-esc" aria-hidden="true"></div>
+        </li>
+      </ol>
+      <div class="escenario" aria-hidden="true"><div class="marco" id="marco"></div></div>
+    </div>
+    <div class="porque-h r">
+      <h3 data-t="porH" data-split>Por eso, <em>Toisón</em></h3>
+      <p data-t="porP">Porque invertir se parece al viaje del Argo: hay algo de oro al final, el camino es largo y lo que consigues hay que guardarlo bien. Y porque es una palabra española, con casi seis siglos de historia, corta y fácil de recordar.</p>
+    </div>
+    <div class="porque-g">
+      <div class="porque-c r"><span class="gr" aria-hidden="true">I</span><h4 data-t="po1h">El oro</h4><p data-t="po1p">Lo que buscas al invertir: que tu dinero crezca. El vellocino era de oro, y oro es la T del símbolo.</p></div>
+      <div class="porque-c r"><span class="gr" aria-hidden="true">II</span><h4 data-t="po2h">El viaje</h4><p data-t="po2p">Nadie llega a la Cólquide en un día. Invertir bien es cosa de años, con tormentas por el camino; Toisón te acompaña en todas.</p></div>
+      <div class="porque-c r"><span class="gr" aria-hidden="true">III</span><h4 data-t="po3h">La guardia</h4><p data-t="po3p">Al vellocino lo guardaba un dragón que nunca dormía. A tu cartera, tu contraseña: va cifrada y nadie más la ve.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- ========== PRODUCTO ========== -->
 <section id="producto" class="seccion producto" aria-labelledby="t-prod">
   <div class="cont">
     <div class="cab-sec r">
-      <p class="k" data-rom="I" data-t="kProd">Producto</p>
+      <p class="k" data-rom="II" data-t="kProd">Producto</p>
       <h2 id="t-prod" data-t="hProd" data-split>Tu cartera entera, <em>explicada</em></h2>
       <p class="ent" data-t="entProd">Apuntas lo que tienes en cada bróker, una vez. Toisón lo junta, lo valora con precios de mercado y te cuenta qué pasa con ello: lo que ganas y pierdes, el riesgo, los costes y el reparto por países y sectores.</p>
     </div>
@@ -283,7 +340,7 @@
 <section id="ia" class="seccion ia alt" aria-labelledby="t-ia">
   <div class="cont">
     <div class="cab-sec r">
-      <p class="k" data-rom="II" data-t="kIA">La IA</p>
+      <p class="k" data-rom="III" data-t="kIA">La IA</p>
       <h2 id="t-ia" data-t="hIA" data-split>Una IA que lee el mundo <em>para que tú decidas</em></h2>
       <p class="ent" data-t="entIA">Cada día lee la prensa económica, mira lo que pasa con las 840 empresas del radar y te lo cuenta en claro: qué ha pasado, a quién afecta y qué supone para tu cartera. Explica; no recomienda.</p>
     </div>
@@ -363,7 +420,7 @@
   <div class="cadena" aria-hidden="true"></div>
   <div class="cont">
     <div class="cab-sec r">
-      <p class="k" data-rom="III" data-t="kRenta">Hacienda</p>
+      <p class="k" data-rom="IV" data-t="kRenta">Hacienda</p>
       <h2 id="t-renta" data-t="hRenta" data-split>La renta, <em>hecha a la española</em></h2>
       <p class="ent" data-t="entRenta">Ganancias y pérdidas de cada venta, dividendos con su retención, intereses y lo que se compensa. Toisón lleva la cuenta durante el año y te dice lo que supondría en la declaración, con una guía de qué va en cada sitio.</p>
     </div>
@@ -429,7 +486,7 @@
 <section id="mundo" class="seccion mundo alt" aria-labelledby="t-mundo">
   <div class="cont">
     <div class="cab-sec r">
-      <p class="k" data-rom="IV" data-t="kMundo">Mercados</p>
+      <p class="k" data-rom="V" data-t="kMundo">Mercados</p>
       <h2 id="t-mundo" data-t="hMundo" data-split>Cada país, <em>del color de su bolsa</em></h2>
       <p class="ent" data-t="entMundo">Las bolsas, los tipos de interés, las divisas y las materias primas del mundo, y qué significa cada movimiento para lo que tú tienes. En «Tu dinero», en qué países está lo tuyo, aunque sea a través de un fondo.</p>
     </div>
@@ -468,7 +525,7 @@
   <div class="cadena" aria-hidden="true"></div>
   <div class="cont">
     <div class="cab-sec r">
-      <p class="k" data-rom="V" data-t="kSeg">Seguridad</p>
+      <p class="k" data-rom="VI" data-t="kSeg">Seguridad</p>
       <h2 id="t-seg" data-t="hSeg" data-split>Tu cartera, <em>solo tuya</em></h2>
       <p class="ent" data-t="entSeg">Toisón no necesita ver tu dinero para explicártelo. Así se guarda lo tuyo y así de claro está lo que no hacemos.</p>
     </div>
@@ -500,7 +557,7 @@
 <section id="pro" class="seccion pro alt" aria-labelledby="t-pro">
   <div class="cont">
     <div class="cab-sec r">
-      <p class="k" data-rom="VI" data-t="kPro">Gratis y Pro</p>
+      <p class="k" data-rom="VII" data-t="kPro">Gratis y Pro</p>
       <h2 id="t-pro" data-t="hPro" data-split>Gratis para empezar. <em>Pro, en 2027.</em></h2>
       <p class="ent" data-t="entPro">La cartera entera, los mercados, el paso a paso y la IA van en la versión gratuita. Pro llegará a principios de 2027, para quien quiera más.</p>
     </div>
@@ -532,64 +589,8 @@
   </div>
 </section>
 
-<!-- ========== POR QUÉ TOISÓN: la historia del nombre, con escenas que cambian al bajar ========== -->
-<section id="nombre" class="seccion nombre mito" aria-labelledby="t-nombre">
-  <div class="cadena" aria-hidden="true"></div>
-  <div class="cont">
-    <div class="cab-sec r">
-      <p class="k" data-rom="VII" data-t="kNombre">Por qué Toisón</p>
-      <h2 id="t-nombre" data-t="hNombre" data-split>Una historia de <em>oro, mar y paciencia</em></h2>
-      <p class="ent" data-t="entNombre">Toisón quiere decir vellón, la lana de una oveja. El de oro tiene casi tres mil años de historia: de un mito griego a una orden de caballeros y, ahora, a tu cartera.</p>
-    </div>
-    <div class="mito-grid">
-      <ol class="caps">
-        <li class="cap" data-cap="0">
-          <span class="fecha" data-t="m1f">El mito</span>
-          <h3 data-t="m1h">El carnero de oro</h3>
-          <p data-t="m1p">Un carnero alado, de lana de oro, salvó a Frixo y voló con él hasta la Cólquide, a orillas del mar Negro. Allí su piel, el vellocino de oro, quedó colgada en un bosque sagrado. Dicen que el carnero subió al cielo: es la constelación de Aries.</p>
-          <div class="mini-esc" aria-hidden="true"></div>
-        </li>
-        <li class="cap" data-cap="1">
-          <span class="fecha" data-t="m2f">La travesía</span>
-          <h3 data-t="m2h">Jasón y los argonautas</h3>
-          <p data-t="m2p">Jasón reunió a los mejores héroes de Grecia y zarpó en el Argo a buscarlo. Un viaje largo, con tormentas y pruebas, para traerse algo de oro que guardaba un dragón que nunca dormía. Invertir también es un viaje largo.</p>
-          <div class="mini-esc" aria-hidden="true"></div>
-        </li>
-        <li class="cap" data-cap="2">
-          <span class="fecha" data-t="m3f">1430, Brujas</span>
-          <h3 data-t="m3h">La Orden del Toisón de Oro</h3>
-          <p data-t="m3p">Felipe el Bueno, duque de Borgoña, funda una orden de caballeros con el vellocino como emblema. <i>Toison</i> es «vellón» en francés. En el siglo XVI, con Carlos I, nieto de María de Borgoña, la orden pasa a los reyes de España, que la siguen concediendo. Y borgoña es también el color de la marca.</p>
-          <div class="mini-esc" aria-hidden="true"></div>
-        </li>
-        <li class="cap" data-cap="3">
-          <span class="fecha" data-t="m4f">Ahora</span>
-          <h3 data-t="m4h">Algo de oro, bien guardado</h3>
-          <p data-t="m4p">Nos quedamos con la idea. La T es una columna, como las de los templos griegos: lo que se construye para durar. Y como el dragón con el vellocino, tu contraseña guarda tu cartera, y nadie más la ve.</p>
-          <div class="mini-esc" aria-hidden="true"></div>
-        </li>
-        <li class="cap" data-cap="4">
-          <span class="fecha" data-t="m5f">La O áurea</span>
-          <h3 data-t="m5h">Áureo quiere decir «de oro»</h3>
-          <p data-t="m5p">La O de Toisón cabe justa en un rectángulo de 1,618 por 1, el número de oro que ya describió Euclides. Si le quitas un cuadrado, lo que queda tiene otra vez la misma forma, y de ahí sale la espiral. Oro en el mito, oro en la orden y oro en la O.</p>
-          <div class="mini-esc" aria-hidden="true"></div>
-        </li>
-      </ol>
-      <div class="escenario" aria-hidden="true"><div class="marco" id="marco"></div></div>
-    </div>
-    <div class="porque-h r">
-      <h3 data-t="porH" data-split>Por eso, <em>Toisón</em></h3>
-      <p data-t="porP">Porque invertir se parece al viaje del Argo: hay algo de oro al final, el camino es largo y lo que consigues hay que guardarlo bien. Y porque es una palabra española, con casi seis siglos de historia, corta y fácil de recordar.</p>
-    </div>
-    <div class="porque-g">
-      <div class="porque-c r"><span class="gr" aria-hidden="true">I</span><h4 data-t="po1h">El oro</h4><p data-t="po1p">Lo que buscas al invertir: que tu dinero crezca. El vellocino era de oro, y oro es la T del símbolo.</p></div>
-      <div class="porque-c r"><span class="gr" aria-hidden="true">II</span><h4 data-t="po2h">El viaje</h4><p data-t="po2p">Nadie llega a la Cólquide en un día. Invertir bien es cosa de años, con tormentas por el camino; Toisón te acompaña en todas.</p></div>
-      <div class="porque-c r"><span class="gr" aria-hidden="true">III</span><h4 data-t="po3h">La guardia</h4><p data-t="po3p">Al vellocino lo guardaba un dragón que nunca dormía. A tu cartera, tu contraseña: va cifrada y nadie más la ve.</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- ========== QUIÉN HAY DETRÁS ========== -->
-<section id="quien" class="seccion quien alt" aria-labelledby="t-quien">
+<section id="quien" class="seccion quien" aria-labelledby="t-quien">
   <div class="cont quien-grid">
     <div class="cab-sec r" style="margin-bottom:0">
       <p class="k" data-rom="VIII" data-t="kQuien">Quién hay detrás</p>
@@ -605,7 +606,7 @@
 </section>
 
 <!-- ========== PREGUNTAS ========== -->
-<section id="preguntas" class="seccion preguntas" aria-labelledby="t-faq">
+<section id="preguntas" class="seccion preguntas alt" aria-labelledby="t-faq">
   <div class="cadena" aria-hidden="true"></div>
   <div class="cont">
     <div class="cab-sec r">
@@ -687,7 +688,7 @@
   </div>
 </footer>
 
-<script src="js/en.js?v=20261105b" defer></script>
-<script src="js/web.js?v=20261105b" defer></script>
+<script src="js/en.js?v=20261105c" defer></script>
+<script src="js/web.js?v=20261105c" defer></script>
 </body>
 </html>

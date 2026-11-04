@@ -69,9 +69,9 @@ html[data-dir="marmol"] .brillo.on { opacity: 1; }
 .nav { position: sticky; top: 0; z-index: 40; background: var(--nav-bg); -webkit-backdrop-filter: blur(14px) saturate(1.2); backdrop-filter: blur(14px) saturate(1.2); border-bottom: 1px solid var(--nav-linea); transition: background-color .5s; }
 .nav .cont { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 28px; min-height: 66px; }
 .logo { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; }
-.logo svg { width: 30px; height: auto; }
+.logo svg { flex: none; width: 30px; max-width: none; height: auto; }
 .logo b { font: 600 17px/1 var(--marca); letter-spacing: .16em; }
-.menu { display: flex; justify-content: center; gap: 30px; font-size: 14.5px; font-weight: 500; }
+.menu { display: flex; justify-content: center; gap: 26px; font-size: 14.5px; font-weight: 500; }
 .menu a { position: relative; padding: 6px 0; text-decoration: none; color: var(--txt2); white-space: nowrap; transition: color .25s; }
 .menu a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--oro); transform: scaleX(0); transform-origin: 0 50%; transition: transform .35s var(--curva); }
 .menu a:hover { color: var(--txt); }
@@ -104,7 +104,7 @@ html[data-dir="marmol"] .brillo.on { opacity: 1; }
 .mm-ajustes .estilo button { width: 44px; height: 44px; } .mm-ajustes .estilo i { width: 18px; height: 18px; }
 .mm-ajustes .idioma button { min-width: 48px; height: 40px; font-size: 13px; }
 @media (max-width: 1180px) { .menu { gap: 18px; font-size: 14px; } .nav .cont { gap: 16px; } .derecha { gap: 12px; } .demo-wrap { width: 100%; } .movil { right: 0; } }
-@media (max-width: 940px) {
+@media (max-width: 1160px) {
   .nav .cont { grid-template-columns: auto 1fr; }
   .menu, .ajustes { display: none; }
   .menu-btn { display: grid; }
@@ -915,7 +915,6 @@ html[data-dir="marfil"] .porque-c { border-color: var(--txt); background: var(--
 html[data-dir="marfil"] .porque-c .gr { color: var(--prim); }
 .porque-c h4 { margin: 10px 0 6px; font: 600 21px/1.2 var(--marca); }
 .porque-c p { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--txt2); }
-html[data-dir="borgona"] .nombre { background: var(--bg2); }
 
 /* ---------- pantallas estrechas (lo recuperado) ---------- */
 @media (max-width: 1140px) {
@@ -1012,3 +1011,6 @@ html[data-dir="marfil"] .texto > .ent { margin-top: 26px; }
 .estilo button:hover::after, .estilo button:focus-visible::after { opacity: 1; transform: translate(-50%, 0); }
 .mm-ajustes .estilo button::after { display: none; }
 @media (prefers-reduced-motion: reduce) { .estilo button::after { transition: none; } }
+
+/* el menú con «Por qué Toisón» delante: más apretado antes de plegarse */
+@media (max-width: 1340px) { .menu { gap: 18px; font-size: 14px; } .nav .cont { gap: 18px; } .derecha { gap: 12px; } }
