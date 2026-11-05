@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es" data-dir="marmol">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacidad · Toisón</title>
+<meta name="description" content="Qué datos trata Toisón, para qué, cuánto tiempo y quién más los ve. Tu cartera va cifrada con tu contraseña y Toisón no puede leerla.">
+<meta name="theme-color" content="#151817">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://toison.es/privacidad/">
+<link rel="icon" type="image/webp" href="../toison-icono.webp">
+<!-- el estilo que eligió la persona en toison.es, puesto antes de pintar (igual que en la portada) -->
+<script>try{var h=document.documentElement,d=localStorage.getItem('toison-estilo');if(/^(marmol|marfil|borgona)$/.test(d||'')){h.setAttribute('data-dir',d);document.querySelector('meta[name="color-scheme"]').content=d==='marfil'?'light dark':'dark';document.querySelector('meta[name="theme-color"]').content={marmol:'#151817',marfil:'#faf2e8',borgona:'#4e101d'}[d];}}catch(e){}</script>
+<link rel="preload" href="../fonts/ibarra.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/legal.css?v=20261105a">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <path id="o" d="M-80.9 0A80.9 50 0 1 1 80.9 0A80.9 50 0 1 1 -80.9 0ZM-54.1 0A54.1 46.4 0 1 0 54.1 0A54.1 46.4 0 1 0 -54.1 0Z"/>
+  <path id="t" d="M-61.15 -76L61.15 -76L61.15 -66.7L16.25 -66.7L9.05 -57L12.25 60L20.5 60L20.5 67.2L-20.5 67.2L-20.5 60L-12.25 60L-9.05 -57L-16.25 -66.7L-61.15 -66.7ZM-6.45 -40.5L-6.45 38.5L-4.55 38.5L-4.55 -40.5ZM-0.95 -40.5L-0.95 38.5L0.95 38.5L0.95 -40.5ZM4.55 -40.5L4.55 38.5L6.45 38.5L6.45 -40.5Z"/>
+</defs></svg>
+
+<header class="cab"><div class="cont">
+  <a class="logo" href="../" aria-label="Toisón, volver a la portada"><svg viewBox="-82 -78 164 147" aria-hidden="true"><use class="s-o" href="#o"/><use class="s-t" href="#t"/></svg><b>TOISÓN</b></a>
+  <nav aria-label="Páginas"><a href="./" aria-current="page">Privacidad</a><a href="../borrar-cuenta/">Borrar la cuenta</a></nav>
+</div></header>
+
+<main class="cont">
+  <p class="antetitulo">Privacidad</p>
+  <h1>Qué datos trata Toisón y quién más los ve</h1>
+  <p class="entradilla">Toisón está en pruebas: la usan quien la hace y un grupo de invitados, en la web y en la app de Android. Aquí se explica qué datos trata ahora mismo, para qué, cuánto tiempo los guarda y quién más los ve.</p>
+  <p class="fecha">Versión del 5 de noviembre de 2026. Vale para toison.es, la app web de Toisón y la app «Toisón» de Google Play.</p>
+
+  <div class="caja oro">
+    <h3>Lo esencial</h3>
+    <ul>
+      <li>Tu cartera se cifra en tu dispositivo con tu contraseña antes de guardarse. Toisón no puede leerla.</li>
+      <li>Hay tres momentos en que parte de ella sale sin ese cifrado: cuando preguntas a la IA, cuando la app pide los precios y los logotipos de lo que tienes y en el widget del móvil. Están explicados abajo.</li>
+      <li>No vendemos datos. No hay anuncios ni rastreadores publicitarios.</li>
+      <li>Puedes borrar tu cuenta cuando quieras desde la app o desde <a href="../borrar-cuenta/">esta página</a>.</li>
+    </ul>
+  </div>
+
+  <ol class="indice" aria-label="Apartados">
+    <li><a href="#responsable">Quién es el responsable</a></li>
+    <li><a href="#cifrado">Lo que Toisón no puede ver</a></li>
+    <li><a href="#datos">Qué datos trata y para qué</a></li>
+    <li><a href="#ia">La IA</a></li>
+    <li><a href="#terceros">Quién más ve datos</a></li>
+    <li><a href="#dispositivo">Lo que se queda en tu dispositivo</a></li>
+    <li><a href="#fuera">Datos fuera de la Unión Europea</a></li>
+    <li><a href="#derechos">Tus derechos</a></li>
+    <li><a href="#menores">Menores</a></li>
+    <li><a href="#seguridad">Seguridad y cambios</a></li>
+  </ol>
+
+  <h2 id="responsable">1. Quién es el responsable</h2>
+  <p>Carlos Díez Rodríguez, que hace Toisón como persona física, en Madrid. Para cualquier cosa sobre tus datos: <a href="mailto:hola@toison.es">hola@toison.es</a>. Toisón no tiene delegado de protección de datos porque una actividad de este tamaño no está obligada a tenerlo.</p>
+
+  <h2 id="cifrado">2. Lo que Toisón no puede ver</h2>
+  <p>Tu cartera, tus ajustes, tus objetivos, tu clave de Google para la IA y la conexión con tu banco, si la usas, se cifran en tu dispositivo antes de guardarse. A tu cuenta solo llega un texto cifrado. La clave para abrirlo sale de la contraseña de tu cartera o de tu código de recuperación y nunca sale de tu dispositivo. Para quien quiera el detalle: AES-GCM de 256 bits, con la clave derivada por PBKDF2-SHA256 con 600.000 iteraciones.</p>
+  <p>Sin tu contraseña ni tu código nadie puede abrir la cartera, tampoco Toisón. Si pierdes las dos cosas, no se puede recuperar. La contraseña con la que entras en tu cuenta la gestiona Firebase, de Google, y Toisón tampoco la ve.</p>
+
+  <h2 id="datos">3. Qué datos trata y para qué</h2>
+  <div class="tabla"><table>
+    <thead><tr><th scope="col">Qué</th><th scope="col">Datos</th><th scope="col">Para qué y con qué base</th><th scope="col">Cuánto tiempo</th></tr></thead>
+    <tbody>
+      <tr><td>Tu cuenta</td><td>Correo, identificador, fecha de alta y cómo entras (correo y contraseña, o Google). Con Google, también el nombre y la foto de tu cuenta de Google.</td><td>Darte acceso y guardar tu copia. Contrato (RGPD, art. 6.1.b).</td><td>Hasta que borres la cuenta.</td></tr>
+      <tr><td>Copia de tu cartera</td><td>El texto cifrado, la fecha de la última copia, su número de revisión, la versión de la app y si se hizo desde la app o desde la web.</td><td>Tener la cartera en todos tus dispositivos. Contrato.</td><td>Hasta que borres la cuenta.</td></tr>
+      <tr><td>Modo de tu cuenta</td><td>Tu correo, el modo con el que ves la app y, a veces, una nota corta para ti. Lo pone Carlos.</td><td>Saber qué versión de la app te toca durante las pruebas. Contrato.</td><td>Hasta que borres la cuenta (30 días como mucho después).</td></tr>
+      <tr><td>Opiniones</td><td>Lo que escribas en «Escríbeme», el tipo de mensaje, la pantalla desde la que escribes, tu identificador y tu correo, y la respuesta.</td><td>Contestarte y mejorar la app. Interés legítimo (art. 6.1.f).</td><td>Hasta que borres la cuenta.</td></tr>
+      <tr><td>Fallos de la IA</td><td>Tipo de fallo, código, modelo, pantalla, versión de la app y el identificador de tu cuenta. Nunca la pregunta, la respuesta ni la cartera.</td><td>Arreglar los fallos. Interés legítimo.</td><td>30 días.</td></tr>
+      <tr><td>Contador de preguntas a Claude</td><td>Tu correo, el día y cuántas preguntas llevas ese día.</td><td>Aplicar el límite diario. Contrato.</td><td>Solo se guarda la cuenta del último día en que preguntaste.</td></tr>
+      <tr><td>Estadística de visitas de la app web</td><td>Página, país, navegador y tipo de dispositivo, con Cloudflare Web Analytics, que no usa cookies. Nada de tu cartera ni de tu cuenta.</td><td>Saber cuánto se usa la app. Interés legítimo.</td><td>Cloudflare la junta con las demás visitas; Toisón solo ve totales.</td></tr>
+      <tr><td>Lista de espera de toison.es</td><td>Correo, fecha e idioma.</td><td>Avisarte cuando puedas entrar. Consentimiento (art. 6.1.a).</td><td>Hasta que crees la cuenta o pidas que lo borremos, y como mucho 12 meses.</td></tr>
+      <tr><td>Aviso de baja</td><td>Tu correo y la fecha en que borraste la cuenta.</td><td>Terminar de borrar lo que va por correo (el modo y la lista de espera). Obligación legal (art. 6.1.c).</td><td>Hasta terminar, 30 días como mucho.</td></tr>
+      <tr><td>Correos a hola@toison.es</td><td>Tu dirección y lo que escribas.</td><td>Contestarte. Interés legítimo.</td><td>Un año desde el último correo.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Cuando añades a mano un valor que no estaba en el catálogo, su ticker o su ISIN se apunta sin decir quién lo pidió, para añadirlo. Eso no es un dato personal.</p>
+
+  <h2 id="ia">4. La IA</h2>
+  <p>La IA es opcional: el resto de Toisón funciona sin ella. Según tu cuenta, contesta Claude, de Anthropic, o Gemini, de Google, con tu propia clave. Arriba del chat siempre pone cuál es.</p>
+  <h3>Con Claude</h3>
+  <p>La app manda tu pregunta al servidor de Toisón (en Cloudflare), que comprueba que tu cuenta puede preguntar y la reenvía a Anthropic PBC, en Estados Unidos. El servidor no guarda lo que pasa por él, aunque mientras lo reenvía lo tiene sin cifrar.</p>
+  <p>A Anthropic no le llegan tu correo ni tu contraseña. Le llega lo que hace falta para contestar: tus posiciones con sus cantidades y cifras; tu edad, tus ingresos, tus gastos, tus metas y tus límites, si los has puesto; lo que le cuentes; y los archivos o capturas que subas, con todo lo que se vea en ellos. En un extracto del banco suelen salir tu nombre, tu dirección y tu IBAN: tápalos antes si no quieres mandarlos. No escribas datos de otras personas.</p>
+  <p>Según sus condiciones comerciales, Anthropic no entrena sus modelos con estos datos. Por norma general los borra en 30 días; puede guardarlos más si la ley se lo exige o si sus sistemas marcan una pregunta como contraria a su política de uso (<a href="https://privacy.claude.com/en/articles/7996866">centro de privacidad de Anthropic</a>).</p>
+  <h3>Con Gemini y tu clave de Google</h3>
+  <p>Tu dispositivo habla directamente con Google, con la clave que creaste en Google AI Studio. Toisón no ve ni las preguntas ni las respuestas. Google las trata según las condiciones de la API de Gemini que aceptaste al crear la clave. Para quien está en el Espacio Económico Europeo, esas condiciones dicen que Google no usa las preguntas para mejorar sus productos, aunque la clave sea gratuita, y que las guarda un tiempo limitado para detectar abusos (<a href="https://ai.google.dev/gemini-api/terms">condiciones de la API de Gemini</a>).</p>
+  <h3>Búsquedas y «Copiar para tu IA»</h3>
+  <p>Si la IA busca algo en internet, la búsqueda la hace Anthropic o Google. «Copiar para tu IA» solo copia un texto con tu cartera en tu móvil: si lo pegas en otro asistente, quedas bajo sus condiciones.</p>
+
+  <h2 id="terceros">5. Quién más ve datos</h2>
+  <div class="tabla"><table>
+    <thead><tr><th scope="col">Quién</th><th scope="col">Para qué</th><th scope="col">Dónde</th></tr></thead>
+    <tbody>
+      <tr><td>Google (Firebase)</td><td>Cuentas y copia cifrada de la cartera.</td><td>UE y EE. UU.</td></tr>
+      <tr><td>GitHub (Microsoft)</td><td>Aloja la app web y los datos del día (precios, noticias, informes). Ve tu IP cuando la cargas.</td><td>EE. UU.</td></tr>
+      <tr><td>Cloudflare</td><td>Servidor de la IA y de la conexión con el banco, contador de preguntas y estadística de visitas.</td><td>Red mundial, sede en EE. UU.</td></tr>
+      <tr><td>Anthropic</td><td>La IA, cuando contesta Claude.</td><td>EE. UU.</td></tr>
+      <tr><td>Google (Gemini)</td><td>La IA, cuando contesta Gemini con tu clave.</td><td>Según Google.</td></tr>
+      <tr><td>Enable Banking</td><td>Solo si conectas tu banco, que está en pruebas para algunas cuentas: lee los saldos de tus cuentas, sin poder mover dinero, con el permiso que das en tu banco. Lo que lee se guarda cifrado en tu cartera.</td><td>Finlandia</td></tr>
+      <tr><td>Yahoo Finance y Bitvavo</td><td>Precios en directo. Tu dispositivo les pide el precio de los valores que tienes, así que ven tu IP y qué valores son (no cuánto tienes).</td><td>EE. UU. y Países Bajos</td></tr>
+      <tr><td>Google (logotipos), flagcdn, jsDelivr y cdnjs</td><td>Logotipos de las empresas, banderas y algunas librerías. Ven tu IP y, en los logotipos, qué empresas tienes.</td><td>EE. UU. y red mundial</td></tr>
+      <tr><td>OVHcloud</td><td>El dominio toison.es y el reenvío de hola@toison.es.</td><td>Francia</td></tr>
+      <tr><td>Gmail (Google)</td><td>El buzón al que llegan los correos de hola@toison.es.</td><td>UE y EE. UU.</td></tr>
+      <tr><td>Google Play</td><td>Descargar e instalar la app de Android.</td><td>Según Google.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Firebase, GitHub, Cloudflare y Anthropic tratan los datos por encargo de Toisón. Google con Gemini, Enable Banking, Google Play y las webs de precios, logotipos y librerías los tratan por su cuenta y con sus propias políticas: a esas webs les llega la petición igual que cuando visitas cualquier página. Antes de que Toisón se abra a todo el mundo, la idea es servir los precios, los logotipos y las librerías desde el propio servidor de Toisón, para que dejen de estar en esta lista.</p>
+
+  <h2 id="dispositivo">6. Lo que se queda en tu dispositivo</h2>
+  <p>La web y la app guardan en tu dispositivo la copia cifrada de la cartera, tus preferencias (idioma, estilo, lo que ves en Inicio) y tus 20 últimas conversaciones con la IA, también cifradas. No hay cookies de publicidad ni de seguimiento.</p>
+  <p>En Android, el widget de la pantalla de inicio guarda sin cifrar, en el propio móvil, lo que enseña: el total y las cantidades. Se borra al quitar el widget o al cerrar la sesión. La app pide permiso para mandarte avisos, puede usar la huella para desbloquearse (la huella la comprueba Android y no sale del móvil) y usa un servicio en primer plano para que la IA termine de contestar aunque cambies de app. No lleva anuncios ni librerías de terceros para medir lo que haces.</p>
+
+  <h2 id="fuera">7. Datos fuera de la Unión Europea</h2>
+  <p>Google, GitHub, Cloudflare y Anthropic son empresas de Estados Unidos. Para que tus datos tengan allí la protección europea, sus contratos llevan las cláusulas contractuales tipo de la Comisión Europea, y las que están adheridas al Marco de Privacidad de Datos UE-EE. UU. se apoyan también en él. Puedes pedir una copia de esas garantías en <a href="mailto:hola@toison.es">hola@toison.es</a>. Toisón no toma decisiones automatizadas que te produzcan efectos jurídicos ni te afecten de forma parecida.</p>
+
+  <h2 id="derechos">8. Tus derechos</h2>
+  <p>Puedes pedir ver tus datos, corregirlos, borrarlos, llevártelos, limitar su uso u oponerte, y retirar el consentimiento de la lista de espera cuando quieras.</p>
+  <ul>
+    <li><strong>Borrar la cuenta:</strong> en la app, Ajustes, Tu cuenta, «Borrar la cuenta». Si ya no tienes la app, mira <a href="../borrar-cuenta/">cómo pedirlo</a>.</li>
+    <li><strong>Llevarte la cartera:</strong> en Ajustes, Seguridad, «Copia de seguridad», en un archivo cifrado, o también sin cifrar.</li>
+    <li><strong>Lo demás:</strong> escribe a <a href="mailto:hola@toison.es">hola@toison.es</a> desde el correo de tu cuenta. Contestamos en un mes como mucho. Si ya no tienes ese correo, escribe desde otro y te pediremos lo justo para comprobar que eres tú.</li>
+  </ul>
+  <p>Si no estás de acuerdo con la respuesta, puedes reclamar ante la <a href="https://www.aepd.es">Agencia Española de Protección de Datos</a>.</p>
+
+  <h2 id="menores">9. Menores</h2>
+  <p>Toisón es solo para mayores de 18 años. Si sabemos que una cuenta es de un menor, la cerramos y damos 30 días para descargar la cartera; después se borra.</p>
+
+  <h2 id="seguridad">10. Seguridad y cambios</h2>
+  <p>Además del cifrado, todo viaja por HTTPS, las reglas de la base de datos solo dejan leer cada copia a su cuenta y las cuentas de administración llevan verificación en dos pasos. Si hubiera una brecha con riesgo para ti, se avisa a la Agencia Española de Protección de Datos en 72 horas y a ti sin demora.</p>
+  <p>Si esta política cambia en algo importante, lo avisaremos en la app antes de que se aplique.</p>
+</main>
+
+<footer class="pie"><div class="cont">
+  <span>Toisón · Carlos Díez Rodríguez</span>
+  <a href="mailto:hola@toison.es">hola@toison.es</a>
+  <a href="../borrar-cuenta/">Borrar la cuenta</a>
+  <a href="../">Volver a toison.es</a>
+</div></footer>
+</body>
+</html>
