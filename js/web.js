@@ -857,8 +857,9 @@
     if (!DIRS.includes(d)) d = 'marmol';
     html.dataset.dir = d;
     $('meta[name="theme-color"]').content = { marmol: '#151817', marfil: '#faf2e8', borgona: '#4e101d' }[d];
-    // Marfil es claro: «only light» le dice al navegador que no lo oscurezca aunque el móvil esté en modo oscuro
-    $('meta[name="color-scheme"]').content = d === 'marfil' ? 'only light' : 'dark';
+    // Marfil es claro. 5 nov: «only light» no le vale a Samsung Internet, que la repintaba igual; «light dark» le dice que
+    // la web lleva su propio modo oscuro y así no la toca (los colores de Marfil son suyos, así que sigue clara)
+    $('meta[name="color-scheme"]').content = d === 'marfil' ? 'light dark' : 'dark';
     $$('.estilo button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.dir === d));
     vetasAlto = 0;
     requestAnimationFrame(generaVetas);

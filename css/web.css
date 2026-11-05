@@ -24,8 +24,10 @@ html[data-dir="marfil"] {
   --nav-bg: rgb(250 242 232 / .86); --nav-linea: #1e1a17;
   --a-bg: #f7f4ef; --a-surf: #fff; --a-surf2: #efeae2; --a-borde: #e3ddd3; --a-txt: #1e1a17; --a-txt2: #4d4640; --a-graf: #8a6216; --a-sube: #08573a; --a-baja: #982d0e; --a-prim: #4e101d; --a-sobre: #f6ead5;
   --sombra: 10px 10px 0 #1e1a17;
-  color-scheme: only light;
+  /* 5 nov: «light dark» en la raíz (Samsung Internet no repinta lo que dice llevar su modo oscuro) y lo de dentro, claro */
+  color-scheme: light dark;
 }
+html[data-dir="marfil"] body { color-scheme: light; }
 html[data-dir="borgona"] {
   --radio: 6px; --radio-c: 12px;
   --bg: #4e101d; --bg2: #3c0b16; --surf: #26121a; --surf2: #351921; --borde: #84404f;

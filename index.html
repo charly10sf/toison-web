@@ -7,10 +7,12 @@
 <meta name="description" content="Toisón reúne tus fondos, acciones, ETF, oro y cripto de cualquier bróker, con precios en directo, una IA que lee el mercado y lo que supondría en la renta española. Tu cartera, cifrada con tu contraseña.">
 <meta name="theme-color" content="#151817">
 <!-- El esquema de color dicho en la cabecera, para que el modo oscuro del móvil (Samsung Internet, los navegadores de
-     WhatsApp y X) no repinte la web. Lo cambia ponDir (js/web.js) según el estilo: «dark», «only light» en Marfil -->
+     WhatsApp y X) no repinte la web. Lo cambia ponDir (js/web.js) según el estilo: «dark»; en Marfil, «light dark»
+     (5 nov: Samsung Internet no hace caso de «only light» y la repintaba; con «light dark» entiende que la web se ocupa
+     ella del modo oscuro y no la toca, y Marfil sigue clara porque sus colores son suyos) -->
 <meta name="color-scheme" content="dark">
 <!-- Estilo e idioma guardados, puestos antes de pintar: sin destello de Mármol ni de español al cargar -->
-<script>try{var h=document.documentElement,q=location.hash.slice(1),d=localStorage.getItem('toison-estilo'),l=localStorage.getItem('toison-lang'),D=/^(marmol|marfil|borgona)$/;if(D.test(q))d=q;if(D.test(d||'')){h.setAttribute('data-dir',d);document.querySelector('meta[name="color-scheme"]').content=d==='marfil'?'only light':'dark';document.querySelector('meta[name="theme-color"]').content={marmol:'#151817',marfil:'#faf2e8',borgona:'#4e101d'}[d];}if(l!=='en'&&l!=='es')l=(navigator.language||'').toLowerCase().indexOf('en')===0?'en':'es';h.lang=l;if(l==='en'){h.className+=' en-pend';setTimeout(function(){h.classList.remove('en-pend')},2500);}}catch(e){}</script>
+<script>try{var h=document.documentElement,q=location.hash.slice(1),d=localStorage.getItem('toison-estilo'),l=localStorage.getItem('toison-lang'),D=/^(marmol|marfil|borgona)$/;if(D.test(q))d=q;if(D.test(d||'')){h.setAttribute('data-dir',d);document.querySelector('meta[name="color-scheme"]').content=d==='marfil'?'light dark':'dark';document.querySelector('meta[name="theme-color"]').content={marmol:'#151817',marfil:'#faf2e8',borgona:'#4e101d'}[d];}if(l!=='en'&&l!=='es')l=(navigator.language||'').toLowerCase().indexOf('en')===0?'en':'es';h.lang=l;if(l==='en'){h.className+=' en-pend';setTimeout(function(){h.classList.remove('en-pend')},2500);}}catch(e){}</script>
 <link rel="canonical" href="https://toison.es/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Toisón">
@@ -30,7 +32,7 @@
 <link rel="apple-touch-icon" href="toison-icono.webp">
 <link rel="preload" href="fonts/ibarra.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/web.css?v=20261105c">
+<link rel="stylesheet" href="css/web.css?v=20261105d">
 </head>
 <body>
 
@@ -688,7 +690,7 @@
   </div>
 </footer>
 
-<script src="js/en.js?v=20261105c" defer></script>
-<script src="js/web.js?v=20261105c" defer></script>
+<script src="js/en.js?v=20261105d" defer></script>
+<script src="js/web.js?v=20261105d" defer></script>
 </body>
 </html>
