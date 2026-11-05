@@ -899,8 +899,6 @@ html[data-dir="borgona"] .marco { border-color: color-mix(in srgb, var(--oro) 55
 .esc.on .fill-o { opacity: 1; }
 .esc.on .fill-t { opacity: 1; transform: none; }
 .esc .guarda { stroke-dasharray: 3 9; opacity: .8; transform-box: fill-box; transform-origin: center; animation: gira 40s linear infinite; }
-.esc .swatch { fill: #4e101d; stroke: var(--oro); stroke-width: 1.2; transform-box: fill-box; transform-origin: center; transform: scale(0); transition: transform .9s var(--curva) 1s; }
-.esc.on .swatch { transform: scale(1); }
 .esc .phi { fill: var(--oro); font: 600 34px var(--marca); letter-spacing: 0; text-transform: none; }
 html[data-dir="marfil"] .esc .linea { stroke: var(--txt); }
 html[data-dir="marfil"] .esc .grande, html[data-dir="marfil"] .esc .phi { fill: var(--prim); }
@@ -979,7 +977,7 @@ html[data-dir="marfil"] .porque-c .gr { color: var(--prim); }
   .cadena ellipse { stroke-dashoffset: 0; transition: none; }
   .radial .flujo { animation: none; opacity: 0; }
   .feed-cab b i, .nt.nueva, .cursor, .fac-det .anim, .etapa-r:not([hidden]), .lin.on dd { animation: none; }
-  .esc, .esc .dib, .esc .estrella, .esc .fill-o, .esc .fill-t, .esc .swatch, .esc .barco { transition: none; }
+  .esc, .esc .dib, .esc .estrella, .esc .fill-o, .esc .fill-t, .esc .barco { transition: none; }
   .esc .titila, .esc .ola, .esc .mece, .esc .guarda { animation: none; }
   .js .cal li::after { transform: none; transition: none; }
   .mapa-lista button { transition: none; }

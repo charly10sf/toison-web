@@ -705,8 +705,7 @@
       let cad = '';
       for (let i = 0; i < 9; i++) { const v = i % 2, x = 56 + i * 36; cad += `<ellipse class="linea dib" style="--d:${(0.3 + i * 0.12).toFixed(2)}s" pathLength="1" cx="${x}" cy="196" rx="${v ? 13 : 24}" ry="${v ? 21 : 14.8}"/>`; }
       return `<svg viewBox="0 0 400 300"><text class="grande" x="200" y="120" text-anchor="middle">1430</text>
-        <text x="200" y="150" text-anchor="middle">${L('Brujas · Borgoña', 'Bruges · Burgundy')}</text>${cad}
-        <circle class="swatch" cx="200" cy="262" r="16"/><text x="226" y="266">#4E101D</text></svg>`;
+        <text x="200" y="150" text-anchor="middle">${L('Brujas · Borgoña', 'Bruges · Burgundy')}</text>${cad}</svg>`;
     },
     () => `<svg viewBox="0 0 400 300"><circle class="tenue guarda" cx="200" cy="150" r="128"/>
         <g transform="translate(200 158) scale(1.25)">
