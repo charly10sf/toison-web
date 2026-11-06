@@ -9,20 +9,20 @@
   --curva: cubic-bezier(.2, .7, .2, 1);
   --radio: 999px; --radio-c: 18px;
   --bg: #151817; --bg2: #101312; --surf: #1c1f1e; --surf2: #272b29; --borde: #353a38;
-  --txt: #f2ede6; --txt2: #c8bfb7; --oro: #e3b45f; --sube: #6fd6a1; --baja: #ff9a78;
+  --txt: #f2ede6; --txt2: #c8bfb7; --oro: #e3b45f; --sube: #6fd6a1; --baja: #ff6b62;
   --prim: #e3b45f; --sobre-prim: #2a0e14; --sim-o: #f6ead5; --sim-t: #e3b45f;
   --nav-bg: rgb(21 24 23 / .74); --nav-linea: rgb(255 255 255 / .08);
-  --a-bg: #141113; --a-surf: #1e1a1c; --a-surf2: #292426; --a-borde: #3a3336; --a-txt: #f2ede6; --a-txt2: #c8bfb7; --a-graf: #e3b45f; --a-sube: #6fd6a1; --a-baja: #ff9a78; --a-prim: #f6ead5; --a-sobre: #2a0e14;
+  --a-bg: #141113; --a-surf: #1e1a1c; --a-surf2: #292426; --a-borde: #3a3336; --a-txt: #f2ede6; --a-txt2: #c8bfb7; --a-graf: #e3b45f; --a-sube: #6fd6a1; --a-baja: #ff6b62; --a-prim: #f6ead5; --a-sobre: #2a0e14;
   --sombra: 0 60px 120px -40px rgb(0 0 0 / .7), 0 0 0 1px rgb(255 255 255 / .06);
   color-scheme: dark;
 }
 html[data-dir="marfil"] {
   --radio: 8px; --radio-c: 10px;
   --bg: #faf2e8; --bg2: #f3eadc; --surf: #fffdf9; --surf2: #efe7da; --borde: #d9cfc0;
-  --txt: #1e1a17; --txt2: #4d4640; --oro: #684910; --sube: #08573a; --baja: #982d0e;
+  --txt: #1e1a17; --txt2: #4d4640; --oro: #684910; --sube: #08573a; --baja: #a42018;
   --prim: #4e101d; --sobre-prim: #f6ead5; --sim-o: #4e101d; --sim-t: #8a6216;
   --nav-bg: rgb(250 242 232 / .86); --nav-linea: #1e1a17;
-  --a-bg: #f7f4ef; --a-surf: #fff; --a-surf2: #efeae2; --a-borde: #e3ddd3; --a-txt: #1e1a17; --a-txt2: #4d4640; --a-graf: #8a6216; --a-sube: #08573a; --a-baja: #982d0e; --a-prim: #4e101d; --a-sobre: #f6ead5;
+  --a-bg: #f7f4ef; --a-surf: #fff; --a-surf2: #efeae2; --a-borde: #e3ddd3; --a-txt: #1e1a17; --a-txt2: #4d4640; --a-graf: #8a6216; --a-sube: #08573a; --a-baja: #a42018; --a-prim: #4e101d; --a-sobre: #f6ead5;
   --sombra: 10px 10px 0 #1e1a17;
   /* 5 nov: «light dark» en la raíz (Samsung Internet no repinta lo que dice llevar su modo oscuro) y lo de dentro, claro */
   color-scheme: light dark;
@@ -31,10 +31,10 @@ html[data-dir="marfil"] body { color-scheme: light; }
 html[data-dir="borgona"] {
   --radio: 6px; --radio-c: 12px;
   --bg: #4e101d; --bg2: #3c0b16; --surf: #26121a; --surf2: #351921; --borde: #84404f;
-  --txt: #f6ead5; --txt2: #ead9c2; --oro: #e3b45f; --sube: #93e2b9; --baja: #ffb7a0;
+  --txt: #f6ead5; --txt2: #ead9c2; --oro: #e3b45f; --sube: #93e2b9; --baja: #ff7b78;
   --prim: #e3b45f; --sobre-prim: #3c0b16; --sim-o: #f6ead5; --sim-t: #e3b45f;
   --nav-bg: rgb(60 11 22 / .8); --nav-linea: rgb(227 180 95 / .28);
-  --a-bg: #2a0e14; --a-surf: #3c0b16; --a-surf2: #4e101d; --a-borde: #6a1f2f; --a-txt: #f6ead5; --a-txt2: #ead9c2; --a-graf: #e3b45f; --a-sube: #93e2b9; --a-baja: #ffb7a0; --a-prim: #f6ead5; --a-sobre: #2a0e14;
+  --a-bg: #2a0e14; --a-surf: #3c0b16; --a-surf2: #4e101d; --a-borde: #6a1f2f; --a-txt: #f6ead5; --a-txt2: #ead9c2; --a-graf: #e3b45f; --a-sube: #93e2b9; --a-baja: #ff7b78; --a-prim: #f6ead5; --a-sobre: #2a0e14;
   --sombra: 0 60px 120px -40px rgb(0 0 0 / .75), 0 0 0 1px rgb(227 180 95 / .35);
   color-scheme: dark;
 }
