@@ -61,6 +61,9 @@
     pon('data-t-ph', '[data-t-ph]', (e) => e.placeholder, (e, v) => { e.placeholder = v; });
     pon('data-t-alt', '[data-t-alt]', (e) => e.alt, (e, v) => { e.alt = v; });
     $$('.idioma button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === lang));
+    // las cifras con miles (2.800, 6.000) con el separador de cada idioma: «2,800» en inglés; las que aún no han
+    // contado lo hacen al entrar en pantalla, ya con fmt
+    $$('[data-count]').forEach((b) => { if (reducir || b.dataset.contado || +b.dataset.count >= 1000) b.textContent = fmt(+b.dataset.count); });
     partePalabras();
   }
   function ponLang(l, guardar) {
