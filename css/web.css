@@ -21,7 +21,7 @@ html[data-dir="marfil"] {
   /* 7 nov: los mismos tonos que el Marfil nuevo de la app (0.8.3b): crema en capas, tinta, el vino y el oro del logo */
   --bg: #ede1cc; --bg2: #e5d7bf; --surf: #fdf9f2; --surf2: #eee3d0; --borde: #dccbb0;
   --txt: #1c1915; --txt2: #4a443d; --oro: #7a5716; --sube: #08573a; --baja: #a42018;
-  --prim: #4e101d; --sobre-prim: #f8efe0; --sim-o: #1c1915; --sim-t: #a87a2a;
+  --prim: #4e101d; --sobre-prim: #f8efe0; --sim-o: #4e101d; --sim-t: #a87a2a;
   --nav-bg: rgb(237 225 204 / .88); --nav-linea: #dccbb0;
   --a-bg: #ede1cc; --a-surf: #fdf9f2; --a-surf2: #eee3d0; --a-borde: #dccbb0; --a-txt: #1c1915; --a-txt2: #4a443d; --a-graf: #a87a2a; --a-sube: #08573a; --a-baja: #a42018; --a-prim: #4e101d; --a-sobre: #f8efe0;
   --a-menu: #3c0b16; --a-menu-txt: #e2d0bb; --a-oro-logo: #e3b45f;
