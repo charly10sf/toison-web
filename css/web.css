@@ -78,6 +78,10 @@ html[data-dir="marmol"] .brillo.on { opacity: 1; }
 .m-marfil { background: linear-gradient(135deg, #ede1cc 50%, #3c0b16 50%); }
 .idioma button { min-width: 30px; height: 26px; padding: 0 6px; border: 0; border-radius: 999px; background: transparent; font: 650 11.5px/1 var(--ui); letter-spacing: .06em; color: var(--txt2); cursor: pointer; }
 .idioma button[aria-pressed="true"] { background: var(--surf2); color: var(--txt); }
+/* 7 nov: con la bandera de cada idioma delante, como en el selector de la app */
+.idioma button { display: inline-flex; align-items: center; justify-content: center; gap: 5px; }
+.idioma .bandera { width: 16px; height: 11px; flex: none; border-radius: 2px; box-shadow: 0 0 0 1px rgb(0 0 0 / .14); }
+.mm-ajustes .idioma .bandera { width: 20px; height: 14px; }
 .entrar { display: inline-flex; align-items: center; gap: 6px; padding: 8px 2px; font-size: 14.5px; font-weight: 600; text-decoration: none; color: var(--txt); white-space: nowrap; }
 .entrar svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform .3s var(--curva); }
 .entrar:hover svg { transform: translateX(3px); }
@@ -106,7 +110,14 @@ html[data-dir="marmol"] .brillo.on { opacity: 1; }
   .entrar { font-size: 14px; padding: 8px 0; }
   .boton.chico { padding: 0 13px; font-size: 13px; }
   .derecha { gap: 6px; }
+  .entrar svg { display: none; } /* 7 nov: en inglés («Log in», «Request access») la cabecera se salía 8 px a 390, y 13 px a 360 */
+  .boton.chico { padding: 0 10px; }
+  .derecha { gap: 4px; }
+  .menu-btn { width: 38px; }
 }
+/* en los móviles más estrechos (360–380 px) no cabían logo, «Entrar», «Pedir acceso» y el menú: la palabra del logo se
+   esconde (TOISÓN sale grande justo debajo, en la portada) y queda el símbolo */
+@media (max-width: 380px) { .nav .logo b { display: none; } }
 
 /* ---------- botones ---------- */
 .boton { position: relative; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: var(--radio); border: 1px solid transparent; background: var(--prim); color: var(--sobre-prim); font-weight: 650; font-size: 15.5px; letter-spacing: -.005em; text-decoration: none; cursor: pointer; white-space: nowrap; transition: transform .25s var(--curva), box-shadow .25s; }
