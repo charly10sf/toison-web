@@ -18,12 +18,14 @@
 }
 html[data-dir="marfil"] {
   --radio: 8px; --radio-c: 10px;
-  --bg: #faf2e8; --bg2: #f3eadc; --surf: #fffdf9; --surf2: #efe7da; --borde: #d9cfc0;
-  --txt: #1e1a17; --txt2: #4d4640; --oro: #684910; --sube: #08573a; --baja: #a42018;
-  --prim: #4e101d; --sobre-prim: #f6ead5; --sim-o: #4e101d; --sim-t: #8a6216;
-  --nav-bg: rgb(250 242 232 / .86); --nav-linea: #1e1a17;
-  --a-bg: #f7f4ef; --a-surf: #fff; --a-surf2: #efeae2; --a-borde: #e3ddd3; --a-txt: #1e1a17; --a-txt2: #4d4640; --a-graf: #8a6216; --a-sube: #08573a; --a-baja: #a42018; --a-prim: #4e101d; --a-sobre: #f6ead5;
-  --sombra: 10px 10px 0 #1e1a17;
+  /* 7 nov: los mismos tonos que el Marfil nuevo de la app (0.8.3b): crema en capas, tinta, el vino y el oro del logo */
+  --bg: #ede1cc; --bg2: #e5d7bf; --surf: #fdf9f2; --surf2: #eee3d0; --borde: #dccbb0;
+  --txt: #1c1915; --txt2: #4a443d; --oro: #7a5716; --sube: #08573a; --baja: #a42018;
+  --prim: #4e101d; --sobre-prim: #f8efe0; --sim-o: #1c1915; --sim-t: #a87a2a;
+  --nav-bg: rgb(237 225 204 / .88); --nav-linea: #dccbb0;
+  --a-bg: #ede1cc; --a-surf: #fdf9f2; --a-surf2: #eee3d0; --a-borde: #dccbb0; --a-txt: #1c1915; --a-txt2: #4a443d; --a-graf: #a87a2a; --a-sube: #08573a; --a-baja: #a42018; --a-prim: #4e101d; --a-sobre: #f8efe0;
+  --a-menu: #3c0b16; --a-menu-txt: #e2d0bb; --a-oro-logo: #e3b45f;
+  --sombra: 10px 10px 0 #1c1915;
   /* 5 nov: «light dark» en la raíz (Samsung Internet no repinta lo que dice llevar su modo oscuro) y lo de dentro, claro */
   color-scheme: light dark;
 }
@@ -86,7 +88,7 @@ html[data-dir="marmol"] .brillo.on { opacity: 1; }
 .estilo i { width: 14px; height: 14px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(0 0 0 / .25); transition: transform .3s var(--curva); }
 .estilo button[aria-pressed="true"] i { transform: scale(1.15); box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--oro); }
 .m-marmol { background: linear-gradient(135deg, #151817 50%, #e3b45f 50%); }
-.m-marfil { background: linear-gradient(135deg, #faf2e8 50%, #4e101d 50%); }
+.m-marfil { background: linear-gradient(135deg, #ede1cc 50%, #3c0b16 50%); }
 .m-borgona { background: linear-gradient(135deg, #4e101d 50%, #e3b45f 50%); }
 .idioma button { min-width: 30px; height: 26px; padding: 0 6px; border: 0; border-radius: 999px; background: transparent; font: 650 11.5px/1 var(--ui); letter-spacing: .06em; color: var(--txt2); cursor: pointer; }
 .idioma button[aria-pressed="true"] { background: var(--surf2); color: var(--txt); }
@@ -314,7 +316,7 @@ html[data-dir="marfil"] .ventana { border: 1px solid var(--txt); }
 /* móvil */
 .movil { position: absolute; right: -40px; bottom: -40px; width: 204px; aspect-ratio: 300 / 620; padding: 7px; border-radius: 34px; background: #0e0c0d; box-shadow: 0 0 0 1px #3a3336, 0 50px 90px -30px rgb(0 0 0 / .65); transform: translate3d(var(--mx, 0), var(--my, 0), 0); transition: transform .5s var(--curva); }
 html[data-dir="borgona"] .movil { background: #1a080d; box-shadow: 0 0 0 1px #6a1f2f, 0 50px 90px -30px rgb(0 0 0 / .7); }
-html[data-dir="marfil"] .movil { box-shadow: 0 0 0 1px #3a3336, 8px 8px 0 #1e1a17; }
+html[data-dir="marfil"] .movil { box-shadow: 0 0 0 1px #3a3336, 8px 8px 0 #1c1915; }
 .movil::before { content: ""; position: absolute; z-index: 6; top: 14px; left: 50%; width: 60px; height: 17px; margin-left: -30px; border-radius: 999px; background: #0e0c0d; }
 html[data-dir="borgona"] .movil::before { background: #1a080d; }
 .pant { position: absolute; inset: 7px; overflow: hidden; border-radius: 27px; background: var(--a-bg); color: var(--a-txt); font: 400 9px/1.4 var(--ui); }
@@ -339,6 +341,12 @@ html[data-dir="borgona"] .movil::before { background: #1a080d; }
 .pant .barra-nav .act { color: var(--a-prim); font-weight: 650; }
 .pant .barra-nav svg { width: 14px; height: 14px; fill: none; stroke: var(--a-txt2); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .pant .barra-nav .act svg { stroke: var(--a-prim); }
+/* Marfil (7 nov): la barra de abajo del móvil en vino, como en la app, con lo elegido en el oro del logo */
+html[data-dir="marfil"] .pant .barra-nav { background: var(--a-menu); border-top: 0; }
+html[data-dir="marfil"] .pant .barra-nav span { color: var(--a-menu-txt); }
+html[data-dir="marfil"] .pant .barra-nav svg { stroke: var(--a-menu-txt); }
+html[data-dir="marfil"] .pant .barra-nav .act { color: var(--a-oro-logo); }
+html[data-dir="marfil"] .pant .barra-nav .act svg { stroke: var(--a-oro-logo); }
 
 /* ---------- cinta y confianza ---------- */
 .cinta { position: relative; z-index: 1; overflow: hidden; padding: 16px 0; border-top: 1px solid color-mix(in srgb, var(--borde) 70%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--borde) 70%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
