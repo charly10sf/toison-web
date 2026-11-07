@@ -297,16 +297,6 @@
     $('#cinta').innerHTML = una + una;
   }
 
-  /* ================= cadena de oes (Borgoña) ================= */
-  function pintaCadenas() {
-    let s = '';
-    for (let i = 0; i < 13; i++) {
-      const x = 30 + i * 38, v = i % 2;
-      s += `<ellipse style="--i:${i}" pathLength="1" cx="${x}" cy="30" rx="${v ? 13 : 24}" ry="${v ? 21 : 14.8}"/>`;
-    }
-    $$('.cadena').forEach((c) => { c.innerHTML = `<svg viewBox="0 0 516 60" aria-hidden="true">${s}</svg>`; });
-  }
-
   /* ================= producto ================= */
   function pintaProducto() {
     $('#mini-precios').innerHTML = [
@@ -782,13 +772,12 @@
     el.classList.add('in');
     $$('[data-count]', el).forEach(cuenta);
     if (el.matches('[data-count]')) cuenta(el);
-    if (el.matches('.cadena')) el.classList.add('vista');
     if (el.matches('.mini-esc')) { miniVistas.add(el); $$('.esc', el).forEach((s) => s.classList.add('on')); }
     if (el.matches('.chat') && !chatVisto) { chatVisto = true; ponPregunta(preguntaActual, true); }
   }
   function revela() {
-    const els = $$('.r, .cadena, .mini-esc, .cifras');
-    if (reducir || !('IntersectionObserver' in window)) { els.forEach((e) => { e.classList.add('in'); if (e.matches('.cadena')) e.classList.add('vista'); if (e.matches('.mini-esc')) miniVistas.add(e); }); pintaEscenas(); return; }
+    const els = $$('.r, .mini-esc, .cifras');
+    if (reducir || !('IntersectionObserver' in window)) { els.forEach((e) => { e.classList.add('in'); if (e.matches('.mini-esc')) miniVistas.add(e); }); pintaEscenas(); return; }
     const io = new IntersectionObserver((ents) => ents.forEach((x) => { if (x.isIntersecting) { entra(x.target); io.unobserve(x.target); } }), { rootMargin: '0px 0px -8% 0px' });
     $$('.r').forEach((e, i) => e.style.setProperty('--d', ((i % 4) * 0.08).toFixed(2) + 's'));
     els.forEach((e) => io.observe(e));
@@ -854,11 +843,12 @@
   }
 
   /* ================= estilo ================= */
-  const DIRS = ['marmol', 'marfil', 'borgona'];
+  const DIRS = ['marmol', 'marfil']; // Borgoña se quitó el 7 nov, como en la app: quien la tenía, a Marfil
   function ponDir(d, guardar) {
+    if (d === 'borgona') { d = 'marfil'; guardar = true; }
     if (!DIRS.includes(d)) d = 'marmol';
     html.dataset.dir = d;
-    $('meta[name="theme-color"]').content = { marmol: '#151817', marfil: '#ede1cc', borgona: '#4e101d' }[d];
+    $('meta[name="theme-color"]').content = { marmol: '#151817', marfil: '#ede1cc' }[d];
     // Marfil es claro. 5 nov: «only light» no le vale a Samsung Internet, que la repintaba igual; «light dark» le dice que
     // la web lleva su propio modo oscuro y así no la toca (los colores de Marfil son suyos, así que sigue clara)
     $('meta[name="color-scheme"]').content = d === 'marfil' ? 'light dark' : 'dark';
@@ -937,7 +927,6 @@
   if (DIRS.includes(h)) dir = h;
   lang = l;
   ponDir(dir, false);
-  pintaCadenas();
   aplicaTextos();
   pintaTodo();
   html.classList.remove('en-pend');

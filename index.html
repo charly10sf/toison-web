@@ -12,7 +12,7 @@
      ella del modo oscuro y no la toca, y Marfil sigue clara porque sus colores son suyos) -->
 <meta name="color-scheme" content="dark">
 <!-- Estilo e idioma guardados, puestos antes de pintar: sin destello de Mármol ni de español al cargar -->
-<script>try{var h=document.documentElement,q=location.hash.slice(1),d=localStorage.getItem('toison-estilo'),l=localStorage.getItem('toison-lang'),D=/^(marmol|marfil|borgona)$/;if(D.test(q))d=q;if(D.test(d||'')){h.setAttribute('data-dir',d);document.querySelector('meta[name="color-scheme"]').content=d==='marfil'?'light dark':'dark';document.querySelector('meta[name="theme-color"]').content={marmol:'#151817',marfil:'#faf2e8',borgona:'#4e101d'}[d];}if(l!=='en'&&l!=='es')l=(navigator.language||'').toLowerCase().indexOf('en')===0?'en':'es';h.lang=l;if(l==='en'){h.className+=' en-pend';setTimeout(function(){h.classList.remove('en-pend')},2500);}}catch(e){}</script>
+<script>try{var h=document.documentElement,q=location.hash.slice(1),d=localStorage.getItem('toison-estilo'),l=localStorage.getItem('toison-lang'),D=/^(marmol|marfil)$/;if(q==='borgona')q='marfil';if(d==='borgona'){d='marfil';localStorage.setItem('toison-estilo',d);}if(D.test(q))d=q;if(D.test(d||'')){h.setAttribute('data-dir',d);document.querySelector('meta[name="color-scheme"]').content=d==='marfil'?'light dark':'dark';document.querySelector('meta[name="theme-color"]').content={marmol:'#151817',marfil:'#ede1cc'}[d];}if(l!=='en'&&l!=='es')l=(navigator.language||'').toLowerCase().indexOf('en')===0?'en':'es';h.lang=l;if(l==='en'){h.className+=' en-pend';setTimeout(function(){h.classList.remove('en-pend')},2500);}}catch(e){}</script>
 <link rel="canonical" href="https://toison.es/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Toisón">
@@ -32,7 +32,7 @@
 <link rel="apple-touch-icon" href="toison-icono.webp">
 <link rel="preload" href="fonts/ibarra.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/web.css?v=20261107a">
+<link rel="stylesheet" href="css/web.css?v=20261107d">
 </head>
 <body>
 
@@ -70,7 +70,6 @@
         <div class="estilo" role="group" aria-label="Estilo" data-t-aria="estiloAria">
           <button type="button" data-dir="marmol" aria-pressed="true" aria-label="Mármol" data-t-aria="marmolAria"><i class="m-marmol"></i></button>
           <button type="button" data-dir="marfil" aria-pressed="false" aria-label="Marfil" data-t-aria="marfilAria"><i class="m-marfil"></i></button>
-          <button type="button" data-dir="borgona" aria-pressed="false" aria-label="Borgoña" data-t-aria="borgonaAria"><i class="m-borgona"></i></button>
         </div>
         <span class="sep" aria-hidden="true"></span>
         <div class="idioma" role="group" aria-label="Idioma" data-t-aria="idiomaAria">
@@ -89,7 +88,6 @@
       <div class="estilo" role="group" aria-label="Estilo" data-t-aria="estiloAria">
         <button type="button" data-dir="marmol" aria-pressed="true" aria-label="Mármol" data-t-aria="marmolAria"><i class="m-marmol"></i></button>
         <button type="button" data-dir="marfil" aria-pressed="false" aria-label="Marfil" data-t-aria="marfilAria"><i class="m-marfil"></i></button>
-        <button type="button" data-dir="borgona" aria-pressed="false" aria-label="Borgoña" data-t-aria="borgonaAria"><i class="m-borgona"></i></button>
       </div>
       <div class="idioma" role="group" aria-label="Idioma" data-t-aria="idiomaAria">
         <button type="button" data-lang="es" aria-pressed="true" lang="es">ES</button>
@@ -121,15 +119,6 @@
         </div>
         <p class="lema" data-t="croLema">Algo de oro, bien guardado. Tu cartera, entera y explicada.</p>
       </div>
-      <!-- Borgoña: el sello que se dibuja y se rellena, TOISÓN letra a letra y la orla -->
-      <div class="esc-borgona" aria-hidden="true">
-        <div class="sello-h"><div class="medalla">
-          <img src="toison-sello.webp" width="420" height="420" alt="" loading="lazy" decoding="async">
-          <svg class="vec" viewBox="0 0 420 420"><g transform="translate(210 235) scale(2.08)"><path class="vo" pathLength="2" d="M-80.9 0A80.9 50 0 1 1 80.9 0A80.9 50 0 1 1 -80.9 0ZM-54.1 0A54.1 46.4 0 1 0 54.1 0A54.1 46.4 0 1 0 -54.1 0Z"/><path class="vt" pathLength="2" d="M-61.15 -76L61.15 -76L61.15 -66.7L16.25 -66.7L9.05 -57L12.25 60L20.5 60L20.5 67.2L-20.5 67.2L-20.5 60L-12.25 60L-9.05 -57L-16.25 -66.7L-61.15 -66.7Z"/></g></svg>
-        </div></div>
-        <p class="palabra-b"><span style="--i:0">T</span><span style="--i:1">O</span><span style="--i:2">I</span><span style="--i:3">S</span><span style="--i:4">Ó</span><span style="--i:5">N</span></p>
-        <div class="orla"><i></i></div>
-      </div>
     </div>
 
     <h1 data-t="h1" data-split>Todas tus inversiones, <em>en un solo sitio.</em></h1>
@@ -157,7 +146,6 @@
 
     <div class="demo-wrap" role="group" aria-label="La app de Toisón, dibujada con datos de ejemplo" data-t-aria="demoAria">
       <div class="demo" id="demo">
-        <svg class="orla-fondo" viewBox="-82 -52 164 104" aria-hidden="true"><use href="#o"/></svg>
         <div class="ventana" id="ventana">
           <div class="barra-nav-web" aria-hidden="true">
             <span class="luces"><i></i><i></i><i></i></span>
@@ -219,7 +207,6 @@
 
 <!-- ========== POR QUÉ TOISÓN: la historia del nombre, con escenas que cambian al bajar ========== -->
 <section id="nombre" class="seccion nombre mito alt" aria-labelledby="t-nombre">
-  <div class="cadena" aria-hidden="true"></div>
   <div class="cont">
     <div class="cab-sec r">
       <p class="k" data-rom="I" data-t="kNombre">Por qué Toisón</p>
@@ -419,7 +406,6 @@
 
 <!-- ========== HACIENDA: la hoja paso a paso, el simulador por tramos y el año en cuatro fechas ========== -->
 <section id="hacienda" class="seccion renta" aria-labelledby="t-renta">
-  <div class="cadena" aria-hidden="true"></div>
   <div class="cont">
     <div class="cab-sec r">
       <p class="k" data-rom="IV" data-t="kRenta">Hacienda</p>
@@ -524,7 +510,6 @@
 
 <!-- ========== SEGURIDAD ========== -->
 <section id="seguridad" class="seccion seguridad" aria-labelledby="t-seg">
-  <div class="cadena" aria-hidden="true"></div>
   <div class="cont">
     <div class="cab-sec r">
       <p class="k" data-rom="VI" data-t="kSeg">Seguridad</p>
@@ -609,7 +594,6 @@
 
 <!-- ========== PREGUNTAS ========== -->
 <section id="preguntas" class="seccion preguntas alt" aria-labelledby="t-faq">
-  <div class="cadena" aria-hidden="true"></div>
   <div class="cont">
     <div class="cab-sec r">
       <p class="k" data-rom="IX" data-t="kFaq">Preguntas</p>
@@ -690,7 +674,7 @@
   </div>
 </footer>
 
-<script src="js/en.js?v=20261107a" defer></script>
-<script src="js/web.js?v=20261107a" defer></script>
+<script src="js/en.js?v=20261107d" defer></script>
+<script src="js/web.js?v=20261107d" defer></script>
 </body>
 </html>
