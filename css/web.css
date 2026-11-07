@@ -161,7 +161,7 @@ html.listo .hero h1 .pal { animation-delay: calc(var(--i) * 35ms); }
 
 /* Mármol: el relieve que se dibuja y respira */
 .esc-marmol { --rw: min(100%, 780px, max(440px, calc((100svh - 440px) * 1.75))); }
-.relieve { position: relative; width: var(--rw); aspect-ratio: 1120 / 640; margin: calc(var(--rw) / 1.75 * -.06) auto calc(var(--rw) / 1.75 * -.13); -webkit-mask-image: radial-gradient(closest-side, #000 52%, rgb(0 0 0 / .6) 72%, transparent 98%); mask-image: radial-gradient(closest-side, #000 52%, rgb(0 0 0 / .6) 72%, transparent 98%); }
+.relieve { position: relative; width: var(--rw); aspect-ratio: 1120 / 640; margin: calc(var(--rw) / 1.75 * -.06) auto calc(var(--rw) / 1.75 * -.13); } /* sin máscara desde el Mármol G: la imagen ya no trae fondo (el relieve y la palabra sobre transparente) */
 .relieve .lento { position: absolute; inset: 0; animation: respira 18s ease-in-out infinite alternate; }
 @keyframes respira { from { transform: scale(1); } to { transform: scale(1.05) translateY(-1%); } }
 .relieve img { position: absolute; inset: 0; width: 100%; height: 100%; animation: funde 1s ease .95s both; }
