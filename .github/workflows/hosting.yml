@@ -1,0 +1,21 @@
+# toison.es en Firebase Hosting (0.8.3): al cambiar la web en main, se vuelve a montar el sitio entero (esta web en la raíz
+# y la app en /app/) con la Action «Hosting» del repo de la app (charly10sf/Inversiones), que es la que sabe hacerlo.
+# Solo publica si la variable HOSTING_EN_VIVO de ESTE repositorio vale «si» y está el secreto FIREBASE_HOSTING (el mismo
+# que en el repo de la app). Hasta la mudanza, no hace nada. Mezclar esta rama a main solo cuando la 0.8.3 (que trae
+# .github/workflows/hosting.yml) ya esté en main del repo de la app.
+name: Hosting
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  toison-es:
+    uses: charly10sf/Inversiones/.github/workflows/hosting.yml@main
+    with:
+      canal: live
+    secrets: inherit
