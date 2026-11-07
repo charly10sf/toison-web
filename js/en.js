@@ -176,7 +176,7 @@ window.TEXTOS_EN = {
 };
 
 /* Páginas legales (privacidad/ y borrar-cuenta/): las lee js/legal.js; el español está en cada página (data-t).
-   Generado desde un solo origen con el español al lado: si cambias un texto, cámbialo en los dos sitios. */
+   Si cambias un texto, cámbialo en la página y aquí con la misma clave. */
 Object.assign(window.TEXTOS_EN, {
   bcTitle: "Delete your account · Toisón",
   bcDesc: "How to delete your Toisón account and everything it stores, from the app or by email, what is deleted and how long it takes.",
