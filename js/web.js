@@ -71,7 +71,6 @@
     aplicaTextos();
     pintaTodo();
     if (guardar) { try { localStorage.setItem('toison-lang', lang); } catch (e) {} }
-    requestAnimationFrame(() => { vetasAlto = 0; generaVetas(); });
   }
   $$('.idioma button').forEach((b) => b.addEventListener('click', () => { if (b.dataset.lang !== lang) ponLang(b.dataset.lang, true); }));
 
@@ -629,7 +628,6 @@
     });
     caja.addEventListener('pointerleave', () => { tip.hidden = true; });
     caja.addEventListener('click', (e) => { const p = e.target.closest('path'); if (p && p.classList.contains('con')) { paisSel = p.dataset.c; tip.hidden = true; pintaMapa(); } });
-    requestAnimationFrame(() => { vetasAlto = 0; generaVetas(); });
   }
   function pintaFicha() {
     const c = paisSel, b = BOLSAS[c], t = TUYO[c];
@@ -794,56 +792,6 @@
     els.forEach((e) => io.observe(e));
   }
 
-  /* ================= vetas del mármol: por toda la página, crecen al bajar ================= */
-  let vetas = [], vetasAlto = 0, vetasAncho = 0;
-  function generaVetas() {
-    const svg = $('.vetas');
-    if (html.dataset.dir !== 'marmol') { svg.innerHTML = ''; vetas = []; vetasAlto = 0; return; }
-    const W = html.clientWidth, H = html.scrollHeight;
-    if (Math.abs(H - vetasAlto) < 4 && W === vetasAncho && svg.childElementCount) return;
-    vetasAlto = H; vetasAncho = W;
-    svg.setAttribute('width', W); svg.setAttribute('height', H); svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-    const rnd = azar(1430);
-    const n = Math.round(H / 260);
-    let out = '';
-    const veta = (x, y, ang, largo, tipo, ancho) => {
-      let d = `M${x.toFixed(1)} ${y.toFixed(1)}`, minY = y, maxY = y;
-      const ramas = [];
-      const pasos = Math.max(6, Math.round(largo / 18));
-      for (let i = 0; i < pasos; i++) {
-        ang += (rnd() - 0.5) * 0.55;
-        const l = 12 + rnd() * 14;
-        x += Math.cos(ang) * l; y += Math.sin(ang) * l;
-        d += `L${x.toFixed(1)} ${y.toFixed(1)}`;
-        minY = Math.min(minY, y); maxY = Math.max(maxY, y);
-        if (tipo !== 'v-f' && rnd() < 0.05) ramas.push([x, y, ang + (rnd() < 0.5 ? -1 : 1) * (0.5 + rnd() * 0.6)]);
-      }
-      vetas.push({ top: minY, bot: maxY });
-      out += `<path class="${tipo}" pathLength="1" stroke-width="${ancho}" d="${d}"/>`;
-      ramas.forEach(([rx, ry, ra]) => veta(rx, ry, ra, 120 + rnd() * 260, 'v-f', 0.6));
-    };
-    vetas = [];
-    for (let i = 0; i < n; i++) {
-      const tipo = rnd() < 0.18 ? 'v-o' : 'v-b';
-      const y = (i / n) * H + rnd() * 200;
-      const desdeIzq = rnd() < 0.5;
-      const x = desdeIzq ? -20 + rnd() * W * 0.3 : W * 0.7 + rnd() * W * 0.3 + 20;
-      const ang = desdeIzq ? 0.5 + rnd() * 0.6 : Math.PI - 0.5 - rnd() * 0.6;
-      veta(x, y, ang, 500 + rnd() * 900, tipo, tipo === 'v-o' ? 1.3 : 0.9 + rnd() * 0.5);
-    }
-    svg.innerHTML = out;
-    actualizaVetas();
-  }
-  function actualizaVetas() {
-    if (!vetas.length) return;
-    const ps = $('.vetas').children, abajo = scrollY + innerHeight * 0.95;
-    for (let i = 0; i < ps.length; i++) {
-      const v = vetas[i];
-      if (!v) continue;
-      const p = reducir ? 1 : Math.max(0, Math.min(1, (abajo - v.top) / (v.bot - v.top + innerHeight * 0.5)));
-      if (Math.abs((v.p ?? -1) - p) > 0.004) { v.p = p; ps[i].style.strokeDashoffset = 1 - p; }
-    }
-  }
   const brillo = $('.brillo');
   if (fino && !reducir) {
     let raf = 0;
@@ -858,13 +806,11 @@
   function ponDir(d, guardar) {
     if (!DIRS.includes(d)) d = 'marmol';
     html.dataset.dir = d;
-    $('meta[name="theme-color"]').content = { marmol: '#151817', marfil: '#faf2e8', borgona: '#4e101d' }[d];
+    $('meta[name="theme-color"]').content = { marmol: '#000000', marfil: '#faf2e8', borgona: '#4e101d' }[d];
     // Marfil es claro. 5 nov: «only light» no le vale a Samsung Internet, que la repintaba igual; «light dark» le dice que
     // la web lleva su propio modo oscuro y así no la toca (los colores de Marfil son suyos, así que sigue clara)
     $('meta[name="color-scheme"]').content = d === 'marfil' ? 'light dark' : 'dark';
     $$('.estilo button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.dir === d));
-    vetasAlto = 0;
-    requestAnimationFrame(generaVetas);
     if (guardar) { try { localStorage.setItem('toison-estilo', d); } catch (e) {} }
   }
   $$('.estilo button').forEach((b) => b.addEventListener('click', () => {
@@ -900,13 +846,12 @@
     pend = false;
     const max = html.scrollHeight - innerHeight;
     barra.style.transform = `scaleX(${max > 0 ? Math.min(1, scrollY / max).toFixed(4) : 0})`;
-    actualizaVetas();
     mueveBarco();
     if (innerWidth > 900) ponCap(quePaso('.cap', 'h3'));
   }
   addEventListener('scroll', () => { if (!pend) { pend = true; requestAnimationFrame(alDesplazar); } }, { passive: true });
   let tRes = 0;
-  addEventListener('resize', () => { clearTimeout(tRes); tRes = setTimeout(() => { generaVetas(); alDesplazar(); }, 200); });
+  addEventListener('resize', () => { clearTimeout(tRes); tRes = setTimeout(() => { alDesplazar(); }, 200); });
 
   /* ================= todo lo que se pinta con textos ================= */
   function pintaTodo() {
@@ -947,6 +892,4 @@
   alDesplazar();
   // cuando acaba la entrada de la portada, el titular ya no espera al escudo (cambio de idioma o de estilo)
   setTimeout(() => html.classList.add('listo'), reducir ? 0 : 3200);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { vetasAlto = 0; generaVetas(); });
-  addEventListener('load', () => { vetasAlto = 0; generaVetas(); });
 })();

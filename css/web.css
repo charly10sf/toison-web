@@ -8,11 +8,11 @@
   --ancho: 1200px;
   --curva: cubic-bezier(.2, .7, .2, 1);
   --radio: 999px; --radio-c: 18px;
-  --bg: #151817; --bg2: #101312; --surf: #1c1f1e; --surf2: #272b29; --borde: #353a38;
-  --txt: #f2ede6; --txt2: #c8bfb7; --oro: #e3b45f; --sube: #6fd6a1; --baja: #ff6b62;
-  --prim: #e3b45f; --sobre-prim: #2a0e14; --sim-o: #f6ead5; --sim-t: #e3b45f;
-  --nav-bg: rgb(21 24 23 / .74); --nav-linea: rgb(255 255 255 / .08);
-  --a-bg: #141113; --a-surf: #1e1a1c; --a-surf2: #292426; --a-borde: #3a3336; --a-txt: #f2ede6; --a-txt2: #c8bfb7; --a-graf: #e3b45f; --a-sube: #6fd6a1; --a-baja: #ff6b62; --a-prim: #f6ead5; --a-sobre: #2a0e14;
+  --bg: #000000; --bg2: #000000; --surf: #111111; --surf2: #1c1c1c; --borde: #313131;
+  --txt: #f8f6f2; --txt2: #d2cdc5; --oro: #e3b45f; --sube: #55e8a0; --baja: #ff6b62;
+  --prim: #e3b45f; --sobre-prim: #140d00; --sim-o: #f8f6f2; --sim-t: #e3b45f;
+  --nav-bg: rgb(0 0 0 / .72); --nav-linea: rgb(255 255 255 / .08);
+  --a-bg: #000000; --a-surf: #111111; --a-surf2: #1c1c1c; --a-borde: #313131; --a-txt: #f8f6f2; --a-txt2: #d2cdc5; --a-graf: #e3b45f; --a-sube: #55e8a0; --a-baja: #ff6b62; --a-prim: #e3b45f; --a-sobre: #140d00;
   --sombra: 0 60px 120px -40px rgb(0 0 0 / .7), 0 0 0 1px rgb(255 255 255 / .06);
   color-scheme: dark;
 }
@@ -57,13 +57,10 @@ button { font: inherit; color: inherit; }
 .ejemplo { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 4px; background: var(--a-surf2); color: var(--a-txt2); font: 650 11px/1.4 var(--ui); letter-spacing: .08em; text-transform: uppercase; }
 main { position: relative; z-index: 1; }
 
-/* ---------- mármol: vetas y brillo ---------- */
-.vetas { position: absolute; z-index: 0; top: 0; left: 0; pointer-events: none; display: none; -webkit-mask-image: linear-gradient(90deg, #000 0, #000 4%, rgb(0 0 0 / .2) 18%, rgb(0 0 0 / .2) 82%, #000 96%); mask-image: linear-gradient(90deg, #000 0, #000 4%, rgb(0 0 0 / .2) 18%, rgb(0 0 0 / .2) 82%, #000 96%); }
-html[data-dir="marmol"] .vetas { display: block; }
-.vetas path { fill: none; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
-.vetas .v-b { stroke: #e9e4dc; opacity: .16; }
-.vetas .v-f { stroke: #e9e4dc; opacity: .09; }
-.vetas .v-o { stroke: #e3b45f; opacity: .55; }
+/* ---------- mármol G (AMOLED con vetas finas): la misma textura que la app; fija, sin costuras ---------- */
+html[data-dir="marmol"] body::before { content: ""; position: fixed; z-index: 0; inset: 0; pointer-events: none; background: linear-gradient(118deg, transparent 28%, rgb(255 255 255 / .045) 40%, rgb(255 255 255 / .085) 46%, rgb(255 255 255 / .03) 52%, transparent 64%), radial-gradient(120% 60% at 30% -10%, rgb(255 255 255 / .07), transparent 60%), url(../marmol-g.webp) center top / cover no-repeat #000; }
+@media (min-width: 900px) { html[data-dir="marmol"] body::before { background-image: linear-gradient(118deg, transparent 28%, rgb(255 255 255 / .045) 40%, rgb(255 255 255 / .085) 46%, rgb(255 255 255 / .03) 52%, transparent 64%), radial-gradient(120% 60% at 30% -10%, rgb(255 255 255 / .07), transparent 60%), url(../marmol-g-pc.webp); } }
+html[data-dir="marmol"] .boton { background: linear-gradient(180deg, #f7dfa8 0%, #e3b45f 55%, #b5863a 100%); }
 .brillo { position: fixed; z-index: 0; top: 0; left: 0; width: 720px; height: 720px; margin: -360px 0 0 -360px; border-radius: 50%; pointer-events: none; background: radial-gradient(circle, rgb(227 180 95 / .09), transparent 60%); opacity: 0; transition: opacity .6s; }
 html[data-dir="marmol"] .brillo.on { opacity: 1; }
 
@@ -85,7 +82,7 @@ html[data-dir="marmol"] .brillo.on { opacity: 1; }
 .estilo button { display: grid; place-items: center; width: 26px; height: 26px; padding: 0; border: 0; border-radius: 50%; background: transparent; cursor: pointer; }
 .estilo i { width: 14px; height: 14px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(0 0 0 / .25); transition: transform .3s var(--curva); }
 .estilo button[aria-pressed="true"] i { transform: scale(1.15); box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--oro); }
-.m-marmol { background: linear-gradient(135deg, #151817 50%, #e3b45f 50%); }
+.m-marmol { background: linear-gradient(135deg, #000 50%, #e3b45f 50%); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .28); }
 .m-marfil { background: linear-gradient(135deg, #faf2e8 50%, #4e101d 50%); }
 .m-borgona { background: linear-gradient(135deg, #4e101d 50%, #e3b45f 50%); }
 .idioma button { min-width: 30px; height: 26px; padding: 0 6px; border: 0; border-radius: 999px; background: transparent; font: 650 11.5px/1 var(--ui); letter-spacing: .06em; color: var(--txt2); cursor: pointer; }
@@ -393,7 +390,6 @@ html[data-dir="marfil"] .cinta { border-color: var(--txt); }
   .spark .ln, .spark .ar, .reparto span, .medidor span, .anillo .lleno, .tramo i::after, .pantalla { animation: none; stroke-dashoffset: 0; opacity: 1; }
   .k .punto, .spark .halo { animation: none; }
   .ventana, .movil { transition: none; transform: none !important; }
-  .vetas path { stroke-dashoffset: 0 !important; }
 }
 @media (max-width: 350px) { .logo b { display: none; } }
 
