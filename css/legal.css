@@ -42,6 +42,7 @@ a:hover { text-decoration-thickness: 2px; }
 .idioma button[aria-pressed="true"] { background: var(--prim); color: var(--sobre-prim); }
 html[data-dir="marfil"] .idioma, html[data-dir="marfil"] .idioma button { border-radius: 8px; }
 .cab nav a { color: var(--txt2); text-decoration: none; font-size: 14.5px; padding: 12px 10px; border-radius: 8px; }
+@media (min-width: 380px) { .cab nav a { white-space: nowrap; } }
 .cab nav a:hover, .cab nav a[aria-current="page"] { color: var(--txt); background: var(--surf); }
 
 .cont { width: min(760px, 100% - 40px); margin: 0 auto; }
