@@ -1,0 +1,102 @@
+/* Páginas de texto de toison.es (privacidad, borrar la cuenta): los dos estilos de la web, sin nada más que leer.
+   Las fuentes y los colores son los de web.css (Design System de Toisón 1.3); aquí solo lo que hace falta para leer. */
+@font-face { font-family: "Ibarra Real Nova"; src: url(../fonts/ibarra.woff2) format("woff2"); font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter"; src: url(../fonts/inter.woff2) format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+
+/* Mármol G y Marfil: los mismos tokens que css/web.css (7 nov); Borgoña ya no existe */
+:root {
+  --marca: "Ibarra Real Nova", Georgia, "Times New Roman", serif;
+  --ui: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radio-c: 18px;
+  --bg: #000000; --surf: #111111; --surf2: #1c1c1c; --borde: #313131;
+  --txt: #f8f6f2; --txt2: #d2cdc5; --oro: #e3b45f; --baja: #ff6b62;
+  --prim: #e3b45f; --sobre-prim: #140d00; --sim-o: #f8f6f2; --sim-t: #e3b45f;
+  color-scheme: dark;
+}
+html[data-dir="marfil"] {
+  --radio-c: 10px;
+  --bg: #ede1cc; --surf: #fdf9f2; --surf2: #eee3d0; --borde: #dccbb0;
+  --txt: #1c1915; --txt2: #4a443d; --oro: #7a5716; --baja: #a42018;
+  --prim: #4e101d; --sobre-prim: #f8efe0; --sim-o: #4e101d; --sim-t: #a87a2a;
+  color-scheme: light dark;
+}
+html[data-dir="marfil"] body { color-scheme: light; }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--txt); font: 400 16.5px/1.65 var(--ui); }
+a { color: var(--oro); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--oro); outline-offset: 3px; border-radius: 4px; }
+
+.cab { border-bottom: 1px solid var(--borde); }
+.cab .cont { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+.logo { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; color: var(--txt); min-height: 48px; }
+.logo svg { width: 28px; height: auto; flex: none; }
+.logo b { font: 600 16px/1 var(--marca); letter-spacing: .16em; }
+.s-o { fill: var(--sim-o); } .s-t { fill: var(--sim-t); }
+.cab-der { display: flex; align-items: center; gap: 10px; }
+.cab nav { display: flex; gap: 4px; }
+.idioma { display: inline-flex; border: 1px solid var(--borde); border-radius: 999px; padding: 2px; }
+.idioma button { min-height: 40px; min-width: 44px; padding: 0 12px; border: 0; border-radius: 999px; background: none; color: var(--txt2); font: 600 13px/1 var(--ui); cursor: pointer; }
+.idioma button[aria-pressed="true"] { background: var(--prim); color: var(--sobre-prim); }
+html[data-dir="marfil"] .idioma, html[data-dir="marfil"] .idioma button { border-radius: 8px; }
+.cab nav a { color: var(--txt2); text-decoration: none; font-size: 14.5px; padding: 12px 10px; border-radius: 8px; }
+.cab nav a:hover, .cab nav a[aria-current="page"] { color: var(--txt); background: var(--surf); }
+
+.cont { width: min(760px, 100% - 40px); margin: 0 auto; }
+main { padding: 48px 0 72px; }
+.antetitulo { color: var(--oro); font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 12px; }
+h1 { font: 600 clamp(34px, 6vw, 48px)/1.08 var(--marca); letter-spacing: -.01em; margin: 0 0 18px; text-wrap: balance; }
+.entradilla { font-size: 18.5px; color: var(--txt2); margin: 0 0 12px; max-width: 62ch; }
+.fecha { color: var(--txt2); font-size: 14px; margin: 0 0 36px; }
+h2 { font: 600 26px/1.2 var(--marca); margin: 48px 0 12px; padding-top: 24px; border-top: 1px solid var(--borde); scroll-margin-top: 16px; }
+h3 { font-size: 17px; font-weight: 650; margin: 24px 0 6px; }
+p, li { max-width: 68ch; }
+ul, ol { padding-left: 22px; }
+li { margin: 6px 0; }
+li::marker { color: var(--oro); }
+strong { font-weight: 650; }
+
+.caja { background: var(--surf); border: 1px solid var(--borde); border-radius: var(--radio-c); padding: 20px 22px; margin: 22px 0; }
+.caja > :first-child { margin-top: 0; } .caja > :last-child { margin-bottom: 0; }
+.caja.oro { border-color: color-mix(in srgb, var(--oro) 55%, var(--borde)); }
+
+.indice { columns: 2; column-gap: 32px; padding-left: 22px; margin: 0; font-size: 15px; }
+.indice li { break-inside: avoid; margin: 4px 0; }
+.indice a { color: var(--txt); text-decoration: none; display: inline-block; padding: 6px 0; }
+.indice a:hover { color: var(--oro); }
+
+.tabla { width: 100%; overflow-x: auto; margin: 18px 0; border: 1px solid var(--borde); border-radius: var(--radio-c); }
+table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14.5px; line-height: 1.5; }
+th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--borde); }
+th { background: var(--surf2); font-weight: 650; font-size: 13px; letter-spacing: .02em; }
+tr:last-child td { border-bottom: 0; }
+td:first-child { font-weight: 600; }
+
+.pasos { counter-reset: paso; list-style: none; padding: 0; }
+.pasos li { counter-increment: paso; position: relative; padding-left: 48px; margin: 16px 0; }
+.pasos li::before { content: counter(paso); position: absolute; left: 0; top: -2px; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--prim); color: var(--sobre-prim); font: 700 15px/1 var(--ui); }
+
+.boton { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 22px; border-radius: 999px; background: var(--prim); color: var(--sobre-prim); font-weight: 650; text-decoration: none; }
+html[data-dir="marmol"] .boton { background: linear-gradient(180deg, #f7dfa8 0%, #e3b45f 55%, #b5863a 100%); }
+html[data-dir="marfil"] .boton { border-radius: 8px; }
+.boton:hover { filter: brightness(1.06); }
+
+.pie { border-top: 1px solid var(--borde); padding: 28px 0 40px; color: var(--txt2); font-size: 14px; }
+.pie .cont { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; }
+.pie a { color: var(--txt2); padding: 12px 0; display: inline-block; }
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  main { padding: 32px 0 56px; }
+  .indice { columns: 1; }
+  .cab nav a { padding: 12px 8px; font-size: 14px; }
+  .logo b { display: none; }
+  .idioma button { padding: 0 9px; min-width: 40px; }
+}
+@media print {
+  .cab nav, .pie, .indice { display: none; }
+  body { background: #fff; color: #000; }
+  .caja, .tabla { border-color: #999; }
+}
