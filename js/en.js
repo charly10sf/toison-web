@@ -3,7 +3,7 @@ window.TEXTOS_EN = {
   metaDesc: 'Toisón brings together your funds, shares, ETFs, gold and crypto from any broker, with up-to-date prices, an AI that reads the market and what it would mean for your Spanish tax return. Your portfolio, encrypted with your password.',
   salta: 'Skip to content', logoAria: 'Toisón, home', menuAria: 'Sections',
   mProducto: 'Product', mIA: 'The AI', mHacienda: 'Taxes', mSeguridad: 'Security', mPro: 'Pro', mPreguntas: 'FAQ', mMercados: 'Markets',
-  estiloAria: 'Style', marmolAria: 'Marble', marfilAria: 'Ivory', borgonaAria: 'Burgundy', idiomaAria: 'Language',
+  estiloAria: 'Style', marmolAria: 'Marble', marfilAria: 'Ivory', idiomaAria: 'Language',
   entrar: 'Log in', pedir: 'Request access', menuBtnAria: 'Menu', portadaAria: 'Home',
   kHero: 'Early access · Android coming soon · Free to start',
   h1: 'All your investments, <em>in one place.</em>',
