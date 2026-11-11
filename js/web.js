@@ -160,7 +160,7 @@
         ${pos('RF', '#8a6216', L('Fondo de renta fija', 'Bond fund'), 'MyInvestor · ' + L('Fondo', 'Fund'), 9643.06, 0.12)}
       </div></div>`,
     paso: () => `<div class="pantalla p-paso">
-      <div class="tarj"><div class="et"><span>${L('Noviembre · tu mes', 'November · your month')}</span><span>${L('1 de 4 hecho', '1 of 4 done')}</span></div>
+      <div class="tarj"><div class="et"><span>${L('Noviembre · tu mes', 'November · your month')}</span><span>${L('4 fechas', '4 dates')}</span></div>
         <div style="display:flex;gap:14px;align-items:center;margin-top:8px">${anillo(0.25)}<div><b style="font-size:14px">${L('Lo que hay que vigilar', 'What to keep an eye on')}</b><div style="font-size:11px;color:var(--a-txt2)">${L('Lo decides tú. Toisón solo lleva la cuenta.', 'Your call. Toisón just keeps track.')}</div></div></div>
         <div class="check ok"><i></i><div>${L('Tu aportación programada: ' + eur(200) + ' al fondo mundial', 'Your scheduled contribution: ' + eur(200) + ' to the global fund')}<small>${L('En la renta: nada', 'Tax effect: none')}</small></div></div>
         <div class="check"><i></i><div>${L('Resultados de dos empresas de tu ETF', 'Earnings from two companies in your ETF')}<small>${L('Jueves 12 y martes 17', 'Thursday 12 and Tuesday 17')}</small></div></div>
@@ -246,14 +246,14 @@
     not: '<path d="M5 5h11v14H7a2 2 0 0 1-2-2zM16 9h3v8a2 2 0 0 1-2 2"/><path d="M8 9h5M8 12h5M8 15h3"/>',
     exp: '<path d="M12 4l2.4 5 5.4.6-4 3.7 1.1 5.3L12 16l-4.9 2.6 1.1-5.3-4-3.7 5.4-.6z"/>'
   };
-  const navApp = (act) => '<div class="barra-nav">' + [['ini', 'Hoy', 'Today'], ['paso', 'Tu plan', 'Plan'], ['merc', 'Mercados', 'Markets'], ['not', 'Noticias', 'News'], ['exp', 'Ideas', 'Ideas']]
+  const navApp = (act) => '<div class="barra-nav">' + [['ini', 'Hoy', 'Today'], ['paso', 'Calendario', 'Calendar'], ['merc', 'Mercados', 'Markets'], ['not', 'Noticias', 'News'], ['exp', 'Ideas', 'Ideas']]
     .map(([k, es, en], i) => `<span class="${i === act ? 'act' : ''}"><svg viewBox="0 0 24 24">${ICON[k]}</svg>${L(es, en)}</span>`).join('') + '</div>';
   const ESTADO = '<div class="estado"><span>17:35</span><span><svg viewBox="0 0 18 11"><rect x="0" y="7" width="3" height="4" rx=".7"/><rect x="5" y="5" width="3" height="6" rx=".7"/><rect x="10" y="2.5" width="3" height="8.5" rx=".7"/><rect x="15" y="0" width="3" height="11" rx=".7"/></svg></span></div>';
   const yo = '<span class="yo"><svg viewBox="-82 -78 164 147" aria-hidden="true"><use class="s-o" href="#o"/><use class="s-t" href="#t"/></svg></span>';
   function pintaMovil() {
     $('#movil').innerHTML = `<div class="pant">${ESTADO}<div class="capa">
-      <div class="hola"><div><small>${L('Noviembre', 'November')}</small><b>${L('Tu plan', 'Your plan')}</b></div>${yo}</div>
-      <div class="tarj" style="display:flex;align-items:center;gap:8px">${anillo(0.25)}<div><b style="font-size:11px">${L('1 de 4 hecho', '1 of 4 done')}</b><small style="display:block;color:var(--a-txt2)">${L('Tu mes', 'Your month')}</small></div><span class="ejemplo" style="margin-left:auto;font-size:7px;padding:2px 5px">${L('Ejemplo', 'Example')}</span></div>
+      <div class="hola"><div><small>${L('Noviembre', 'November')}</small><b>${L('Calendario', 'Calendar')}</b></div>${yo}</div>
+      <div class="tarj" style="display:flex;align-items:center;gap:8px">${anillo(0.25)}<div><b style="font-size:11px">${L('4 fechas', '4 dates')}</b><small style="display:block;color:var(--a-txt2)">${L('Tu mes', 'Your month')}</small></div><span class="ejemplo" style="margin-left:auto;font-size:7px;padding:2px 5px">${L('Ejemplo', 'Example')}</span></div>
       <div class="tarj">
         <div class="check ok"><i></i><div>${L('Tu aportación programada: ' + eur(200), 'Your scheduled contribution: ' + eur(200))}<small>${L('En la renta: nada', 'Tax effect: none')}</small></div></div>
         <div class="check"><i></i><div>${L('Resultados de dos empresas de tu ETF', 'Earnings from two companies in your ETF')}<small>${L('Jueves 12 y martes 17', 'Thursday 12 and Tuesday 17')}</small></div></div>
