@@ -186,7 +186,7 @@
       <div class="tarj"><b style="font-size:14px">${L('Fabricante de chips', 'Chipmaker')}</b><small style="display:block;color:var(--a-txt2)">${L('EE. UU. · Semiconductores · en tu cartera', 'US · Semiconductors · in your portfolio')}</small>
         <div class="fila" style="margin-top:10px"><span>${L('En tu cartera', 'In your portfolio')}</span><b class="num">${pc(2.1, 1)} · ${L('vía ETF', 'via ETF')}</b></div>
         <div class="fila"><span>${L('Última ficha', 'Last profile')}</span><b>${L('Hoy, 15:40', 'Today, 15:40')}</b></div>
-        <div class="fila"><span>${L('Radar de Toisón', 'Toisón radar')}</span><b>${L('840 empresas', '840 companies')}</b></div>
+        <div class="fila"><span>${L('Radar de Toisón', 'Toisón radar')}</span><b>${L('2.800 empresas', '2,800 companies')}</b></div>
         <small style="display:block;margin-top:8px;color:var(--a-txt2)">${L('Hechos y opiniones por separado, con las fuentes.', 'Facts and opinions kept apart, with sources.')}</small></div>
       <div class="tarj"><div class="et" style="margin-bottom:4px">${L('Lo que dice la prensa, por factores', 'What the press says, by factor')}</div>
         ${FACT.map((f) => `<div class="ff"><span>${L(f.n[0], f.n[1])}</span>${sg(f.s)}${pesos(f.p)}</div>`).join('')}
@@ -246,13 +246,13 @@
     not: '<path d="M5 5h11v14H7a2 2 0 0 1-2-2zM16 9h3v8a2 2 0 0 1-2 2"/><path d="M8 9h5M8 12h5M8 15h3"/>',
     exp: '<path d="M12 4l2.4 5 5.4.6-4 3.7 1.1 5.3L12 16l-4.9 2.6 1.1-5.3-4-3.7 5.4-.6z"/>'
   };
-  const navApp = (act) => '<div class="barra-nav">' + [['ini', 'Inicio', 'Home'], ['paso', 'Paso a paso', 'Steps'], ['merc', 'Mercados', 'Markets'], ['not', 'Noticias', 'News'], ['exp', 'Radar', 'Radar']]
+  const navApp = (act) => '<div class="barra-nav">' + [['ini', 'Hoy', 'Today'], ['paso', 'Tu plan', 'Plan'], ['merc', 'Mercados', 'Markets'], ['not', 'Noticias', 'News'], ['exp', 'Ideas', 'Ideas']]
     .map(([k, es, en], i) => `<span class="${i === act ? 'act' : ''}"><svg viewBox="0 0 24 24">${ICON[k]}</svg>${L(es, en)}</span>`).join('') + '</div>';
   const ESTADO = '<div class="estado"><span>17:35</span><span><svg viewBox="0 0 18 11"><rect x="0" y="7" width="3" height="4" rx=".7"/><rect x="5" y="5" width="3" height="6" rx=".7"/><rect x="10" y="2.5" width="3" height="8.5" rx=".7"/><rect x="15" y="0" width="3" height="11" rx=".7"/></svg></span></div>';
   const yo = '<span class="yo"><svg viewBox="-82 -78 164 147" aria-hidden="true"><use class="s-o" href="#o"/><use class="s-t" href="#t"/></svg></span>';
   function pintaMovil() {
     $('#movil').innerHTML = `<div class="pant">${ESTADO}<div class="capa">
-      <div class="hola"><div><small>${L('Noviembre', 'November')}</small><b>${L('Paso a paso', 'Step by step')}</b></div>${yo}</div>
+      <div class="hola"><div><small>${L('Noviembre', 'November')}</small><b>${L('Tu plan', 'Your plan')}</b></div>${yo}</div>
       <div class="tarj" style="display:flex;align-items:center;gap:8px">${anillo(0.25)}<div><b style="font-size:11px">${L('1 de 4 hecho', '1 of 4 done')}</b><small style="display:block;color:var(--a-txt2)">${L('Tu mes', 'Your month')}</small></div><span class="ejemplo" style="margin-left:auto;font-size:7px;padding:2px 5px">${L('Ejemplo', 'Example')}</span></div>
       <div class="tarj">
         <div class="check ok"><i></i><div>${L('Tu aportación programada: ' + eur(200), 'Your scheduled contribution: ' + eur(200))}<small>${L('En la renta: nada', 'Tax effect: none')}</small></div></div>
